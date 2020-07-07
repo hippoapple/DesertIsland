@@ -7,6 +7,7 @@ TagManager:
   - Ball
   - Branch
   - WOOD
+  - BOTTLE
   layers:
   - Default
   - TransparentFX
