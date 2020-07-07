@@ -4,11 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/01. Scenes/ViveSetting_JK.unity
-    guid: af5a7e27f52c354459699c635919e590
-  - enabled: 1
-    path: Assets/01. Scenes/ViveSetting_JH.unity
-    guid: ece1521a02ab9fd43bb450711f4eb818
+  m_Scenes: []
   m_configObjects: {}
