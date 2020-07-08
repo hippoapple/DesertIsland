@@ -26,23 +26,23 @@ public class StartFire : MonoBehaviour
         {
             SliderProgress();
         }
-        if(gauge.gameObject.GetComponentInChildren<Slider>().value ==1)
+        if(progress ==10)
         {
             smoke.gameObject.SetActive(false);
             fire.gameObject.SetActive(true);
         }
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
+        
+   
         if(other.gameObject.tag =="BOTTLE")
         {
             isTriggerenter = true;
             Debug.Log("BOTTLE is triggerEnter here");
             gauge.gameObject.SetActive(true);
             smoke.gameObject.SetActive(true);
-            
-
         }
 
     }
