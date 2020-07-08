@@ -1,10 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Island/Standard.meta
 guid: 4837b3f5f3a41f944bbc9e8336c5703a
 =======
 guid: 90bdf2f6aa44df142a8f06123f11fa93
 >>>>>>> dde5738c12c90cfce094ef23fbde1a3ba0840cc7:Assets/02. Scripts/HR.meta
 folderAsset: yes
+=======
+<<<<<<< HEAD:Assets/Island/Standard/Island_2019.3.15_Standard.unitypackage.meta
+guid: 2c70f4b9ecc3a814fb862a4f12fa106e
+=======
+guid: 90bdf2f6aa44df142a8f06123f11fa93
+folderAsset: yes
+>>>>>>> 2d1f6e180af5624bb142180702ff8c0ed43f6e95:Assets/02. Scripts/HR.meta
+>>>>>>> 2d1f6e180af5624bb142180702ff8c0ed43f6e95
 DefaultImporter:
   externalObjects: {}
   userData: 

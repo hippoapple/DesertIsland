@@ -1,9 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/05. Models.meta
 guid: d40e48a4dbe313d4fa256f98f98dcd64
 =======
 guid: 4837b3f5f3a41f944bbc9e8336c5703a
 >>>>>>> dde5738c12c90cfce094ef23fbde1a3ba0840cc7:Assets/Island/Standard.meta
+=======
+<<<<<<< HEAD:Assets/Island/URP.meta
+guid: af6f8aac3322436469bc3d968f662814
+=======
+guid: b8ea39c3b81484542ab9e2fd43169106
+>>>>>>> 2d1f6e180af5624bb142180702ff8c0ed43f6e95:Assets/05. Models.meta
+>>>>>>> 2d1f6e180af5624bb142180702ff8c0ed43f6e95
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
