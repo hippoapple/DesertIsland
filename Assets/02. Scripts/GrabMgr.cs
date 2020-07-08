@@ -43,10 +43,9 @@ public class GrabMgr : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.CompareTag("Ball"))
-        {
-            isTouched = true;
-            grabObject = coll.transform;
-        }
+        
+        isTouched = true;
+        grabObject = coll.transform;
+        
     }
 }
