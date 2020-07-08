@@ -24,8 +24,6 @@ public class FireFire : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        
-        
         if(other.gameObject.tag =="WOOD")
         {
             count+=1;
