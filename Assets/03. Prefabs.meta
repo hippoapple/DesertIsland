@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/03. Prefabs.meta
 guid: 5146e5b7096df62438836df63e062581
+=======
+guid: 6e93ad9df94db9049a286184072d8f34
+>>>>>>> df6adfeb05d72a52e6708ce2c8c88ac6e4e9298e:Assets/05. Models/HR.meta
+=======
+guid: 5146e5b7096df62438836df63e062581
+>>>>>>> df6adfeb05d72a52e6708ce2c8c88ac6e4e9298e
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
