@@ -22,10 +22,11 @@ public class Sos : MonoBehaviour
 
 
     void update()
-    { //if (collision.gameObject.tag == "Flag")
-
-      //  {transform.position + transform.position(0, 0.7, 0) * speed * Time.deltaTime;
-      //  SOS.gameObject.SetActive(true);
-     //   }
+    { 
+        //if(collision.gameObject.tag == "Flag")
+        //{
+        //transform.position + transform.position(0, 0.7, 0) * speed * Time.deltaTime;
+        //SOS.gameObject.SetActive(true);
+        //}
     }
 }
