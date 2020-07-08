@@ -45,7 +45,6 @@ public class GrabMgr : MonoBehaviour
     {
         
         isTouched = true;
-        grabObject = coll.transform;
-        
+        grabObject = coll.transform;        
     }
 }
