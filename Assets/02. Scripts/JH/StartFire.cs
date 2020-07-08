@@ -26,7 +26,11 @@ public class StartFire : MonoBehaviour
         {
             SliderProgress();
         }
-        if(progress>=10)
+        if(progress>=5)
+        {
+            smoke.gameObject.SetActive(true);
+        }
+        else if(progress>=10)
         {
             FinishProgress();
         }
@@ -42,7 +46,6 @@ public class StartFire : MonoBehaviour
             isTriggerenter = true;
             Debug.Log("BOTTLE is triggerEnter here");
             gauge.gameObject.SetActive(true);
-            smoke.gameObject.SetActive(true);
         }
 
     }
