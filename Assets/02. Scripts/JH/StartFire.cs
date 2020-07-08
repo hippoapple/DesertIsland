@@ -11,7 +11,8 @@ public class StartFire : MonoBehaviour
     public GameObject smoke;
     bool isTriggerenter = false;
 
-    
+    public GameObject fire;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,11 @@ public class StartFire : MonoBehaviour
         if(isTriggerenter == true)
         {
             SliderProgress();
+        }
+        if(gauge.gameObject.GetComponentInChildren<Slider>().value ==1)
+        {
+            smoke.gameObject.SetActive(false);
+            fire.gameObject.SetActive(true);
         }
     }
     
@@ -53,7 +59,7 @@ public class StartFire : MonoBehaviour
 
     void SliderProgress()
     {
-        progress += Time.deltaTime*10;
+        progress += Time.deltaTime;
         gauge.gameObject.GetComponentInChildren<Slider>().value = progress;
     }
 
