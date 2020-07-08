@@ -37,7 +37,10 @@ public class FireFire : MonoBehaviour
             firePlace.gameObject.SetActive(true);
             rocks.gameObject.SetActive(false);
             other.gameObject.SetActive(false);
-            
+            for( int i = 0; i < storage.Count; i++)
+            {
+                storage[i].SetActive(false);
+            }
         }
     }
 }

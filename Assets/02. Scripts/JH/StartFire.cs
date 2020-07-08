@@ -26,13 +26,13 @@ public class StartFire : MonoBehaviour
         {
             SliderProgress();
         }
-        if(progress>=5)
-        {
-            smoke.gameObject.SetActive(true);
-        }
-        else if(progress>=10)
+        if(progress>=10)
         {
             FinishProgress();
+        }
+        else if(progress>=5)
+        {
+            smoke.gameObject.SetActive(true);
         }
         
     }
@@ -62,7 +62,7 @@ public class StartFire : MonoBehaviour
 
     void SliderProgress()
     {
-        progress += Time.deltaTime;
+        progress += Time.deltaTime*0.5f;
         gauge.gameObject.GetComponentInChildren<Slider>().value = progress;
     }
 
