@@ -26,11 +26,11 @@ public class StartFire : MonoBehaviour
         {
             SliderProgress();
         }
-        if(progress ==10)
+        if(progress>=10)
         {
-            smoke.gameObject.SetActive(false);
-            fire.gameObject.SetActive(true);
+            FinishProgress();
         }
+        
     }
     
     private void OnTriggerStay(Collider other)
@@ -63,4 +63,11 @@ public class StartFire : MonoBehaviour
         gauge.gameObject.GetComponentInChildren<Slider>().value = progress;
     }
 
+    void FinishProgress()
+    {
+        smoke.gameObject.SetActive(false);
+        fire.gameObject.SetActive(true); 
+        isTriggerenter = false;
+        gauge.gameObject.SetActive(false);
+    }
 }
