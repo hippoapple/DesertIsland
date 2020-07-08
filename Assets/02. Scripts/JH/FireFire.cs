@@ -8,6 +8,7 @@ public class FireFire : MonoBehaviour
     public GameObject firePlace;
     public GameObject rocks;
     public GameObject wood;
+    public List<GameObject> storage = new List<GameObject>(); 
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +29,15 @@ public class FireFire : MonoBehaviour
         {
             count+=1;
             Debug.Log($"count = {count}");
+            storage.Add(other.gameObject);
         }
         
         if(count==3)
         {
-            firePlace.gameObject.SetActive(true );
-            rocks.gameObject.SetActive(false );
-            wood.gameObject.SetActive(false );
-
+            firePlace.gameObject.SetActive(true);
+            rocks.gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
+            
         }
     }
 }
