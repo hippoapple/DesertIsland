@@ -13,7 +13,7 @@ public class Flag : MonoBehaviour
 
     void Start() 
     {
-       for (int i = 0; i < 2; i++) 
+       for (int i = 0; i < 1; i++) 
        {
         Instantiate(sOS);
        }
@@ -25,6 +25,7 @@ public class Flag : MonoBehaviour
 
     public void SosMake()
     {
+       
         Instantiate(sOS, sosPosition.position, Quaternion.identity);
     }
            
