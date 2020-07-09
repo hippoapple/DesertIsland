@@ -6,9 +6,6 @@ using UnityEngine.EventSystems;
 
 public class RaycastClick : MonoBehaviour
 {
-
-    RaycastHit hit;
-    float distance =50.0f;
     public int count =0;
      private int LayerUI;
 
@@ -28,13 +25,12 @@ public class RaycastClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Physics.Raycast(transform.position,transform.forward, out hit, distance, LayerUI))
-        {
+        
               ++count;
               ChangeHint();
 
 
-        }
+        
     }
 
     public void ChangeHint()
