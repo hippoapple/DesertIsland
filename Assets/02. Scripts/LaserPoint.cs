@@ -90,10 +90,10 @@ public class LaserPoint : MonoBehaviour
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         }
        
-        if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))
-        {
+        // if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))
+        // {
         
-        }
+        // }
         
 
 
