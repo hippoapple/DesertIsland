@@ -88,15 +88,8 @@ public class LaserPoint : MonoBehaviour
             //Sleep
             print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
-        }
-       
-        // if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))
-        // {
+        }   
         
-        // }
-        
-
-
     }
     IEnumerator Teleport(Vector3 pos)//열거자형태 //까맣게 하고 위치를 바꿀꺼야 
 
