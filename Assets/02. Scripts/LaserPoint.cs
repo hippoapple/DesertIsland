@@ -85,7 +85,7 @@ public class LaserPoint : MonoBehaviour
         {
             SteamVR_Fade.Start(Color.black,0.0f ); // 바뀔 색, 바뀔 시간, 
             //Sleep
-            print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
+            //print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         }   
 
