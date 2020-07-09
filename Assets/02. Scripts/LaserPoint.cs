@@ -28,6 +28,7 @@ public class LaserPoint : MonoBehaviour
     //암막효과가 지속도니ㅡㄴ 시간
 
     public float durationTime = 0.2f;
+    private int LayerFloor = 1 << LayerMask.NameToLayer("Floor");
 
     // Start is called before the first frame update
     void Start()
@@ -77,7 +78,7 @@ public class LaserPoint : MonoBehaviour
             pointer.transform.rotation = Quaternion.LookRotation(tr.forward); //올일러를 하면 오류가있을수있음  벡터의 각도를 쿼터니온 각도로 변환해서 넣어준다. 
         }
 
-        if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, 1 << 9))//왼손
+        if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerFloor))//왼손
         {
             SteamVR_Fade.Start(Color.black,0.0f ); // 바뀔 색, 바뀔 시간, 
             //Sleep

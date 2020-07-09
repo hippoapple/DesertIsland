@@ -38,9 +38,7 @@ public class StartFire : MonoBehaviour
     }
     
     private void OnTriggerStay(Collider other)
-    {
-        
-   
+    {   
         if(other.gameObject.tag =="BOTTLE")
         {
             isTriggerenter = true;
@@ -73,4 +71,7 @@ public class StartFire : MonoBehaviour
         isTriggerenter = false;
         gauge.gameObject.SetActive(false);
     }
+
+
+    
 }
