@@ -48,6 +48,15 @@ public class GrabMgr : MonoBehaviour
         {
             isTouched= false;
         }
-        grabObject = coll.transform;        
+        grabObject = coll.transform;  
+    
+	    if (coll.gameObject.CompareTag ("Flag"))
+        {
+           GameObject.Find("Flag").GetComponent<Flag>().SosMake();
+
+
+        }
+      
+    
     }
 }

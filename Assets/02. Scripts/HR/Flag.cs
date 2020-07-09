@@ -5,7 +5,7 @@ using UnityEngine;
 public class Flag : MonoBehaviour
 {
     public float speed = 1;
-    GameObject flag;
+ 
     //생성될 Prefab
     public GameObject sOS;
     //Prefab 생성위치
@@ -13,19 +13,20 @@ public class Flag : MonoBehaviour
 
     void Start() 
     {
-        flag = GameObject.Find("Flag");
+      
     }
     
     // 만약 깃발을 잡으면 = 부딪히면
     // SOS 가 해골과 돌들이 Y축 1.2 더올라온다.
 
 
-    void OnTriggerEnter(Collider Flag) 
-	{if (Flag.gameObject.CompareTag ("SOS"))
-        {
-            Instantiate(sOS, sosPosition);
-        }
+    public void SosMake()
+    {
+        Instantiate(sOS, sosPosition);
     }
+           
+      
+    
 }
 
     // --------------------------
