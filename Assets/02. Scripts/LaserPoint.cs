@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Valve.VR;
 public class LaserPoint : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class LaserPoint : MonoBehaviour
 
     public float durationTime = 0.2f;
     private int LayerFloor = 1 << LayerMask.NameToLayer("Floor");
+    private int LayerUI = 1 << LayerMask.NameToLayer("UI");
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +87,8 @@ public class LaserPoint : MonoBehaviour
             print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         }
+        if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerFloor))//왼손
+        
 
 
     }
