@@ -17,30 +17,24 @@ public class FireFire : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private int woodCount = 0;
+    void OnTriggerEnter(Collider coll)
     {
-        
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.tag =="WOOD")
+        if (coll.CompareTag("WOOD"))
         {
-            count+=1;
-            Debug.Log($"count = {count}");
-            storage.Add(other.gameObject);
-        }
-        
-        if(count==3)
-        {
-            firePlace.gameObject.SetActive(true);
-            rocks.gameObject.SetActive(false);
-            other.gameObject.SetActive(false);
-            for( int i = 0; i < storage.Count; i++)
+            if (++woodCount == 5)
             {
-                storage[i].SetActive(false);
+                DestoryWoods();
             }
+            Debug.Log($"count = {count}");
+        }
+    }
+    void DestoryWoods()
+    {
+        Collider[] colls = Physics.OverlapSphere(transform.position, 1.0f, 1<<LayerMask.NameToLayer("Wood"));
+        foreach(Collider coll in colls)
+        {
+            Destroy(coll.gameObject);
         }
     }
 }
