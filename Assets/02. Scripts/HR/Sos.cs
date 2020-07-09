@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Sos : MonoBehaviour
 {
+    public GameObject SOS;
     public float speed = 1;
-
-    void update() 
+    
+    private void OnTriggerEnter(Collider other)
     {
-        transform.position += new Vector3(0.0f, 1.2f, 0.0f) * speed * Time.deltaTime;
+        SOS.transform.position += new Vector3(0.0f, 1.2f, 0.0f) * speed * Time.deltaTime;
     }
 }
     
