@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
 public class TextManager : MonoBehaviour
-{
-   private SteamVR_Action_Boolean tirgger = SteamVR_Actions.default_InteractUI;
+{    
+    private SteamVR_Input_Sources hand = SteamVR_Input_Sources.Any;   
+    private SteamVR_Action_Boolean tirgger = SteamVR_Actions.default_InteractUI;
       public Text [] hintmasage = new Text [4] ;
 
+    int count;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,9 @@ public class TextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if()
+        if(tirgger.GetStateDown(hand))
+        {
+            ++count;
+        }
     }
 }
