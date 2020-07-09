@@ -10,7 +10,7 @@ public class RaycastClick : MonoBehaviour
     RaycastHit hit;
     float distance =50.0f;
     public int count =0;
-     private int LayerUI = 1 << LayerMask.NameToLayer("UI");
+     private int LayerUI;
 
     List <string> hints;
  
@@ -18,6 +18,7 @@ public class RaycastClick : MonoBehaviour
     public Text hintText;
     void Start()
     {
+        LayerUI = 1 << LayerMask.NameToLayer("UI");
         hints = new List<string>();
        
         hintText = GameObject.Find("HintText").GetComponent<Text>();

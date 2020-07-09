@@ -29,8 +29,8 @@ public class LaserPoint : MonoBehaviour
     //암막효과가 지속도니ㅡㄴ 시간
 
     public float durationTime = 0.2f;
-    private int LayerFloor = 1 << LayerMask.NameToLayer("Floor");
-    private int LayerUI = 1 << LayerMask.NameToLayer("UI");
+    private int LayerFloor ;
+    private int LayerUI ;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +45,8 @@ public class LaserPoint : MonoBehaviour
 
         pointer = Instantiate<GameObject>(pointerPrefab, this.transform);//(pointerPrefab,위치,각도, 부모)
         tr = GetComponent<Transform>();
-
+        LayerFloor = 1 << LayerMask.NameToLayer("Floor");
+        LayerFloor = 1 << LayerMask.NameToLayer("UI");
     }
 
 
