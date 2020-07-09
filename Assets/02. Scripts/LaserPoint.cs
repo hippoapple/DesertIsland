@@ -32,6 +32,8 @@ public class LaserPoint : MonoBehaviour
     private int LayerFloor ;
     private int LayerUI ;
 
+    public static int count =0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,8 @@ public class LaserPoint : MonoBehaviour
         tr = GetComponent<Transform>();
         LayerFloor = 1 << LayerMask.NameToLayer("Floor");
         LayerUI = 1 << LayerMask.NameToLayer("UI");
+
+        
     }
 
 
@@ -89,7 +93,14 @@ public class LaserPoint : MonoBehaviour
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         }   
 
-        
+       if (tirgger.GetStateUp(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//왼손
+        {
+            print("tirgger Click");
+            count++;
+            print(count);
+            RaycastClick hintManager = GameObject.Find("HintManager").GetComponent<RaycastClick>();
+             hintManager.ChangeHint();
+        }
 
     }
     IEnumerator Teleport(Vector3 pos)//열거자형태 //까맣게 하고 위치를 바꿀꺼야 

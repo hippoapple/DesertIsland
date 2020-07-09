@@ -48,6 +48,10 @@ public class GrabMgr : MonoBehaviour
         {
             isTouched= false;
         }
+         if(coll.gameObject.tag=="UI")
+        {
+            isTouched= false;
+        }
         grabObject = coll.transform;  
     
 	    if (coll.gameObject.CompareTag ("Flag"))
