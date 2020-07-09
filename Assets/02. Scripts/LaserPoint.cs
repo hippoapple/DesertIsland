@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Valve.VR;
 public class LaserPoint : MonoBehaviour
-{
-
+    {
+    private SteamVR_Action_Boolean tirgger = SteamVR_Actions.default_InteractUI;   
     private SteamVR_Behaviour_Pose pose; //컨트롤의 위치, 회전 값을 가져오기 위해
     private SteamVR_Input_Sources hands;
     private SteamVR_Action_Boolean teleport;
@@ -88,6 +88,8 @@ public class LaserPoint : MonoBehaviour
             print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         }   
+
+        
 
     }
     IEnumerator Teleport(Vector3 pos)//열거자형태 //까맣게 하고 위치를 바꿀꺼야 
