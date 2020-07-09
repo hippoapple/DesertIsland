@@ -45,8 +45,8 @@ public class LaserPoint : MonoBehaviour
 
         pointer = Instantiate<GameObject>(pointerPrefab, this.transform);//(pointerPrefab,위치,각도, 부모)
         tr = GetComponent<Transform>();
-        LayerFloor = LayerMask.GetMask("Floor");
-        LayerFloor = LayerMask.GetMask("UI");
+        LayerFloor = 1 << LayerMask.NameToLayer("Floor");
+        LayerUI = 1 << LayerMask.NameToLayer("UI");
     }
 
 
