@@ -83,7 +83,6 @@ public class LaserPoint : MonoBehaviour
 
         if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerFloor))//왼손
         {
-            Debug.Log("ㄷㅡㄹㅇㅓㅇㅗㅁ");
             SteamVR_Fade.Start(Color.black,0.0f ); // 바뀔 색, 바뀔 시간, 
             //Sleep
             print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
@@ -97,7 +96,7 @@ public class LaserPoint : MonoBehaviour
         //위치를 바꾼다는건 카메라 리그를 점프한다는것
         tr.parent.transform.position = pos;
         print(tr.parent.transform.position);
-        Debug.Log($"teleport to {tr.parent.transform.position}");
+
         //Waiting
         yield return new WaitForSeconds(durationTime);//0.2포만큼 기다렸다가 
         SteamVR_Fade.Start(Color.clear,0.2f);
