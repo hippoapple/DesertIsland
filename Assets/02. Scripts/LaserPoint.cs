@@ -17,7 +17,7 @@ public class LaserPoint : MonoBehaviour
     //라인렌더러 속성변수
     private LineRenderer line;
     [Range(3.0f, 10.0f)] //
-    public float distance = 5.0f;
+    public float distance = 20.0f;
 
     public Color defaltColor = Color.green;
     public Color clikedColor = Color.blue;
@@ -89,7 +89,7 @@ public class LaserPoint : MonoBehaviour
             print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         }   
-        
+
     }
     IEnumerator Teleport(Vector3 pos)//열거자형태 //까맣게 하고 위치를 바꿀꺼야 
 
