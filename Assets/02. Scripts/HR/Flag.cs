@@ -22,7 +22,7 @@ public class Flag : MonoBehaviour
 
     public void SosMake()
     {
-        Instantiate(sOS, sosPosition);
+        Instantiate(sOS, sosPosition.position, Quaternion.identity);
     }
            
       
