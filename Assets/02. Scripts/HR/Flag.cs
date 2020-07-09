@@ -13,7 +13,10 @@ public class Flag : MonoBehaviour
 
     void Start() 
     {
-      
+       for (int i = 0; i < 2; i++) 
+       {
+        Instantiate(sOS);
+       }
     }
     
     // 만약 깃발을 잡으면 = 부딪히면
