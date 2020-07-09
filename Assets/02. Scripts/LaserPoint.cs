@@ -90,7 +90,7 @@ public class LaserPoint : MonoBehaviour
        
         if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))
         {
-           
+        
         }
         
 
