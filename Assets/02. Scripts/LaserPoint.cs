@@ -105,7 +105,7 @@ public class LaserPoint : MonoBehaviour
             count++;
             print(count);
             RaycastClick hintManager = GameObject.Find("HintManager").GetComponent<RaycastClick>();
-             hintManager.ChangeHint();
+            hintManager.ChangeHint();
         }
 
     }
