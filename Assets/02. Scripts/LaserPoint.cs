@@ -26,7 +26,7 @@ public class LaserPoint : MonoBehaviour
     private RaycastHit hit;
     private Transform tr;
 
-    //암막효과가 지속도니ㅡㄴ 시간
+    //암막효과가 지속되는 시간
 
     public float durationTime = 0.2f;
     private int LayerFloor ;
@@ -38,13 +38,14 @@ public class LaserPoint : MonoBehaviour
     void Awake()
     {
         tirgger = SteamVR_Actions.default_InteractUI;
+        teleport = SteamVR_Actions.default_Teleport;
     }
     // Start is called before the first frame update
     void Start()
     {
         pose = GetComponent<SteamVR_Behaviour_Pose>();
         hands = SteamVR_Input_Sources.LeftHand;
-        teleport = SteamVR_Actions.default_Teleport;
+       
         CreateLine();
 
         pointerPrefab = Resources.Load<GameObject>("Pointer");
