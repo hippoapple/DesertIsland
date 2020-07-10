@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class RaycastClick : MonoBehaviour
+public class HintManager : MonoBehaviour
 {
    
     public GameObject hintPanel1_1;
@@ -85,7 +85,5 @@ public class RaycastClick : MonoBehaviour
         hints.Add("나무가 필요하겠지?");//4
         hints.Add("Mission 1 <불을 피우자!!> ");//5
        
-
-
     }
 }
