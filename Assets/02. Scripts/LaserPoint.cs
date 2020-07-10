@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using Valve.VR;
 public class LaserPoint : MonoBehaviour
     {
-    private SteamVR_Action_Boolean tirgger = SteamVR_Actions.default_InteractUI;   
+    private SteamVR_Action_Boolean tirgger ;   
     private SteamVR_Behaviour_Pose pose; //컨트롤의 위치, 회전 값을 가져오기 위해
     private SteamVR_Input_Sources hands;
     private SteamVR_Action_Boolean teleport;
@@ -32,12 +32,20 @@ public class LaserPoint : MonoBehaviour
     private int LayerFloor ;
     private int LayerUI ;
 
+    public static int count =0;
+    
+
+    void Awake()
+    {
+        tirgger = SteamVR_Actions.default_InteractUI;
+        teleport = SteamVR_Actions.default_Teleport;
+    }
     // Start is called before the first frame update
     void Start()
     {
         pose = GetComponent<SteamVR_Behaviour_Pose>();
         hands = SteamVR_Input_Sources.LeftHand;
-        teleport = SteamVR_Actions.default_Teleport;
+       
         CreateLine();
 
         pointerPrefab = Resources.Load<GameObject>("Pointer");
@@ -47,6 +55,8 @@ public class LaserPoint : MonoBehaviour
         tr = GetComponent<Transform>();
         LayerFloor = 1 << LayerMask.NameToLayer("Floor");
         LayerUI = 1 << LayerMask.NameToLayer("UI");
+
+        
     }
 
 
@@ -89,7 +99,14 @@ public class LaserPoint : MonoBehaviour
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         }   
 
-        
+       if (tirgger.GetStateUp(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//왼손
+        {
+            print("tirgger Click");
+            count++;
+            print(count);
+            RaycastClick hintManager = GameObject.Find("HintManager").GetComponent<RaycastClick>();
+             hintManager.ChangeHint();
+        }
 
     }
     IEnumerator Teleport(Vector3 pos)//열거자형태 //까맣게 하고 위치를 바꿀꺼야 

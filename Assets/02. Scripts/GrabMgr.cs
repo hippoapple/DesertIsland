@@ -37,7 +37,7 @@ public class GrabMgr : MonoBehaviour
             grabObject.GetComponent<Rigidbody>().velocity = _velocity;
 
             isTouched = false;
-            grabObject = null;
+            //grabObject = null;
         }
     }
 
@@ -45,6 +45,10 @@ public class GrabMgr : MonoBehaviour
     {
         isTouched = true;
         if(coll.gameObject.tag=="UnTouched")
+        {
+            isTouched= false;
+        }
+         if(coll.gameObject.tag=="UI")
         {
             isTouched= false;
         }
