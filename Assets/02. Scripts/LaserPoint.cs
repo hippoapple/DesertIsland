@@ -32,8 +32,8 @@ public class LaserPoint : MonoBehaviour
     private int LayerFloor ;
     private int LayerUI ;
 
-    public static int count =0;
-  
+    
+    public Transform cameraRig;
     
    
     void Awake()
@@ -57,7 +57,7 @@ public class LaserPoint : MonoBehaviour
         LayerFloor = 1 << LayerMask.NameToLayer("Floor");
         LayerUI = 1 << LayerMask.NameToLayer("UI");
 
-        
+         cameraRig = GameObject.Find("[CameraRig]").GetComponent<Transform>();  
     }
 
 
@@ -103,8 +103,8 @@ public class LaserPoint : MonoBehaviour
        if (tirgger.GetStateUp(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//왼손
         {
             print("tirgger Click");
-            count++;
-            print(count);
+            RaycastClick.clickCount++;
+          
             RaycastClick hintManager = GameObject.Find("HintManager").GetComponent<RaycastClick>();
             hintManager.ChangeHint();
         }
@@ -114,9 +114,10 @@ public class LaserPoint : MonoBehaviour
 
     {
         //위치를 바꾼다는건 카메라 리그를 점프한다는것
-        tr.parent.transform.position = pos;
-       print(tr.parent.transform.position);
-       
+       // tr.parent.transform.position = pos;
+       // print(tr.parent.transform.position);
+        cameraRig.transform.position = pos;
+        this.gameObject.transform.position = cameraRig.transform.position;
         //Waiting
         yield return new WaitForSeconds(durationTime);//0.2포만큼 기다렸다가 
         SteamVR_Fade.Start(Color.clear,0.2f);
