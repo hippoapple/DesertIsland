@@ -27,11 +27,9 @@ public class Flag : MonoBehaviour
     {
        
         Instantiate(sOS, sosPosition.position, Quaternion.identity);
-    }
-           
-      
-    
+    }       
 }
+
 
     // --------------------------
 
