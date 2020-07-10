@@ -5,9 +5,10 @@ using UnityEngine.EventSystems;
 using Valve.VR;
 public class LaserPoint : MonoBehaviour
     {
-    private SteamVR_Action_Boolean tirgger ;   
+    private SteamVR_Action_Boolean trigger ;   
     private SteamVR_Behaviour_Pose pose; //컨트롤의 위치, 회전 값을 가져오기 위해
     private SteamVR_Input_Sources hands;
+    private SteamVR_Input_Sources triggerhands;
     private SteamVR_Action_Boolean teleport;
 
     [SerializeField] //프라이빗이지만 인스펙터창에 보여짐
@@ -38,7 +39,7 @@ public class LaserPoint : MonoBehaviour
    
     void Awake()
     {
-        tirgger = SteamVR_Actions.default_InteractUI;
+        trigger = SteamVR_Actions.default_InteractUI;
         teleport = SteamVR_Actions.default_Teleport;
     }
     // Start is called before the first frame update
@@ -46,6 +47,7 @@ public class LaserPoint : MonoBehaviour
     {
         pose = GetComponent<SteamVR_Behaviour_Pose>();
         hands = SteamVR_Input_Sources.LeftHand;
+        triggerhands = SteamVR_Input_Sources.Any;
        
         CreateLine();
 
@@ -100,7 +102,7 @@ public class LaserPoint : MonoBehaviour
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         }   
 
-       if (tirgger.GetStateUp(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//왼손
+       if (trigger.GetStateDown(triggerhands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//양손트리거
         {
             print("tirgger Click");
             RaycastClick.clickCount++;
