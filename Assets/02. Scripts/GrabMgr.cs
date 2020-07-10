@@ -59,10 +59,10 @@ public class GrabMgr : MonoBehaviour
         }
         grabObject = coll.transform;  
     
-	    if (coll.gameObject.CompareTag ("Flag"))
-        {
-           GameObject.Find("Flag").GetComponent<Flag>().SosMake();
-        }
+	    //if (coll.gameObject.CompareTag ("Flag"))
+        //{
+        //   GameObject.Find("Flag").GetComponent<Flag>().SosMake();
+        //}
       
     
     }
