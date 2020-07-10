@@ -44,25 +44,27 @@ public class StoneZone : MonoBehaviour
     public static int count = 0 ;
     public GameObject stoneZone;
     public GameObject sOS2;
-
-    public List<GameObject> storage = new List<GameObject>(); 
-
     private int stoneCount = 0;
+
     void OnTriggerEnter(Collider coll)
     {
         if (coll.CompareTag("Stone"))
         {
-            if (++stoneCount == 9)
+            if (++stoneCount == 10)
             {
-                sOS2.gameObject.SetActive(true);
+                sOS2.SetActive(true);
                 DestroyStones();
             }
             // Debug.Log($"count = {count}");
         }
     }
+
     void DestroyStones()
     {
-        Collider[] colls = Physics.OverlapSphere(transform.position, 10.0f);
+        Collider[] colls = Physics.OverlapBox(transform.position
+                                            , new Vector3(4.0f, 1.5f, 5.0f)
+                                            , Quaternion.LookRotation(transform.forward)
+                                            , 1<<LayerMask.NameToLayer("Stone"));
         foreach(Collider coll in colls)
         {
             Destroy(coll.gameObject);
