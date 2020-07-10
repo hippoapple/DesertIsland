@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class RaycastClick : MonoBehaviour
 {
@@ -12,14 +13,14 @@ public class RaycastClick : MonoBehaviour
     List <string> hints;
  
  
-    public Text hintText;
+    public TextMeshProUGUI hintText;
 
     void Start()
     {
        // LayerUI = 1 << LayerMask.NameToLayer("UI");
         hints = new List<string>();
        
-        hintText = GameObject.Find("HintText").GetComponent<Text>();
+        hintText = GameObject.Find("HintText").GetComponent<TextMeshProUGUI>();
          SetScript();
     }
 
