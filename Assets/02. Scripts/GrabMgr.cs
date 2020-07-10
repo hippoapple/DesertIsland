@@ -12,7 +12,12 @@ public class GrabMgr : MonoBehaviour
     private bool isTouched = false;
 
     private SteamVR_Input_Sources hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
-    private SteamVR_Action_Boolean tirgger = SteamVR_Actions.default_InteractUI;
+    private SteamVR_Action_Boolean tirgger ;
+
+    void Awake()
+    {
+        tirgger = SteamVR_Actions.default_InteractUI;
+    }
 
     // Start is called before the first frame update
     void Start()

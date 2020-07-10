@@ -15,7 +15,7 @@ public class BlackOut : MonoBehaviour
     void Start()
     {
         timer = 0.0f;
-        waitingTime = 7;
+        waitingTime = 3;
         inside = false;
 
         OnEyeBlank();
@@ -27,6 +27,7 @@ public class BlackOut : MonoBehaviour
     {
         print("aaa");
         SteamVR_Fade.Start(Color.black, 0.0f);
+        StartCoroutine(FadeInEye());       
     }
 
     IEnumerator FadeInEye()
