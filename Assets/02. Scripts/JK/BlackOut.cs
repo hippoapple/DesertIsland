@@ -9,6 +9,8 @@ public class BlackOut : MonoBehaviour
 
     float timer;
     int waitingTime;
+    int waitingTime2;
+    
     bool inside;
     
     // Start is called before the first frame update
@@ -16,6 +18,7 @@ public class BlackOut : MonoBehaviour
     {
         timer = 0.0f;
         waitingTime = 3;
+        waitingTime2 = 1;
         inside = false;
 
         OnEyeBlank();
@@ -34,6 +37,19 @@ public class BlackOut : MonoBehaviour
     {
         yield return new WaitForSeconds(waitingTime);
         SteamVR_Fade.Start(Color.clear, 0.3f);
+        StartCoroutine(OnEyeBlank());  
     }
 
+    public void OnEyeBlank()
+    {
+        yield return new WaitForSeconds(waitingTime2);
+        SteamVR_Fade.Start(Color.black, 0.0f);
+        StartCoroutine(FadeInEye2());       
+    }
+
+        IEnumerator FadeInEye2()
+    {
+        yield return new WaitForSeconds(waitingTime2);
+        SteamVR_Fade.Start(Color.clear, 0.3f);
+    }
 }
