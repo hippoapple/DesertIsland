@@ -13,27 +13,27 @@ public class GrabMgr : MonoBehaviour
 
   
     SteamVR_Input_Sources hand;
-    SteamVR_Action_Boolean tirgger;
+    SteamVR_Action_Boolean trigger;
     public GameObject SOS;
     public float speed = 5;
 
     void Awake()
     {
         hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
-        tirgger = SteamVR_Actions.default_InteractUI;
+        trigger = SteamVR_Actions.default_InteractUI;
     }
 
  
     // Update is called once per frame
     void Update()
     {
-        if (isTouched == true && tirgger.GetStateDown(hand))//만졌을때
+        if (isTouched == true && trigger.GetStateDown(hand))//만졌을때
         {
             grabObject.SetParent(this.transform);
             grabObject.GetComponent<Rigidbody>().isKinematic = true; //잡은물체의 물리엔진을 끈다,.
         }
 
-        if (isTouched == true && tirgger.GetStateUp(hand))//땔때
+        if (isTouched == true && trigger.GetStateUp(hand))//땔때
         {
             grabObject.SetParent(null);
             Vector3 _velocity = GetComponent<SteamVR_Behaviour_Pose>().GetVelocity();
