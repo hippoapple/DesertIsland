@@ -37,19 +37,12 @@ public class BlackOut : MonoBehaviour
     {
         yield return new WaitForSeconds(waitingTime);
         SteamVR_Fade.Start(Color.clear, 0.3f);
-        StartCoroutine(OnEyeBlank());  
-    }
 
-    public void OnEyeBlank()
-    {
         yield return new WaitForSeconds(waitingTime2);
         SteamVR_Fade.Start(Color.black, 0.0f);
-        StartCoroutine(FadeInEye2());       
-    }
-
-        IEnumerator FadeInEye2()
-    {
+        
         yield return new WaitForSeconds(waitingTime2);
         SteamVR_Fade.Start(Color.clear, 0.3f);
     }
+
 }
