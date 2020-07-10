@@ -15,7 +15,7 @@ public class GrabMgr : MonoBehaviour
     SteamVR_Input_Sources hand;
     SteamVR_Action_Boolean tirgger;
     public GameObject SOS;
-    public float speed = 1;
+    public float speed = 5;
 
     void Awake()
     {
@@ -41,7 +41,7 @@ public class GrabMgr : MonoBehaviour
             grabObject.GetComponent<Rigidbody>().velocity = _velocity;
 
             isTouched = false;
-            //grabObject = null;
+            grabObject = null;
         }
     }
 
@@ -57,16 +57,15 @@ public class GrabMgr : MonoBehaviour
             isTouched= false;
         }
         grabObject = coll.transform;  
-    
-	    
-    }
-
-    void OnTriggerStay(Collider coll)
-    {
         if (coll.gameObject.CompareTag ("Flag"))
         {
-           SOS.transform.position += new Vector3(0.0f, 1.2f, 0.0f) * speed * Time.deltaTime;
-        }
+         SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f) ;
+	    }
     }
+        
+
+ 
+
+   
 
 }
