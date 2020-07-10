@@ -33,8 +33,9 @@ public class LaserPoint : MonoBehaviour
     private int LayerUI ;
 
     public static int count =0;
+  
     
-
+   
     void Awake()
     {
         tirgger = SteamVR_Actions.default_InteractUI;
@@ -114,8 +115,8 @@ public class LaserPoint : MonoBehaviour
     {
         //위치를 바꾼다는건 카메라 리그를 점프한다는것
         tr.parent.transform.position = pos;
-        print(tr.parent.transform.position);
-
+       print(tr.parent.transform.position);
+       
         //Waiting
         yield return new WaitForSeconds(durationTime);//0.2포만큼 기다렸다가 
         SteamVR_Fade.Start(Color.clear,0.2f);

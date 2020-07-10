@@ -11,20 +11,19 @@ public class GrabMgr : MonoBehaviour
     //공에 접촉했는지 여부
     private bool isTouched = false;
 
-    private SteamVR_Input_Sources hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
-    private SteamVR_Action_Boolean tirgger ;
+  
+    SteamVR_Input_Sources hand;
+    SteamVR_Action_Boolean tirgger;
+    public GameObject SOS;
+    public float speed = 5;
 
     void Awake()
     {
+        hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
         tirgger = SteamVR_Actions.default_InteractUI;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+ 
     // Update is called once per frame
     void Update()
     {
@@ -42,7 +41,7 @@ public class GrabMgr : MonoBehaviour
             grabObject.GetComponent<Rigidbody>().velocity = _velocity;
 
             isTouched = false;
-            //grabObject = null;
+            grabObject = null;
         }
     }
 
@@ -58,12 +57,15 @@ public class GrabMgr : MonoBehaviour
             isTouched= false;
         }
         grabObject = coll.transform;  
-    
-	    //if (coll.gameObject.CompareTag ("Flag"))
-        //{
-        //   GameObject.Find("Flag").GetComponent<Flag>().SosMake();
-        //}
-      
-    
+        if (coll.gameObject.CompareTag ("Flag"))
+        {
+         SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f) ;
+	    }
     }
+        
+
+ 
+
+   
+
 }
