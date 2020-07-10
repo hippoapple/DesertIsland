@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    Vector3 a = new Vector3(0,1,0);
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

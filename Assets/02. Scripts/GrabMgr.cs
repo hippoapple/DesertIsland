@@ -37,7 +37,7 @@ public class GrabMgr : MonoBehaviour
             grabObject.GetComponent<Rigidbody>().velocity = _velocity;
 
             isTouched = false;
-            //grabObject = null;
+            grabObject = null;
         }
     }
 
