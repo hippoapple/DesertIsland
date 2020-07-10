@@ -6,12 +6,12 @@ public class ViveController : MonoBehaviour
 {
 
     //컨트롤러 정의
-    public SteamVR_Input_Sources leftHand;
-    public SteamVR_Input_Sources rightHand;
-    public SteamVR_Input_Sources any;
+    public SteamVR_Input_Sources leftHand = SteamVR_Input_Sources.LeftHand;
+    public SteamVR_Input_Sources rightHand = SteamVR_Input_Sources.RightHand;
+    public SteamVR_Input_Sources any       = SteamVR_Input_Sources.Any;
 
     //컨트롤러 입력값 정의
-    public SteamVR_Action_Boolean trigger;
+    public SteamVR_Action_Boolean trigger = SteamVR_Actions.default_InteractUI;
 
     //트랙패드 클릭
     public SteamVR_Action_Boolean trackPadCilck = SteamVR_Actions.default_Teleport;
@@ -21,7 +21,7 @@ public class ViveController : MonoBehaviour
     public SteamVR_Action_Vibration haptic = SteamVR_Actions.default_Haptic;
     void Awake()
     {
-        trigger = SteamVR_Actions.default_InteractUI;
+        
     }
 
 
