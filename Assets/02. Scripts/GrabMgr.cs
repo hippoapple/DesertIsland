@@ -11,18 +11,19 @@ public class GrabMgr : MonoBehaviour
     //공에 접촉했는지 여부
     private bool isTouched = false;
 
-    private SteamVR_Input_Sources hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
-    private SteamVR_Action_Boolean tirgger = SteamVR_Actions.default_InteractUI;
-
+  
+    SteamVR_Input_Sources hand;
+    SteamVR_Action_Boolean tirgger;
     public GameObject SOS;
     public float speed = 1;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
+        tirgger = SteamVR_Actions.default_InteractUI;
     }
 
+ 
     // Update is called once per frame
     void Update()
     {
