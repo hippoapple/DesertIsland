@@ -31,7 +31,7 @@ public class RaycastClick : MonoBehaviour
     void Update()
     {  
        timer += Time.deltaTime;
-        print(timer);
+        print((int)timer);
     }
 
     public void ChangeHint()
@@ -68,7 +68,7 @@ public class RaycastClick : MonoBehaviour
              case 6:
                 hintPanel1_1.SetActive(false);
                 timer =0;
-                print(timer);
+                print(  (int)timer);
 
             break; 
 
@@ -83,7 +83,7 @@ public class RaycastClick : MonoBehaviour
         hints.Add("그건 그렇고.. 너무 춥다.");//2
         hints.Add("저기 화덕에 불을 피워야겠다.");//3
         hints.Add("나무가 필요하겠지?");//4
-        hints.Add("Mission 1 \n 불을 피우자 ");//4
+        hints.Add("Mission 1 <불을 피우자!!> ");//5
        
 
 
