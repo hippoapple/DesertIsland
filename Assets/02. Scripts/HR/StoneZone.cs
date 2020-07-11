@@ -12,7 +12,7 @@ public class StoneZone : MonoBehaviour
     public static int count = 0 ;
     public GameObject stoneZone;
     public GameObject sOS2;
-    public GameObject helicopter;
+    public GameObject tweenMgr;
     private int stoneCount = 0;
 
     void OnTriggerEnter(Collider coll)
@@ -22,7 +22,7 @@ public class StoneZone : MonoBehaviour
             if (++stoneCount == 10)
             {
                 sOS2.SetActive(true);
-                helicopter.SetActive(true);
+                tweenMgr.SetActive(true);
                 DestroyStones();
             }
             // Debug.Log($"count = {count}");
