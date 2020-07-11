@@ -108,10 +108,10 @@ public class LaserPoint2 : MonoBehaviour
        if (tirgger.GetStateUp(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//왼손
         {
             print("tirgger Click");
-            RaycastClick.clickCount++;
+            //RaycastClick.clickCount++;
           
-            RaycastClick hintManager = GameObject.Find("HintManager").GetComponent<RaycastClick>();
-            hintManager.ChangeHint();
+            //RaycastClick hintManager = GameObject.Find("HintManager").GetComponent<RaycastClick>();
+            //hintManager.ChangeHint();
         }
 
     }
