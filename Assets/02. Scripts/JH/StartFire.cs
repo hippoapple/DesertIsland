@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class StartFire : MonoBehaviour
 {
-    public GameObject bottle;
     public GameObject gauge;
     float progress=0.0f;
     public GameObject smoke;
     bool isTriggerenter = false;
-
     public GameObject fire;
 
     // Start is called before the first frame update
