@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class Meseges : MonoBehaviour
 {
-     float timer = 0;
-     public GameObject textCanvas;
+    
+     public GameObject Hint1_Canvas;
+     public GameObject Hint2_Canvas;
+     public Slider FireSlider;
 
    
     // Start is called before the first frame update
@@ -18,14 +20,21 @@ public class Meseges : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-         print(timer);
+        HintManager.timer += Time.deltaTime;
+         print( HintManager.timer);
 
-        if(timer >= 10 && FireFire.count == 0 )
+        if( HintManager.timer >= 10 && FireFire.count == 0 )
         {
          
-            textCanvas.SetActive(true);  
-             //  timer = 0;
+            Hint1_Canvas.SetActive(true);  
+            HintManager.timer = 0;
+        }
+
+         if( HintManager.timer >= 10 && FireSlider.value == 0 )
+        {
+         
+            Hint2_Canvas.SetActive(true);  
+            HintManager.timer = 0;
         }
         
     }
