@@ -19,10 +19,3 @@ public class Sos : MonoBehaviour
     //     SOS.transform.position += new Vector3(0.0f, 1.2f, 0.0f) * speed * Time.deltaTime;
     // }   
 
-    
-
-    // --------------------------
-
-    // 만약 존 안에 10개의 돌이 올라온다면
-    // Prefabs SOS2가 생기고, 기존의 10 개 돌이 사라진다.
-    // 헬기가 소리가 들리며 헬기가 온다.

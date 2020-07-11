@@ -4,38 +4,6 @@ using UnityEngine;
 
 public class StoneZone : MonoBehaviour
 {
-    /*public int i = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        for(int i = 0; i < 10; i++)
-        {
-            if(i == 9)
-            {
-                break;
-            }
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    
-    }
-
-    public GameObject sOS2;
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Stone"))
-        {
-            sOS2.gameObject.SetActive(true);
-            sOS.gameObject.SetActive(false);
-            .gameObject.SetActive(false); 
-        }
-    }
-    */
-
         // tag가 Stone인게 10개 들어 온다면
         // 근데 만약 StoneZone 안에 
         // sos2가 setactive 되며
@@ -44,6 +12,7 @@ public class StoneZone : MonoBehaviour
     public static int count = 0 ;
     public GameObject stoneZone;
     public GameObject sOS2;
+    public GameObject helicopter;
     private int stoneCount = 0;
 
     void OnTriggerEnter(Collider coll)
@@ -53,6 +22,7 @@ public class StoneZone : MonoBehaviour
             if (++stoneCount == 10)
             {
                 sOS2.SetActive(true);
+                helicopter.SetActive(true);
                 DestroyStones();
             }
             // Debug.Log($"count = {count}");
@@ -72,3 +42,6 @@ public class StoneZone : MonoBehaviour
     }
 }
 
+    // 만약 존 안에 10개의 돌이 올라온다면
+    // Prefabs SOS2가 생기고, 기존의 10 개 돌이 사라진다.
+    // 헬기가 소리가 들리며 헬기가 온다.
