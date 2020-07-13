@@ -88,6 +88,7 @@ public class HintManager : MonoBehaviour
               hintText.text = hints[clickCount];
             break;
 
+            //화덕에 불이 붙고난후 
             case 10:
               hintText.text = hints[clickCount];
             break;
@@ -110,10 +111,13 @@ public class HintManager : MonoBehaviour
             case 16:
               hintText.text = hints[clickCount];
             break;
+
+            //통에 물을 담고 난후 
             case 17:
               hintText.text = hints[clickCount];
             break;
-           
+
+           //물을 먹고 난후    
             case 18:
               hintText.text = hints[clickCount];
             break;
@@ -130,6 +134,8 @@ public class HintManager : MonoBehaviour
             case 22:
               hintText.text = hints[clickCount];
             break;
+              
+             //깃발을 터치한후 
             case 23:
               hintText.text = hints[clickCount];
             break;
