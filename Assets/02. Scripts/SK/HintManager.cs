@@ -103,7 +103,7 @@ public class HintManager : MonoBehaviour
             case 14:
               hintText.text = hints[clickCount];
             break;
-            ㅍ
+            
             case 15:
               hintText.text = hints[clickCount];
             break;
@@ -113,7 +113,6 @@ public class HintManager : MonoBehaviour
             case 17:
               hintText.text = hints[clickCount];
             break;
-            ㅍ
             case 18:
               hintText.text = hints[clickCount];
             break;
