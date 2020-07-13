@@ -105,10 +105,10 @@ public class LaserPoint : MonoBehaviour
        if (trigger.GetStateDown(triggerhands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//양손트리거
         {
             print("tirgger Click");
-            HintManager.clickCount++;
+            StoryManager.clickCount++;
           
-            HintManager hintManager = GameObject.Find("HintManager").GetComponent<HintManager>();
-            hintManager.ChangeHint();
+            StoryManager storyManager = GameObject.Find("StoryManager").GetComponent<StoryManager>();
+            storyManager.ChangeHint();
         }
 
     }
