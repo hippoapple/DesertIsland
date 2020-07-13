@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using Valve.VR;
 //SteamVR_LaserPointer의 네임스페이스
 using Valve.VR.Extras;
+using UnityEngine.SceneManagement;
 
 public class CastEventToUI : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class CastEventToUI : MonoBehaviour
         if (clickHandler == null) return;
 
         clickHandler.OnPointerClick(new PointerEventData(EventSystem.current));
+
+        SceneManager.LoadScene("01. MainScene");
         
         //ExecuteEvents.Execute(e.target.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
     }
