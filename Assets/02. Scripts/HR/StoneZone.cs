@@ -19,7 +19,7 @@ public class StoneZone : MonoBehaviour
     {
         if (coll.CompareTag("Stone"))
         {
-            if (++stoneCount == 10)
+            if (++stoneCount == 3) // 추후 10개로 하자. 10개 일단은 너무 많은듯 ㅠ
             {
                 sOS2.SetActive(true);
                 tweenMgr.SetActive(true);
