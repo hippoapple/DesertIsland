@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MesegesManager : MonoBehaviour
-{
+{   
+    public static MesegesManager instance;
     
      public GameObject Hint1_Canvas;
      public GameObject Hint2_Canvas;
@@ -15,7 +16,10 @@ public class MesegesManager : MonoBehaviour
      public GameObject Hint7_Canvas;
      public Slider FireSlider;
 
-   
+   private void Awake()
+   {
+       instance = this;
+   }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +30,7 @@ public class MesegesManager : MonoBehaviour
     void Update()
     {
         StoryManager.timer += Time.deltaTime;
-         print( StoryManager.timer);
+         //print( StoryManager.timer);
 
         if( StoryManager.timer >= 10 && FireFire.count == 0 )
         {
@@ -40,7 +44,7 @@ public class MesegesManager : MonoBehaviour
          
             CanvasOn();
             Invoke("CanvasOff",5);
-            StoryManager.timer = 0;
+           // StoryManager.timer = 0;
 
         }
         

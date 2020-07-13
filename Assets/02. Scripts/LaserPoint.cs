@@ -47,7 +47,7 @@ public class LaserPoint : MonoBehaviour
     {
         pose = GetComponent<SteamVR_Behaviour_Pose>();
         hands = SteamVR_Input_Sources.LeftHand;
-        triggerhands = SteamVR_Input_Sources.Any;
+        triggerhands = SteamVR_Input_Sources.RightHand;
        
         CreateLine();
 
@@ -107,8 +107,8 @@ public class LaserPoint : MonoBehaviour
             print("tirgger Click");
             StoryManager.clickCount++;
           
-            StoryManager storyManager = GameObject.Find("StoryManager").GetComponent<StoryManager>();
-            storyManager.ChangeHint();
+            StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
+            hintManager.ChangeHint();
         }
 
     }
