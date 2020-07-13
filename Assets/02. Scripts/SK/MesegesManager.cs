@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Meseges : MonoBehaviour
+public class MesegesManager : MonoBehaviour
 {
     
      public GameObject Hint1_Canvas;
@@ -25,22 +25,22 @@ public class Meseges : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HintManager.timer += Time.deltaTime;
-         print( HintManager.timer);
+        StoryManager.timer += Time.deltaTime;
+         print( StoryManager.timer);
 
-        if( HintManager.timer >= 10 && FireFire.count == 0 )
+        if( StoryManager.timer >= 10 && FireFire.count == 0 )
         {
          
            CanvasOn();
            Invoke("CanvasOff",5);
         }
 
-         if( HintManager.timer >= 10 && FireSlider.value == 0 )
+         if( StoryManager.timer >= 10 && FireSlider.value == 0 )
         {
          
             CanvasOn();
             Invoke("CanvasOff",5);
-            HintManager.timer = 0;
+            StoryManager.timer = 0;
 
         }
         

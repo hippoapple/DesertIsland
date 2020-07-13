@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class HintManager : MonoBehaviour
+public class StoryManager : MonoBehaviour
 {
    
     public GameObject StoryCanvas;
@@ -134,7 +134,7 @@ public class HintManager : MonoBehaviour
             case 22:
               hintText.text = hints[clickCount];
             break;
-              
+
              //깃발을 터치한후 
             case 23:
               hintText.text = hints[clickCount];
