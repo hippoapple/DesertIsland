@@ -42,7 +42,7 @@ public class MesegesManager : MonoBehaviour
 
         }
 
-        if (isCavasOn == false && StoryManager.timer > 15 && FireFire.woodCount == 5)
+        if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 5)
         {
             Hint2_Canvas.SetActive(true);
             isCavasOn = true;
