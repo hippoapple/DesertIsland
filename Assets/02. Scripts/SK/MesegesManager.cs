@@ -55,20 +55,19 @@ public class MesegesManager : MonoBehaviour
 
     void CanvasOff()
     {
-
-        Hint1_Canvas.SetActive(false);
-
+        Debug.Log("이것도 실행 될까?");
+        print("에라이");
         //isCavasOn = false;
+        Hint1_Canvas.SetActive(false);
         print("1꺼짐");
         Hint2_Canvas.SetActive(false);
-
         //print("2꺼짐");
         Hint3_Canvas.SetActive(false);
-        // print("3꺼짐");
+        //print("3꺼짐");
         Hint4_Canvas.SetActive(false);
-        //  print("4꺼짐");
+        //print("4꺼짐");
         Hint5_Canvas.SetActive(false);
-        // print("5꺼짐");
+        //print("5꺼짐");
         Hint6_Canvas.SetActive(false);
         
         storyManager.StopAllCoroutines();
