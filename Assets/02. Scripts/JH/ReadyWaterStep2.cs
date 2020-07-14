@@ -9,8 +9,9 @@ public class ReadyWaterStep2 : MonoBehaviour
     //이것들을 새로 만드는 스피어에 적용을 하도록 한다.
 
     public GameObject smallCup;
+    public static bool IsSmallCup; 
     public GameObject potLid;
-
+    public static bool IsPotLid; 
 
     // Start is called before the first frame update
     void Start()
