@@ -24,7 +24,7 @@ public class ReadyWaterStep1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(progress >=10)
+        if(progress >=5)
         {
             isTriggerenter = false;
             gauge.gameObject.SetActive(false);
