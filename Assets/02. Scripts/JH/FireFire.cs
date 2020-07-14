@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireFire : MonoBehaviour
 {
-    public static int count = 0 ;
+    private int woodCount = 0;
     public GameObject firePlace;
     public GameObject rocks;
     public GameObject wood;
@@ -17,7 +17,7 @@ public class FireFire : MonoBehaviour
         
     }
 
-    private int woodCount = 0;
+
     void OnTriggerEnter(Collider coll)
     {
         if (coll.CompareTag("WOOD"))
@@ -26,7 +26,7 @@ public class FireFire : MonoBehaviour
             {
                 DestoryWoods();
             }
-            Debug.Log($"count = {count}");
+            Debug.Log($"count = {woodCount}");
         }
     }
     void DestoryWoods()
@@ -35,6 +35,14 @@ public class FireFire : MonoBehaviour
         foreach(Collider coll in colls)
         {
             Destroy(coll.gameObject);
+        }
+    }
+    private void OnTriggerExit(Collider coll)
+    {
+        if (coll.CompareTag("WOOD"))
+        {
+            --woodCount;
+            Debug.Log($"count = {woodCount}");
         }
     }
 }

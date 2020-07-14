@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReadyWaterStep1 : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class ReadyWaterStep1 : MonoBehaviour
             isTriggerenter = true;
             Debug.Log("see is triggerEnter here");
             gauge.gameObject.SetActive(true);
-            //gauge.gameObject.GetComponent<Slider>().value = progress;
+            gauge.gameObject.GetComponent<Slider>().value = progress;
 
         }
     }
