@@ -32,7 +32,7 @@ public class MesegesManager : MonoBehaviour
         // StoryManager.timer += Time.deltaTime;
         //print( StoryManager.timer);
 
-        if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 0)
+        if (isCavasOn == false && storyManager.timer > 5 && FireFire.woodCount == 0)
         {
             Debug.Log("실행");
 
@@ -44,31 +44,33 @@ public class MesegesManager : MonoBehaviour
 
         if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 5)
         {
-            Debug.Log("왜안될까");
+            Debug.Log("뭐라도 되라!!");
             Hint2_Canvas.SetActive(true);
             isCavasOn = true;
             Invoke("CanvasOff", 5);
         }
+
+
     }
 
 
-    // void CanvasOff()
-    // {
-    //     Debug.Log("이것도 실행 될까?");
-    //     print("에잉");
-    //     //isCavasOn = false;
-    //     Hint1_Canvas.SetActive(false);
-    //     print("1꺼짐");
-    //     Hint2_Canvas.SetActive(false);
-    //     //print("2꺼짐");
-    //     Hint3_Canvas.SetActive(false);
-    //     //print("3꺼짐");
-    //     Hint4_Canvas.SetActive(false);
-    //     //print("4꺼짐");
-    //     Hint5_Canvas.SetActive(false);
-    //     //print("5꺼짐");
-    //     Hint6_Canvas.SetActive(false);
+    void CanvasOff()
+    {
+        Debug.Log("이것도 실행 될까?");
+        print("에잉");
+        //isCavasOn = false;
+        Hint1_Canvas.SetActive(false);
+        print("1꺼짐");
+        Hint2_Canvas.SetActive(false);
+        //print("2꺼짐");
+        Hint3_Canvas.SetActive(false);
+        //print("3꺼짐");
+        Hint4_Canvas.SetActive(false);
+        //print("4꺼짐");
+        Hint5_Canvas.SetActive(false);
+        //print("5꺼짐");
+        Hint6_Canvas.SetActive(false);
         
-    //     storyManager.StopAllCoroutines();
-    // }
+        storyManager.StopAllCoroutines();
+    }
 }
