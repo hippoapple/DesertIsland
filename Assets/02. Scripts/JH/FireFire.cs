@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class FireFire : MonoBehaviour
 {
-    public static int count = 0 ;
+    public static int woodCount = 0;
     public GameObject firePlace;
     public GameObject rocks;
-    public GameObject wood;
     public List<GameObject> storage = new List<GameObject>(); 
 
     // Start is called before the first frame update
@@ -17,7 +16,7 @@ public class FireFire : MonoBehaviour
         
     }
 
-    private int woodCount = 0;
+
     void OnTriggerEnter(Collider coll)
     {
         if (coll.CompareTag("WOOD"))
@@ -25,8 +24,10 @@ public class FireFire : MonoBehaviour
             if (++woodCount == 5)
             {
                 DestoryWoods();
+                rocks.gameObject.SetActive(false);
+
             }
-            Debug.Log($"count = {count}");
+            Debug.Log($"count = {woodCount}");
         }
     }
     void DestoryWoods()
@@ -35,6 +36,14 @@ public class FireFire : MonoBehaviour
         foreach(Collider coll in colls)
         {
             Destroy(coll.gameObject);
+        }
+    }
+    private void OnTriggerExit(Collider coll)
+    {
+        if (coll.CompareTag("WOOD"))
+        {
+            --woodCount;
+            Debug.Log($"count = {woodCount}");
         }
     }
 }

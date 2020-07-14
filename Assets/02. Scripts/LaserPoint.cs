@@ -108,7 +108,7 @@ public class LaserPoint : MonoBehaviour
             StoryManager.clickCount++;
           
             StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
-            hintManager.ChangeHint();
+            hintManager.ChangeStory();
         }
 
     }

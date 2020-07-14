@@ -14,34 +14,30 @@ public class StoryManager : MonoBehaviour
     List <string> hints;
     public TextMeshProUGUI hintText;
 
-    public static float timer;
+    public static int timer;
+   //public static List <int>  timeArry;
 
-private void Awake()
-{
-    
-}
     void Start()
     {
        // LayerUI = 1 << LayerMask.NameToLayer("UI");
         hints = new List<string>();
-       
+        //timeArry = new List<int>();
         hintText = GameObject.Find("HintText").GetComponent<TextMeshProUGUI>();
          SetScript();
 
 
     }
-
-    // Update is called once per frame
     void Update()
     {  
-       timer += Time.deltaTime;
-       // print((int)timer);
+     
+      
     }
-
-    public void ChangeHint()
+#region ChangeHint
+    public void ChangeStory()
     {
 
-          print(clickCount);
+          print("clickCount" + clickCount);
+
         switch(clickCount)
         {
             case 0:
@@ -72,8 +68,8 @@ private void Awake()
              case 6:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
-                timer =0;
-           //     print(  (int)timer);
+                StartCoroutine(Timer());
+                
 
             break;
             
@@ -93,7 +89,6 @@ private void Awake()
               hintText.text = hints[clickCount];
             break;
 
-        
             case 10:
               hintText.text = hints[clickCount];
             break;
@@ -101,7 +96,8 @@ private void Awake()
             case 11:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-                timer =0;
+              //StartCoroutine(Timer());
+                //timer =0;
             break;
 
             //화덕에 불이 붙고난후 
@@ -129,7 +125,7 @@ private void Awake()
             case 19:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-              timer =0;
+              //timer =0;
             break;
 
              //통에 물을 담고 난후 
@@ -140,15 +136,13 @@ private void Awake()
             case 21:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-              timer =0;
+             // timer =0;
             break;
 
            //물을 먹고 난후  
             case 22:
               hintText.text = hints[clickCount];
             break;
-
-           
             case 23:
               hintText.text = hints[clickCount];
             break;
@@ -164,7 +158,7 @@ private void Awake()
             case 27:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-              timer =0;
+              //timer =0;
             break;
 
            //깃발을 터치한후 
@@ -180,15 +174,15 @@ private void Awake()
             case 31:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-              timer =0;
+             // timer =0;
             break;
-
-
-
         }
+
 
     }
 
+#endregion ChangeHint
+#region SetScript
     public void  SetScript()
     {
         hints.Add("여기가 어디지...?");    //0
@@ -237,8 +231,19 @@ private void Awake()
          hints.Add("SOS를 완성해보자 ");//30
          hints.Add(" ");//31
 
-        
-              
-       
+    }
+#endregion SetScript
+
+      IEnumerator Timer()
+    {
+     for (int i = 0; i < 60; i++)
+     {
+       yield return new WaitForSeconds(1f);
+      timer = i;
+      print(timer);
+       //timeArry.Add(i);
+      // print ("i = " + i ) ;
+               
+     }
     }
 }
