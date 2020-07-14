@@ -48,6 +48,41 @@ public class MesegesManager : MonoBehaviour
             isCavasOn = true;
             Invoke("CanvasOff", 5);
         }
+        
+         if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 5)
+        {
+            Hint3_Canvas.SetActive(true);
+            isCavasOn = true;
+            Invoke("CanvasOff", 5);
+        }
+
+         if (isCavasOn == false && StoryManager.timer > 5 && ReadyWaterStep1.progress == 0.0F)
+        {
+            Hint4_Canvas.SetActive(true);
+            isCavasOn = true;
+            Invoke("CanvasOff", 5);
+        }
+
+         if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 5)
+        {
+            Hint5_Canvas.SetActive(true);
+            isCavasOn = true;
+            Invoke("CanvasOff", 5);
+        }
+
+          if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 5)
+        {
+            Hint6_Canvas.SetActive(true);
+            isCavasOn = true;
+            Invoke("CanvasOff", 5);
+        }
+
+  if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 5)
+        {
+            Hint7_Canvas.SetActive(true);
+            isCavasOn = true;
+            Invoke("CanvasOff", 5);
+        }
 
 
     }
