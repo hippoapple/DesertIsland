@@ -21,7 +21,7 @@ public class BoilWater : MonoBehaviour
         
     }
 
-    public void BoilWater()
+    public void BoiledWaterInPot()
     {
         //gauge.getcomponent<value>().value = progress;
     }
