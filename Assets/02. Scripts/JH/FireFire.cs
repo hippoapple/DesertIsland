@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireFire : MonoBehaviour
 {
-    private int woodCount = 0;
+    public static int woodCount = 0;
     public GameObject firePlace;
     public GameObject rocks;
     public GameObject wood;
