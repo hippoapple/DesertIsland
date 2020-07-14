@@ -9,11 +9,11 @@ public class StoneZone : MonoBehaviour
         // sos2가 setactive 되며
         // StoneZone 안의 tage가 Stone 인 돌멩이들이 삭제 된다.
     
-    public static int count = 0 ;
+    
     public GameObject stoneZone;
     public GameObject sOS2;
     public GameObject tweenMgr;
-    private int stoneCount = 0;
+    public static int stoneCount = 0;
 
     void OnTriggerEnter(Collider coll)
     {

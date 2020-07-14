@@ -13,7 +13,7 @@ public class ReadyWaterStep1 : MonoBehaviour
     public GameObject gauge;
     public static float progress=0.0f;
     bool isTriggerenter = false;
-
+    
     // Start is called before the first frame update
     void Start()
     {
