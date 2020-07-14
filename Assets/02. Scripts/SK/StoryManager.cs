@@ -14,31 +14,25 @@ public class StoryManager : MonoBehaviour
     List <string> hints;
     public TextMeshProUGUI hintText;
 
-    public static float timer;
+    public static int timer;
+   //public static List <int>  timeArry;
 
-private void Awake()
-{
-    
-}
     void Start()
     {
        // LayerUI = 1 << LayerMask.NameToLayer("UI");
-        hints = new List<string>();
-       
+       // hints = new List<string>();
+        //timeArry = new List<int>();
         hintText = GameObject.Find("HintText").GetComponent<TextMeshProUGUI>();
          SetScript();
 
 
     }
-
-    // Update is called once per frame
     void Update()
     {  
-        //timer += Time.deltaTime;
-       // print(  (int)timer);
+     
       
     }
-
+#region ChangeHint
     public void ChangeHint()
     {
 
@@ -73,7 +67,7 @@ private void Awake()
              case 6:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
-              StartCoroutine(Timer());
+                StartCoroutine(Timer());
               //timer = 0;
 
             break;
@@ -181,13 +175,13 @@ private void Awake()
               StoryCanvas.SetActive(false);
              // timer =0;
             break;
-
-
-
         }
+
 
     }
 
+#endregion ChangeHint
+#region SetScript
     public void  SetScript()
     {
         hints.Add("여기가 어디지...?");    //0
@@ -237,14 +231,18 @@ private void Awake()
          hints.Add(" ");//31
 
     }
+#endregion SetScript
 
     IEnumerator Timer()
     {
      for (int i = 0; i < 60; i++)
      {
-       print ("i = " + i ) ;
-       yield return null;
-         
+       yield return new WaitForSeconds(1f);
+      timer = i;
+      print((int)timer);
+       //timeArry.Add(i);
+      // print ("i = " + i ) ;
+               
      }
     }
 }
