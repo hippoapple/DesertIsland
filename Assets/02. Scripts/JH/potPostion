@@ -1,4 +1,0 @@
-ontriggerenter(collider othter)
-{
-    other.transform.position = (15.26f, 10.3f, -7.74f);
-}
