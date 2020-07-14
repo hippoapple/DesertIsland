@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df54603a1943cbf40ab6d4f3de04d83b
+guid: b3714f0efb387f042b12e5950cb7558d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -444,7 +444,12 @@ ModelImporter:
   - first:
       137: 13700000
     second: character _man relax
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: character _man relax_
+    second: {fileID: 2100000, guid: 1bf89af657579974eb28b32ba5cad535, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -464,7 +469,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -1290,13 +1295,13 @@ ModelImporter:
     globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
