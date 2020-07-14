@@ -7,13 +7,13 @@ public class FireFire : MonoBehaviour
     public static int woodCount = 0;
     public GameObject firePlace;
     public GameObject rocks;
-    public List<GameObject> storage = new List<GameObject>(); 
+    public List<GameObject> storage = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        firePlace.gameObject.SetActive(false );
-        
+        firePlace.gameObject.SetActive(false);
+
     }
 
 
@@ -25,15 +25,17 @@ public class FireFire : MonoBehaviour
             {
                 DestoryWoods();
                 rocks.gameObject.SetActive(false);
-
+                firePlace.gameObject.SetActive(true);
+                StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
+                hintManager.ChangeStory();
             }
             Debug.Log($"count = {woodCount}");
         }
     }
     void DestoryWoods()
     {
-        Collider[] colls = Physics.OverlapSphere(transform.position, 1.0f, 1<<LayerMask.NameToLayer("Wood"));
-        foreach(Collider coll in colls)
+        Collider[] colls = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Wood"));
+        foreach (Collider coll in colls)
         {
             Destroy(coll.gameObject);
         }

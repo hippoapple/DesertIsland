@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/05. Models/Island/Standard.meta
+guid: 5de722fb32da8d7488437e6560998fe1
+=======
 guid: 757928a50d15b3349827ebf078663b92
+>>>>>>> 00b0631d563421889b9f2ad88f61aeb4e7d0d0d1:Assets/03. Prefabs/JK/JMO Assets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

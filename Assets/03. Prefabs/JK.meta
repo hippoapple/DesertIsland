@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/05. Models/Island/URP.meta
+guid: e53d708b118daad48af360a91886cd36
+=======
 guid: 181dc95d39bb4a74092d60d7845a17ab
+>>>>>>> 00b0631d563421889b9f2ad88f61aeb4e7d0d0d1:Assets/03. Prefabs/JK.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
