@@ -34,8 +34,9 @@ private void Awake()
     // Update is called once per frame
     void Update()
     {  
-       timer += Time.deltaTime;
-       // print((int)timer);
+        //timer += Time.deltaTime;
+       // print(  (int)timer);
+      
     }
 
     public void ChangeHint()
@@ -72,8 +73,8 @@ private void Awake()
              case 6:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
-                timer =0;
-           //     print(  (int)timer);
+              StartCoroutine(Timer());
+              //timer = 0;
 
             break;
             
@@ -101,7 +102,7 @@ private void Awake()
             case 11:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-                timer =0;
+                //timer =0;
             break;
 
             //화덕에 불이 붙고난후 
@@ -129,7 +130,7 @@ private void Awake()
             case 19:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-              timer =0;
+              //timer =0;
             break;
 
              //통에 물을 담고 난후 
@@ -140,15 +141,13 @@ private void Awake()
             case 21:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-              timer =0;
+             // timer =0;
             break;
 
            //물을 먹고 난후  
             case 22:
               hintText.text = hints[clickCount];
             break;
-
-           
             case 23:
               hintText.text = hints[clickCount];
             break;
@@ -164,7 +163,7 @@ private void Awake()
             case 27:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-              timer =0;
+              //timer =0;
             break;
 
            //깃발을 터치한후 
@@ -180,7 +179,7 @@ private void Awake()
             case 31:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
-              timer =0;
+             // timer =0;
             break;
 
 
@@ -237,8 +236,15 @@ private void Awake()
          hints.Add("SOS를 완성해보자 ");//30
          hints.Add(" ");//31
 
-        
-              
-       
+    }
+
+    IEnumerator Timer()
+    {
+     for (int i = 0; i < 60; i++)
+     {
+       print ("i = " + i ) ;
+       yield return null;
+         
+     }
     }
 }

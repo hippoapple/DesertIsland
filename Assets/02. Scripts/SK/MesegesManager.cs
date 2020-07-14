@@ -32,7 +32,7 @@ public class MesegesManager : MonoBehaviour
         StoryManager.timer += Time.deltaTime;
          //print( StoryManager.timer);
 
-        if( StoryManager.timer >= 10 && FireFire.count == 0 )
+        if( StoryManager.timer >= 60 && FireFire.count == 0 )
         {
          
            CanvasOn();
@@ -44,7 +44,7 @@ public class MesegesManager : MonoBehaviour
          
             CanvasOn();
             Invoke("CanvasOff",5);
-           // StoryManager.timer = 0;
+            // StoryManager.timer = 0;
 
         }
         
