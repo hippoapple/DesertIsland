@@ -66,6 +66,7 @@ public class MesegesManager : MonoBehaviour
 
          if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 5)
         {
+            Debug.Log("ㄴㅏㅇㅗㅏㄹㅏㅆ");
             Hint5_Canvas.SetActive(true);
             isCavasOn = true;
             Invoke("CanvasOff", 5);
