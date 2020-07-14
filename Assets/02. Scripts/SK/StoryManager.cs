@@ -20,7 +20,7 @@ public class StoryManager : MonoBehaviour
     void Start()
     {
        // LayerUI = 1 << LayerMask.NameToLayer("UI");
-       // hints = new List<string>();
+        hints = new List<string>();
         //timeArry = new List<int>();
         hintText = GameObject.Find("HintText").GetComponent<TextMeshProUGUI>();
          SetScript();
@@ -33,10 +33,11 @@ public class StoryManager : MonoBehaviour
       
     }
 #region ChangeHint
-    public void ChangeHint()
+    public void ChangeStory()
     {
 
-          print(clickCount);
+          print("clickCount" + clickCount);
+
         switch(clickCount)
         {
             case 0:
@@ -88,7 +89,6 @@ public class StoryManager : MonoBehaviour
               hintText.text = hints[clickCount];
             break;
 
-        
             case 10:
               hintText.text = hints[clickCount];
             break;
@@ -96,6 +96,7 @@ public class StoryManager : MonoBehaviour
             case 11:
               hintText.text = hints[clickCount];
               StoryCanvas.SetActive(false);
+              //StartCoroutine(Timer());
                 //timer =0;
             break;
 
@@ -233,13 +234,13 @@ public class StoryManager : MonoBehaviour
     }
 #endregion SetScript
 
-    IEnumerator Timer()
+      IEnumerator Timer()
     {
      for (int i = 0; i < 60; i++)
      {
        yield return new WaitForSeconds(1f);
       timer = i;
-      print((int)timer);
+      print(timer);
        //timeArry.Add(i);
       // print ("i = " + i ) ;
                
