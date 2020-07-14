@@ -32,20 +32,26 @@ public class MesegesManager : MonoBehaviour
        // StoryManager.timer += Time.deltaTime;
          //print( StoryManager.timer);
 
-        if( StoryManager.timer > 60 && FireFire.count == 0 )
+        if( StoryManager.timer > 60 && FireFire.woodCount == 0 )
         {
            Hint1_Canvas.SetActive(true); 
            Invoke("CanvasOff",5);
         }
 
-         if( StoryManager.timer >= 60 && FireSlider.value == 0 && FireFire.woodcount ==3);
+         if( StoryManager.timer >= 60 && FireSlider.value == 0 && FireFire.woodCount == 5);
         {
          
             Hint2_Canvas.SetActive(true); 
             Invoke("CanvasOff",5);
             // StoryManager.timer = 0;
         }
-        
+        if( StoryManager.timer >= 60 && FireSlider.value == 0 && FireFire.woodCount ==3);
+        {
+         
+            Hint3_Canvas.SetActive(true); 
+            Invoke("CanvasOff",5);
+            // StoryManager.timer = 0;
+        }
     }
 
     void CanvasOn()

@@ -68,7 +68,7 @@ public class StoryManager : MonoBehaviour
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
                 StartCoroutine(Timer());
-              //timer = 0;
+                
 
             break;
             
