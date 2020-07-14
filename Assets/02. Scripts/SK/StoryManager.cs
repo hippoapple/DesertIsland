@@ -7,183 +7,188 @@ using TMPro;
 
 public class StoryManager : MonoBehaviour
 {
-   public static StoryManager instance;
+    public static StoryManager instance;
     public GameObject StoryCanvas;
-     // private int LayerUI;
+    // private int LayerUI;
     public static int clickCount = -2;
-    List <string> hints;
+    List<string> hints;
     public TextMeshProUGUI hintText;
 
     public static int timer;
-   //public static List <int>  timeArry;
+    //public static List <int>  timeArry;
 
     void Start()
     {
-       // LayerUI = 1 << LayerMask.NameToLayer("UI");
+        // LayerUI = 1 << LayerMask.NameToLayer("UI");
         hints = new List<string>();
         //timeArry = new List<int>();
         hintText = GameObject.Find("HintText").GetComponent<TextMeshProUGUI>();
-         SetScript();
+        SetScript();
 
 
     }
     void Update()
-    {  
-     
-      
+    {
+
+
     }
-#region ChangeHint
+
     public void ChangeStory()
     {
 
-          print("clickCount" + clickCount);
+        print("clickCount" + clickCount);
 
-        switch(clickCount)
+        switch (clickCount)
         {
             case 0:
-            hintText.text = hints[clickCount];
-            break;
-
-             case 1:
                 hintText.text = hints[clickCount];
-            break;
+                break;
 
-             case 2:
+            case 1:
                 hintText.text = hints[clickCount];
-            break;
+                break;
 
-             case 3:
+            case 2:
                 hintText.text = hints[clickCount];
-            break;
+                break;
 
-             case 4:
+            case 3:
                 hintText.text = hints[clickCount];
-            break;
+                break;
+
+            case 4:
+                hintText.text = hints[clickCount];
+                break;
 
             case 5:
-               hintText.text = hints[clickCount];
+                hintText.text = hints[clickCount];
 
-            break; 
+                break;
 
-             case 6:
+            case 6:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
                 StartCoroutine(Timer());
-                
 
-            break;
-            
+
+                break;
+
 
 
             // 나뭇가지 모으고 난 후 
             case 7:
-               hintText.text = hints[clickCount];
+                hintText.text = hints[clickCount];
 
-            break; 
+                break;
 
             case 8:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
 
             case 9:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
 
             case 10:
-              hintText.text = hints[clickCount];
-            break;
-                
+                hintText.text = hints[clickCount];
+                break;
+
             case 11:
-              hintText.text = hints[clickCount];
-              StoryCanvas.SetActive(false);
-              //StartCoroutine(Timer());
+                hintText.text = hints[clickCount];
+                StoryCanvas.SetActive(false);
+                StartCoroutine(Timer());
+              
                 //timer =0;
-            break;
+                break;
 
             //화덕에 불이 붙고난후 
             case 12:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 13:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 14:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 15:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 16:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 17:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 18:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 19:
-              hintText.text = hints[clickCount];
-              StoryCanvas.SetActive(false);
-              //timer =0;
-            break;
+                hintText.text = hints[clickCount];
+                StoryCanvas.SetActive(false);
+                StartCoroutine(Timer());
+                //timer =0;
+                break;
 
-             //통에 물을 담고 난후 
+            //통에 물을 담고 난후 
             case 20:
-              hintText.text = hints[clickCount];
-            break;
-            
+                hintText.text = hints[clickCount];
+                break;
+
             case 21:
-              hintText.text = hints[clickCount];
-              StoryCanvas.SetActive(false);
-             // timer =0;
-            break;
+                hintText.text = hints[clickCount];
+                StoryCanvas.SetActive(false);
+                StartCoroutine(Timer());
+                // timer =0;
+                break;
 
-           //물을 먹고 난후  
+            //물을 먹고 난후  
             case 22:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 23:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 24:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 25:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 26:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 27:
-              hintText.text = hints[clickCount];
-              StoryCanvas.SetActive(false);
-              //timer =0;
-            break;
+                hintText.text = hints[clickCount];
+                StoryCanvas.SetActive(false);
+                StartCoroutine(Timer());
+                //timer =0;
+                break;
 
-           //깃발을 터치한후 
+            //깃발을 터치한후 
             case 28:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 29:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 30:
-              hintText.text = hints[clickCount];
-            break;
+                hintText.text = hints[clickCount];
+                break;
             case 31:
-              hintText.text = hints[clickCount];
-              StoryCanvas.SetActive(false);
-             // timer =0;
-            break;
+                hintText.text = hints[clickCount];
+                StoryCanvas.SetActive(false);
+                StartCoroutine(Timer());
+                // timer =0;
+                break;
         }
 
 
     }
 
-#endregion ChangeHint
-#region SetScript
-    public void  SetScript()
+
+
+    public void SetScript()
     {
         hints.Add("여기가 어디지...?");    //0
         hints.Add("섬인것같은데...");//1
@@ -193,7 +198,7 @@ public class StoryManager : MonoBehaviour
         hints.Add("Mission 1 <불을 피우자!!> ");//5
         hints.Add("");//6
         ///화덕이 만들어졌음(나무 3개 모음)
-        
+
         hints.Add("흐음...");//7
         hints.Add("불을 어떻게 피우지?");//
         hints.Add("빛을 모을 수 있는게 있나?");//9
@@ -226,24 +231,24 @@ public class StoryManager : MonoBehaviour
 
 
         //깃발을 터치한후 
-         hints.Add("어라 해골과 SO..가 보인다! ");//28
-         hints.Add("SOS 구조요청을 하려던 흔적인가..? ");//29
-         hints.Add("SOS를 완성해보자 ");//30
-         hints.Add(" ");//31
+        hints.Add("어라 해골과 SO..가 보인다! ");//28
+        hints.Add("SOS 구조요청을 하려던 흔적인가..? ");//29
+        hints.Add("SOS를 완성해보자 ");//30
+        hints.Add(" ");//31
 
     }
-#endregion SetScript
 
-      IEnumerator Timer()
+    
+    public static IEnumerator Timer()
     {
-     for (int i = 0; i < 60; i++)
-     {
-       yield return new WaitForSeconds(1f);
-      timer = i;
-      print(timer);
-       //timeArry.Add(i);
-      // print ("i = " + i ) ;
-               
-     }
+        for (int i = 0; i < 500; i++)
+        {
+            yield return new WaitForSeconds(1f);
+            timer = i;
+            print(timer);
+            //timeArry.Add(i);
+            // print ("i = " + i ) ;
+
+        }
     }
 }
