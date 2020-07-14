@@ -15,7 +15,7 @@ public class MesegesManager : MonoBehaviour
      public GameObject Hint6_Canvas;
      public GameObject Hint7_Canvas;
      public Slider FireSlider;
-
+    public GameObject FirePlace;
    private void Awake()
    {
        instance = this;
@@ -29,34 +29,37 @@ public class MesegesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StoryManager.timer += Time.deltaTime;
+       // StoryManager.timer += Time.deltaTime;
          //print( StoryManager.timer);
 
-        if( StoryManager.timer >= 60 && FireFire.count == 0 )
+        if( StoryManager.timer > 60 && FireFire.count == 0 )
         {
-         
-           CanvasOn();
+           Hint1_Canvas.SetActive(true); 
            Invoke("CanvasOff",5);
         }
 
-         if( StoryManager.timer >= 10 && FireSlider.value == 0 )
+         if( StoryManager.timer >= 60 && FireSlider.value == 0 && FireFire.woodcount ==3);
         {
          
-            CanvasOn();
+            Hint2_Canvas.SetActive(true); 
             Invoke("CanvasOff",5);
             // StoryManager.timer = 0;
-
         }
         
     }
 
     void CanvasOn()
     {
-        Hint1_Canvas.SetActive(true); 
+      
     }
 
     void CanvasOff()
     {
         Hint1_Canvas.SetActive(false); 
+        Hint2_Canvas.SetActive(false); 
+        Hint3_Canvas.SetActive(false); 
+        Hint4_Canvas.SetActive(false); 
+        Hint5_Canvas.SetActive(false); 
+        Hint6_Canvas.SetActive(false); 
     }
 }
