@@ -7,7 +7,6 @@ public class FireFire : MonoBehaviour
     public static int woodCount = 0;
     public GameObject firePlace;
     public GameObject rocks;
-    public GameObject wood;
     public List<GameObject> storage = new List<GameObject>(); 
 
     // Start is called before the first frame update
@@ -25,6 +24,8 @@ public class FireFire : MonoBehaviour
             if (++woodCount == 5)
             {
                 DestoryWoods();
+                rocks.gameObject.SetActive(false);
+
             }
             Debug.Log($"count = {woodCount}");
         }
