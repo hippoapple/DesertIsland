@@ -32,7 +32,7 @@ public class MesegesManager : MonoBehaviour
         // StoryManager.timer += Time.deltaTime;
         //print( StoryManager.timer);
 
-        if (isCavasOn == false && storyManager.timer > 5 && FireFire.woodCount == 0)
+        if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 0)
         {
             Debug.Log("실행");
 
