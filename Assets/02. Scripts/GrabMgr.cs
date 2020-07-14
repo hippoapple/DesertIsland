@@ -10,6 +10,7 @@ public class GrabMgr : MonoBehaviour
 
     //공에 접촉했는지 여부
     private bool isTouched = false;
+    public static bool isFlag = false;
 
   
     SteamVR_Input_Sources hand;
@@ -55,6 +56,7 @@ public class GrabMgr : MonoBehaviour
         grabObject = coll.transform;  
         if (coll.gameObject.CompareTag ("Flag"))
         {
+            isFlag = true;
          SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f) ;
 	    }
     }
