@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 4d700a1e466b92f42ba7af970c35eb0e
+=======
 guid: e7bf6ff6dff292f46a15f5faf405055e
+>>>>>>> 0c21c5b3899052be42efb66dceb7609f5071186c
 timeCreated: 1516288730
 licenseType: Store
 PluginImporter:
