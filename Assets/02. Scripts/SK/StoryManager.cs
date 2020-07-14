@@ -97,6 +97,7 @@ public class StoryManager : MonoBehaviour
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
                 StartCoroutine(Timer());
+              
                 //timer =0;
                 break;
 
@@ -237,10 +238,10 @@ public class StoryManager : MonoBehaviour
 
     }
 
-
+    
     public static IEnumerator Timer()
     {
-        for (int i = 0; i < 60; i++)
+        for (int i = 0; i < 500; i++)
         {
             yield return new WaitForSeconds(1f);
             timer = i;

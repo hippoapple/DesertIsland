@@ -21,7 +21,7 @@ public class MesegesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //scriptA = GameObject.Find("scriptB가들어있는오브젝트").GetComponent<ScriptA>();
+        
 
         storyManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
     }
@@ -42,11 +42,11 @@ public class MesegesManager : MonoBehaviour
 
         }
 
-        if (StoryManager.timer > 10 && FireFire.woodCount == 5)
+        if (isCavasOn == false && StoryManager.timer > 15 && FireFire.woodCount == 5)
         {
             Hint2_Canvas.SetActive(true);
-            //Invoke("CanvasOff",15);
-            // StoryManager.timer = 0;
+            isCavasOn = true;
+            Invoke("CanvasOff", 5);
         }
 
 
