@@ -56,7 +56,7 @@ public class MesegesManager : MonoBehaviour
     void CanvasOff()
     {
         Debug.Log("이것도 실행 될까?");
-        print("에라이");
+        print("에잉");
         //isCavasOn = false;
         Hint1_Canvas.SetActive(false);
         print("1꺼짐");
