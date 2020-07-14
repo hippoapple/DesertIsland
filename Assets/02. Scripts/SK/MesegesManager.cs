@@ -30,11 +30,11 @@ public class MesegesManager : MonoBehaviour
     void Update()
     {
         // StoryManager.timer += Time.deltaTime;
-        //print( StoryManager.timer);
+        //Debug.Log( StoryManager.timer);
 
         if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 0)
         {
-            Debug.Log("실행");
+            Debug.Log("실행.");
 
             Hint1_Canvas.SetActive(true);
             isCavasOn = true;
@@ -66,6 +66,7 @@ public class MesegesManager : MonoBehaviour
 
          if (isCavasOn == false && StoryManager.timer > 5 && ReadyWaterStep2.IsPotLid == false)
         {
+            Debug.Log("ㄴㅏㅇㅗㅏㄹㅏㅆ.");
             Hint5_Canvas.SetActive(true);
             isCavasOn = true;
             Invoke("CanvasOff", 5);
@@ -91,19 +92,19 @@ public class MesegesManager : MonoBehaviour
 
     void CanvasOff()
     {
-        Debug.Log("이것도 실행 될까?");
-        print("에잉");
+        Debug.Log("이것도 실행 될까?.");
+        Debug.Log("에잉.");
         //isCavasOn = false;
         Hint1_Canvas.SetActive(false);
-        print("1꺼짐");
+        Debug.Log("1꺼짐.");
         Hint2_Canvas.SetActive(false);
-        //print("2꺼짐");
+        //Debug.Log("2꺼짐");
         Hint3_Canvas.SetActive(false);
-        //print("3꺼짐");
+        //Debug.Log("3꺼짐");
         Hint4_Canvas.SetActive(false);
-        //print("4꺼짐");
+        //Debug.Log("4꺼짐");
         Hint5_Canvas.SetActive(false);
-        //print("5꺼짐");
+        //Debug.Log("5꺼짐");
         Hint6_Canvas.SetActive(false);
         
         storyManager.StopAllCoroutines();
