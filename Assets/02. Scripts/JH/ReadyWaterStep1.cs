@@ -59,7 +59,6 @@ public class ReadyWaterStep1 : MonoBehaviour
     {
         isTriggerenter = false;
         gauge.gameObject.SetActive(false);
-        water.gameObject.SetActive(false);
         progress =0.0f;
     }
 }
