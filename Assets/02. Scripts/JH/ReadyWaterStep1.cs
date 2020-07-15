@@ -13,6 +13,7 @@ public class ReadyWaterStep1 : MonoBehaviour
     public GameObject gauge;
     public static float progress=0.0f;
     bool isTriggerenter = false;
+    public static bool isWaterOn;
     
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,7 @@ public class ReadyWaterStep1 : MonoBehaviour
                                         , "time", 2.0f
                                         , "easetype", iTween.EaseType.easeOutElastic
                                         , "oncompletetarget", this.gameObject));
+        isWaterOn = true;
     }
     private void OnTriggerExit(Collider other)
     {

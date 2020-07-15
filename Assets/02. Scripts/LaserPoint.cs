@@ -116,10 +116,10 @@ public class LaserPoint : MonoBehaviour
 
     {
         //위치를 바꾼다는건 카메라 리그를 점프한다는것
-          tr.parent.transform.position = pos;
-          print(tr.parent.transform.position);
-       // cameraRig.transform.position = pos;
-       // this.gameObject.transform.position = cameraRig.transform.position;
+        //   tr.parent.transform.position = pos;
+        //   print(tr.parent.transform.position);
+       cameraRig.transform.position = pos;
+       this.gameObject.transform.position = cameraRig.transform.position;
        // Waiting
         yield return new WaitForSeconds(durationTime);//0.2포만큼 기다렸다가 
         SteamVR_Fade.Start(Color.clear,0.2f);
