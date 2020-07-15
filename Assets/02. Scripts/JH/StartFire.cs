@@ -11,6 +11,7 @@ public class StartFire : MonoBehaviour
     bool isTriggerenter = false;
     public GameObject fire;
     public static bool isFireOn;
+    public GameObject StoryCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +68,7 @@ public class StartFire : MonoBehaviour
     {
         smoke.gameObject.SetActive(false);
         fire.gameObject.SetActive(true); 
+        StoryCanvas.SetActive(true);
         isFireOn = true;
         isTriggerenter = false;
         gauge.gameObject.SetActive(false);
