@@ -6,7 +6,7 @@ using UnityEngine;
 public class BoilWater : MonoBehaviour
 {
     public GameObject gauge;
-    //boolen istriggerenter =false;
+    bool istriggerenter=false;
     float progress;
     
     // Start is called before the first frame update
@@ -23,6 +23,7 @@ public class BoilWater : MonoBehaviour
 
     public void BoiledWaterInPot()
     {
+        istriggerenter=true;
         //gauge.getcomponent<value>().value = progress;
     }
 
