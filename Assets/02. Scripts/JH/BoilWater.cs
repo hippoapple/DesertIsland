@@ -34,7 +34,11 @@ public class BoilWater : MonoBehaviour
         gauge.gameObject.SetActive(true);
         progress+=Time.deltaTime;
         gauge.gameObject.GetComponent<Slider>().value= progress;
-        if(progress>=5)
+        if(progress>= 10)
+        {
+            
+        }
+        else if(progress>=5)
         {
             bubble.gameObject.SetActive(true);
         }
