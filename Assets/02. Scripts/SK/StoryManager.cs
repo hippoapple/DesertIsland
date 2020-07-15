@@ -78,7 +78,7 @@ public class StoryManager : MonoBehaviour
             // 나뭇가지 모으고 난 후 
             case 7:
                 hintText.text = hints[clickCount];
-
+                print("스토리 2");
                 break;
 
             case 8:
@@ -91,12 +91,13 @@ public class StoryManager : MonoBehaviour
 
             case 10:
                 hintText.text = hints[clickCount];
+                StartCoroutine(Timer());
                 break;
+                
 
             case 11:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
-                StartCoroutine(Timer());
               
                 //timer =0;
                 break;
@@ -104,6 +105,7 @@ public class StoryManager : MonoBehaviour
             //화덕에 불이 붙고난후 
             case 12:
                 hintText.text = hints[clickCount];
+                print("스토리 3");
                 break;
             case 13:
                 hintText.text = hints[clickCount];
@@ -133,6 +135,7 @@ public class StoryManager : MonoBehaviour
             //통에 물을 담고 난후 
             case 20:
                 hintText.text = hints[clickCount];
+                print("스토리 4");
                 break;
 
             case 21:
@@ -145,6 +148,7 @@ public class StoryManager : MonoBehaviour
             //물을 먹고 난후  
             case 22:
                 hintText.text = hints[clickCount];
+                print("스토리 5");
                 break;
             case 23:
                 hintText.text = hints[clickCount];
@@ -168,6 +172,7 @@ public class StoryManager : MonoBehaviour
             //깃발을 터치한후 
             case 28:
                 hintText.text = hints[clickCount];
+                print("스토리 6");
                 break;
             case 29:
                 hintText.text = hints[clickCount];

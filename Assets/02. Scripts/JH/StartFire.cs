@@ -10,6 +10,8 @@ public class StartFire : MonoBehaviour
     public GameObject smoke;
     bool isTriggerenter = false;
     public GameObject fire;
+    public static bool isFireOn;
+    public GameObject StoryCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class StartFire : MonoBehaviour
         if(progress>=10)
         {
             FinishProgress();
+            StoryCanvas.SetActive(true);
         }
         else if(progress>=5)
         {
@@ -66,6 +69,8 @@ public class StartFire : MonoBehaviour
     {
         smoke.gameObject.SetActive(false);
         fire.gameObject.SetActive(true); 
+        
+        isFireOn = true;
         isTriggerenter = false;
         gauge.gameObject.SetActive(false);
     }
