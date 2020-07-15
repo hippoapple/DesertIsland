@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PotPosition : MonoBehaviour
 {
-    public GameObject reference;
+    BoilWater boilWater;
+    private void Start()
+    {
+        
+    }
     private void OnTriggerEnter(Collider other)
     {
         other.transform.position= new Vector3(15.26f, 10.3f, -7.74f);
-        //BoilWater.BoiledWaterInPot();
+        boilWater.BoiledWaterInPot();
     }
 }

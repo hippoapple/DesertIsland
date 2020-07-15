@@ -49,7 +49,7 @@ public class GrabMgr : MonoBehaviour
     void OnTriggerEnter(Collider coll)
     {
         isTouched = true;
-        if(coll.gameObject.tag=="UnTouched"||coll.gameObject.tag=="UI")
+        if(coll.gameObject.tag=="UnTouched"||coll.gameObject.tag=="UI"||coll.gameObject.tag=="Sea")
         {
             isTouched= false;
         }
