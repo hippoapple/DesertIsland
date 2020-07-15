@@ -91,12 +91,13 @@ public class StoryManager : MonoBehaviour
 
             case 10:
                 hintText.text = hints[clickCount];
+                StartCoroutine(Timer());
                 break;
+                
 
             case 11:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
-                StartCoroutine(Timer());
               
                 //timer =0;
                 break;
