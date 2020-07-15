@@ -19,10 +19,12 @@ public class StoneZone : MonoBehaviour
     {
         if (coll.CompareTag("Stone"))
         {
+            print("stoneCount  : " +stoneCount);
             if (++stoneCount == 3) // 추후 10개로 하자. 10개 일단은 너무 많은듯 ㅠ
             {
                 sOS2.SetActive(true);
                 tweenMgr.SetActive(true);
+                StartCoroutine(stay());
                 DestroyStones();
             }
             // Debug.Log($"count = {count}");
@@ -46,7 +48,7 @@ public class StoneZone : MonoBehaviour
         if (tweenMgr == true) // tweenMgr가 true 면
         {
             yield return new WaitForSeconds(40); // 40초 후에
-            SceneManager.LoadScene("Level5"); // level5 씬이 켜진다.
+            SceneManager.LoadScene("08. EndingScene",LoadSceneMode.Additive); // level5 씬이 켜진다.
         }
     }
 }
