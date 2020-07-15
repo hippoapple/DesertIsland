@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoneZone : MonoBehaviour
 {
@@ -9,12 +10,11 @@ public class StoneZone : MonoBehaviour
         // sos2가 setactive 되며
         // StoneZone 안의 tage가 Stone 인 돌멩이들이 삭제 된다.
     
-    
     public GameObject stoneZone;
     public GameObject sOS2;
     public GameObject tweenMgr;
     public static int stoneCount = 0;
-
+    
     void OnTriggerEnter(Collider coll)
     {
         if (coll.CompareTag("Stone"))
@@ -40,8 +40,21 @@ public class StoneZone : MonoBehaviour
             Destroy(coll.gameObject);
         }
     }
+
+        IEnumerator stay()
+    {
+        if (tweenMgr == true) // tweenMgr가 true 면
+        {
+            yield return new WaitForSeconds(40); // 40초 후에
+            SceneManager.LoadScene("Level5"); // level5 씬이 켜진다.
+        }
 }
 
     // 만약 존 안에 10개의 돌이 올라온다면
     // Prefabs SOS2가 생기고, 기존의 10 개 돌이 사라진다.
     // 헬기가 소리가 들리며 헬기가 온다.
+
+    // 40초 후 씬 전환
+    // 씬 전환 후 man 이 뜀 
+    // man이 뛰면서 화면이 어두워짐
+
