@@ -22,7 +22,7 @@ public class FireFire : MonoBehaviour
     {
         if (coll.CompareTag("WOOD"))
         {
-            if (++woodCount == 5)
+            if (++woodCount == 3)
             {
                 DestoryWoods();
                 rocks.gameObject.SetActive(false);

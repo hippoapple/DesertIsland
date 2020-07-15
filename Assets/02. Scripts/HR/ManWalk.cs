@@ -27,7 +27,8 @@ public class ManWalk : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > passedTime)
             {  
-                SceneManager.LoadScene("Level6");
+                SceneManager.LoadScene("09. End Menu",LoadSceneMode.Additive);
+                currentTime = 0;
         //     //canvas.GetComponent<Color>();
         //     //color.a = 255;
             }
