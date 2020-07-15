@@ -1,24 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ManWalk : MonoBehaviour
 {
-    public GameObject canvas;
+    public GameObject manWalk;
+    // public Canvas canvas;
+    // public Color color;
+    public float passedTime = 1.2f;
+    private float currentTime = 0.0f;
 
-    void Start() 
+    void Start()
     {
-        canvas.SetActive(true);
+        //Canvas.enabled(true);
+        //canvas.transform.Find("Image").gameObject.GetComponent<Color>();
+        //canvas.GetComponent<Color>();
+        //color.a = 0;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        // 시간 흐름에 따라 투명도가 점점 어두워 진다.
-        // canvas.MeshRenderer.material.color = new Color32(255, 255, 255, 0);
-        SceneManager.LoadScene("Level6"); // 마지막 End Menu level6 씬이 켜진다.
+        currentTime += Time.deltaTime;
+        if (currentTime > passedTime)
+            {  
+                SceneManager.LoadScene("Level6");
+        //     //canvas.GetComponent<Color>();
+        //     //color.a = 255;
+            }
+
+        // 하위 Image 의 0 0 0 0 에서 -> 0 0 0 255 로
+        // 1초후 투명도가 점점 어두워 진다.
+        // canvas.MeshRenderer.material.color = new Color32(0, 0, 0, 0);
+        // 마지막 End Menu level6 씬이 켜진다.
     }
 }
 
