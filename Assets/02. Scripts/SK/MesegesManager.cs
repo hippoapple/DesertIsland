@@ -34,9 +34,9 @@ public class MesegesManager : MonoBehaviour
 
         if (isCavasOn == false && StoryManager.timer > 5 && FireFire.woodCount == 0)
         {
-            Debug.Log("실행.");
 
             Hint1_Canvas.SetActive(true);
+            Debug.Log("힌트 1 실행.");
             isCavasOn = true;
             Invoke("CanvasOff", 10);
 
@@ -46,42 +46,53 @@ public class MesegesManager : MonoBehaviour
         {
             
             Hint2_Canvas.SetActive(true);
+            Debug.Log("힌트 2 실행.");
+
             isCavasOn = true;
             Invoke("CanvasOff", 10);
         }
         
-         if (isCavasOn == false && StoryManager.timer > 5 && ReadyWaterStep1.progress == 0.0F)
+         if (isCavasOn == false && StoryManager.timer > 5 && ReadyWaterStep1.progress == 0.0F && StartFire.isFireOn == true)
         {
             Hint3_Canvas.SetActive(true);
+            Debug.Log("힌트 3 실행.");
+
             isCavasOn = true;
             Invoke("CanvasOff", 10);
         }
 
-         if (isCavasOn == false && StoryManager.timer > 5 && ReadyWaterStep2.IsSmallCup == false )
+         if (isCavasOn == false && StoryManager.timer > 5 && ReadyWaterStep2.IsSmallCup == false && ReadyWaterStep1.isWaterOn == true)
         {
             Hint4_Canvas.SetActive(true);
+            Debug.Log("힌트 4 실행.");
+
             isCavasOn = true;
             Invoke("CanvasOff", 10);
         }
 
-         if (isCavasOn == false && StoryManager.timer > 5 && ReadyWaterStep2.IsPotLid == false)
+         if (isCavasOn == false && StoryManager.timer > 5 && ReadyWaterStep2.IsSmallCup == true )
         {
             
             Hint5_Canvas.SetActive(true);
+            Debug.Log("힌트 5 실행.");
+            
             isCavasOn = true;
             Invoke("CanvasOff", 10);
         }
 
-          if (isCavasOn == false && StoryManager.timer > 5 && GrabMgr.isFlag == false)
-        {
+          if (isCavasOn == false && StoryManager.timer > 5 && GrabMgr.isFlag == false && ReadyWaterStep2.IsPotLid == true )
+        {   
             Hint6_Canvas.SetActive(true);
+            Debug.Log("힌트 6 실행.");
+            
             isCavasOn = true;
             Invoke("CanvasOff", 10);
         }
 
-  if (isCavasOn == false && StoryManager.timer > 5 && StoneZone.stoneCount < 3 )
+         if (isCavasOn == false && StoryManager.timer > 5 && StoneZone.stoneCount < 3 && GrabMgr.isFlag == true  )
         {
             Hint7_Canvas.SetActive(true);
+            Debug.Log("힌트 7 실행.");            
             isCavasOn = true;
             Invoke("CanvasOff", 10);
         }
@@ -93,10 +104,10 @@ public class MesegesManager : MonoBehaviour
     void CanvasOff()
     {
         
-        //isCavasOn = false;
+        isCavasOn = false;
         Hint1_Canvas.SetActive(false);
         Debug.Log("1꺼짐.");
-
+    
         Hint2_Canvas.SetActive(false);
         Debug.Log("2꺼짐");
 
@@ -113,7 +124,7 @@ public class MesegesManager : MonoBehaviour
         Debug.Log("6꺼짐");
 
 
-        
+        isCavasOn = false;
         storyManager.StopAllCoroutines();
     }
 }
