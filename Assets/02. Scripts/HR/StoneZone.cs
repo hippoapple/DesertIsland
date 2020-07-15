@@ -48,6 +48,7 @@ public class StoneZone : MonoBehaviour
             yield return new WaitForSeconds(40); // 40초 후에
             SceneManager.LoadScene("Level5"); // level5 씬이 켜진다.
         }
+    }
 }
 
     // 만약 존 안에 10개의 돌이 올라온다면
