@@ -52,7 +52,7 @@ public class MesegesManager : MonoBehaviour
             Invoke("CanvasOff", 10);
         }
         
-         if (isCavasOn == false && StoryManager.timer > 7 && ReadyWaterStep1.progress == 0.0F && StartFire.isFireOn == true)
+         if (isCavasOn == false && StoryManager.timer > 7 &&  StartFire.isFireOn == true && ReadyWaterStep1.isWaterOn == false)
         {
             Hint3_Canvas.SetActive(true);
             Debug.Log("힌트 3 실행.");
@@ -70,17 +70,16 @@ public class MesegesManager : MonoBehaviour
             Invoke("CanvasOff", 10);
         }
 
-         if (isCavasOn == false && StoryManager.timer > 7 && ReadyWaterStep2.IsSmallCup == true )
+         if (isCavasOn == false  && ReadyWaterStep1.IsSmallCup == true )
         {
             
             Hint5_Canvas.SetActive(true);
             Debug.Log("힌트 5 실행.");
-            
             isCavasOn = true;
             Invoke("CanvasOff", 10);
         }
 
-          if (isCavasOn == false && StoryManager.timer > 7 && GrabMgr.isFlag == false && ReadyWaterStep2.IsPotLid == true )
+          if (isCavasOn == false && StoryManager.timer > 20 && GrabMgr.isFlag == false && ReadyWaterStep1.IsPotLid == true )
         {   
             Hint6_Canvas.SetActive(true);
             Debug.Log("힌트 6 실행.");
@@ -128,4 +127,6 @@ public class MesegesManager : MonoBehaviour
         storyManager.StopAllCoroutines();
         StoryManager.timer = 0;
     }
+
+     
 }

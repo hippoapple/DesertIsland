@@ -23,7 +23,6 @@ public class BoilWater : MonoBehaviour
         gauge.gameObject.SetActive(false);
         bubble.gameObject.SetActive(false);
         cleanWater.gameObject.SetActive(false);
-
     }
 
     // Update is called once per frame
