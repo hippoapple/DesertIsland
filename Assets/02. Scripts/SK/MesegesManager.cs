@@ -52,7 +52,7 @@ public class MesegesManager : MonoBehaviour
             Invoke("CanvasOff", 10);
         }
         
-         if (isCavasOn == false && StoryManager.timer > 7 && ReadyWaterStep1.progress == 0.0F && StartFire.isFireOn == true)
+         if (isCavasOn == false && StoryManager.timer > 7 &&  StartFire.isFireOn == true)
         {
             Hint3_Canvas.SetActive(true);
             Debug.Log("힌트 3 실행.");
