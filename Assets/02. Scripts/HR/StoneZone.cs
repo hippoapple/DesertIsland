@@ -47,7 +47,7 @@ public class StoneZone : MonoBehaviour
     {
         if (tweenMgr == true) // tweenMgr가 true 면
         {
-            yield return new WaitForSeconds(40); // 40초 후에
+            yield return new WaitForSeconds(25); // 25초 후에
             SceneManager.LoadScene("08. EndingScene");
             //,LoadSceneMode.Additive // level5 씬이 켜진다.
         }
