@@ -42,7 +42,7 @@ public class MesegesManager : MonoBehaviour
 
         }
 
-        if (isCavasOn == false && StoryManager.timer > 7 && FireFire.woodCount == 5 && StoryManager.clickCount == 11 )
+        if (isCavasOn == false && StoryManager.timer > 10 && FireFire.woodCount > 3 && StoryManager.clickCount == 11 )
         {
             
             Hint2_Canvas.SetActive(true);
@@ -104,7 +104,7 @@ public class MesegesManager : MonoBehaviour
     void CanvasOff()
     {
         
-        isCavasOn = false;
+        
         Hint1_Canvas.SetActive(false);
         Debug.Log("1꺼짐.");
     
@@ -126,5 +126,6 @@ public class MesegesManager : MonoBehaviour
 
         isCavasOn = false;
         storyManager.StopAllCoroutines();
+        StoryManager.timer = 0;
     }
 }

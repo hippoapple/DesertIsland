@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class StartFire : MonoBehaviour
 {
     public GameObject gauge;
-    float progress=0.0f;
     public GameObject smoke;
-    bool isTriggerenter = false;
     public GameObject fire;
-    public static bool isFireOn;
     public GameObject StoryCanvas;
+    float progress=0.0f;
+    bool isTriggerenter = false;
+    public static bool isFireOn;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +26,14 @@ public class StartFire : MonoBehaviour
         {
             SliderProgress();
         }
-        if(progress>=10)
+        
+        if(progress>=10 && isTriggerenter==true)
         {
             FinishProgress();
-            StoryCanvas.SetActive(true);
+            //progress = 0;
+            isTriggerenter=false;
         }
-        else if(progress>=5)
+        else if(progress>=5 && isTriggerenter==true)
         {
             smoke.gameObject.SetActive(true);
         }
@@ -43,10 +45,15 @@ public class StartFire : MonoBehaviour
         if(other.gameObject.tag =="BOTTLE")
         {
             isTriggerenter = true;
-            Debug.Log("BOTTLE is triggerEnter here");
+           // Debug.Log("BOTTLE is triggerEnter here");
             gauge.gameObject.SetActive(true);
         }
-
+         if(other.gameObject.tag =="BOTTLE" && isFireOn == true )
+         {
+            Destroy(other.gameObject);
+            StoryCanvas.SetActive(true);
+            print("스토리 3 실행");
+         }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -61,7 +68,10 @@ public class StartFire : MonoBehaviour
 
     void SliderProgress()
     {
-        progress += Time.deltaTime*0.5f;
+        if(isTriggerenter!=false)
+        {
+            progress += Time.deltaTime*0.5f;
+        }
         gauge.gameObject.GetComponent<Slider>().value = progress;
     }
 
@@ -69,7 +79,7 @@ public class StartFire : MonoBehaviour
     {
         smoke.gameObject.SetActive(false);
         fire.gameObject.SetActive(true); 
-        
+       
         isFireOn = true;
         isTriggerenter = false;
         gauge.gameObject.SetActive(false);

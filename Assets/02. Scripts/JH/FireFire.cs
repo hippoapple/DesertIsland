@@ -7,9 +7,9 @@ public class FireFire : MonoBehaviour
     public static int woodCount = 0;
     public GameObject firePlace;
     public GameObject rocks;
-    public List<GameObject> storage = new List<GameObject>();
-
     public GameObject StoryCanvas;
+    public List<GameObject> storage = new List<GameObject>();
+    bool isFirePlaceOn;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +27,7 @@ public class FireFire : MonoBehaviour
                 DestoryWoods();
                 rocks.gameObject.SetActive(false);
                 firePlace.gameObject.SetActive(true);
+                isFirePlaceOn=true;
                 StoryCanvas.SetActive(true);
                 // StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
                 // hintManager.ChangeStory();
@@ -44,7 +45,7 @@ public class FireFire : MonoBehaviour
     }
     private void OnTriggerExit(Collider coll)
     {
-        if (coll.CompareTag("WOOD"))
+        if (coll.CompareTag("WOOD") && isFirePlaceOn == false)
         {
             --woodCount;
             Debug.Log($"count(WOOD Out)  =  {woodCount}");
