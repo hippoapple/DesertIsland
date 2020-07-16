@@ -10,7 +10,7 @@ public class ReadyWaterStep1 : MonoBehaviour
 
     public GameObject water;
     public static bool isWaterOn;
-
+    public GameObject StoryCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,7 @@ public class ReadyWaterStep1 : MonoBehaviour
                                             , "easetype", iTween.EaseType.easeOutElastic
                                             , "oncompletetarget", this.gameObject));
             isWaterOn = true;
-
+            StoryCanvas.SetActive(true);
         }
     }
 }
