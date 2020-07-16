@@ -29,8 +29,8 @@ public class ManWalk : MonoBehaviour
             {  
                 SceneManager.LoadScene("09. End Menu");
                 currentTime = 0;
-        //     //canvas.GetComponent<Color>();
-        //     //color.a = 255;
+             //canvas.GetComponent<Color>();
+             //color.a = 255;
             }
 
         // 하위 Image 의 0 0 0 0 에서 -> 0 0 0 255 로
