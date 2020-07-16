@@ -26,10 +26,16 @@ public class StartFire : MonoBehaviour
         {
             SliderProgress();
         }
-        if(progress>=10)
+        
+        if(progress>=11)
+        {
+            
+        }
+
+        else if(progress>=10)
         {
             FinishProgress();
-            StoryCanvas.SetActive(true);
+            //progress = 0;
         }
         else if(progress>=5)
         {
@@ -43,10 +49,15 @@ public class StartFire : MonoBehaviour
         if(other.gameObject.tag =="BOTTLE")
         {
             isTriggerenter = true;
-            Debug.Log("BOTTLE is triggerEnter here");
+           // Debug.Log("BOTTLE is triggerEnter here");
             gauge.gameObject.SetActive(true);
         }
-
+         if(other.gameObject.tag =="BOTTLE" && isFireOn == true )
+         {
+            Destroy(other.gameObject);
+            StoryCanvas.SetActive(true);
+            print("스토리 3 실행");
+         }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -69,7 +80,7 @@ public class StartFire : MonoBehaviour
     {
         smoke.gameObject.SetActive(false);
         fire.gameObject.SetActive(true); 
-        
+       
         isFireOn = true;
         isTriggerenter = false;
         gauge.gameObject.SetActive(false);

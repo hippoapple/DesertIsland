@@ -102,7 +102,7 @@ public class LaserPoint : MonoBehaviour
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         }   
 
-       if (trigger.GetStateDown(triggerhands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//양손트리거
+       if (trigger.GetStateDown(triggerhands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//오른손 트리거
         {
             print("tirgger Click");
             StoryManager.clickCount++;

@@ -10,7 +10,7 @@ public class StoryManager : MonoBehaviour
     public static StoryManager instance;
     public GameObject StoryCanvas;
     // private int LayerUI;
-    public static int clickCount = -2;
+    public static int clickCount = 0;
     List<string> hints;
     public TextMeshProUGUI hintText;
 
@@ -87,11 +87,11 @@ public class StoryManager : MonoBehaviour
 
             case 9:
                 hintText.text = hints[clickCount];
+                StartCoroutine(Timer());
                 break;
 
             case 10:
                 hintText.text = hints[clickCount];
-                StartCoroutine(Timer());
                 break;
                 
 
@@ -128,6 +128,7 @@ public class StoryManager : MonoBehaviour
             case 19:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
+                print("스토리 3 사라져");
                 StartCoroutine(Timer());
                 //timer =0;
                 break;
@@ -141,6 +142,7 @@ public class StoryManager : MonoBehaviour
             case 21:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
+                print("스토리 4 사라져");
                 StartCoroutine(Timer());
                 // timer =0;
                 break;
@@ -165,6 +167,7 @@ public class StoryManager : MonoBehaviour
             case 27:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
+                print("스토리 5 사라져");
                 StartCoroutine(Timer());
                 //timer =0;
                 break;
@@ -183,6 +186,8 @@ public class StoryManager : MonoBehaviour
             case 31:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
+                print("스토리 6 사라져");
+
                 StartCoroutine(Timer());
                 // timer =0;
                 break;
