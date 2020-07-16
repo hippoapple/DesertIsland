@@ -28,7 +28,7 @@ public class ReadyWaterStep1 : MonoBehaviour
 
 
             //여기서 물이 올라올 것이야. 0.1 정도 올라올 것인데. 이것을 상대 좌표계로 올릴 것이야 moveby로 올릴 것이고, y가 0.1만큼 올라갈 것이다.  
-            iTween.MoveBy(water, iTween.Hash("y", 0.1f
+            iTween.MoveBy(water, iTween.Hash("y", 0.05f
                                             , "time", 2.0f
                                             , "easetype", iTween.EaseType.easeOutElastic
                                             , "oncompletetarget", this.gameObject));
