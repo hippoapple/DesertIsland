@@ -70,7 +70,7 @@ public class MesegesManager : MonoBehaviour
             Invoke("CanvasOff", 10);
         }
 
-         if (isCavasOn == false && StoryManager.timer > 10 && ReadyWaterStep2.IsSmallCup == true )
+         if (isCavasOn == false  && ReadyWaterStep2.IsSmallCup == true )
         {
             
             Hint5_Canvas.SetActive(true);
@@ -128,4 +128,6 @@ public class MesegesManager : MonoBehaviour
         storyManager.StopAllCoroutines();
         StoryManager.timer = 0;
     }
+
+     
 }
