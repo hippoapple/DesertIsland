@@ -7,10 +7,8 @@ public class FireFire : MonoBehaviour
     public static int woodCount = 0;
     public GameObject firePlace;
     public GameObject rocks;
-    public List<GameObject> storage = new List<GameObject>();
-
     public GameObject StoryCanvas;
-    
+    public List<GameObject> storage = new List<GameObject>();
     bool isFirePlaceOn;
     // Start is called before the first frame update
     void Start()

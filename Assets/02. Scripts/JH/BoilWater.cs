@@ -12,9 +12,9 @@ public class BoilWater : MonoBehaviour
 
     public GameObject gauge;
     public GameObject bubble;
+    public GameObject cleanWater;
     bool istriggerenter=false;
     float progress;
-    public GameObject cleanWater;
 
     
     // Start is called before the first frame update
@@ -40,12 +40,13 @@ public class BoilWater : MonoBehaviour
     void startBoiledWater()
     {
         progress+=Time.deltaTime;
-        if(progress>= 10)
+        if(progress>= 10 && istriggerenter ==true)
         {
+            istriggerenter = false;
             gauge.gameObject.SetActive(false);
             bubble.gameObject.SetActive(false);
         }
-        else if(progress>=5)
+        else if(progress>=5 && istriggerenter ==true)
         {
             bubble.gameObject.SetActive(true);
             iTween.MoveBy(cleanWater, iTween.Hash("y", 0.055f
