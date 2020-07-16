@@ -11,10 +11,17 @@ public class ReadyWaterStep1 : MonoBehaviour
     public GameObject water;
     public static bool isWaterOn;
     public GameObject StoryCanvas;
-    // Start is called before the first frame update
+
+
+     public GameObject smallCup;
+    public static bool IsSmallCup; 
+    public GameObject potLid;
+    public static bool IsPotLid; 
     void Start()
     {
         water.gameObject.SetActive(false);
+        potLid.gameObject.SetActive(false);
+        smallCup.gameObject.SetActive(false);
 
     }
 
@@ -34,6 +41,19 @@ public class ReadyWaterStep1 : MonoBehaviour
                                             , "oncompletetarget", this.gameObject));
             isWaterOn = true;
             StoryCanvas.SetActive(true);
+        }
+
+        if(other.gameObject.CompareTag("SmallCup"))
+        {
+            Destroy(other.gameObject);
+            smallCup.gameObject.SetActive(true);
+            IsSmallCup = true;
+        }
+        if(other.gameObject.CompareTag("PotLid"))
+        {
+            Destroy(other.gameObject);
+            potLid.gameObject.SetActive(true);
+            IsPotLid=true;
         }
     }
 }
