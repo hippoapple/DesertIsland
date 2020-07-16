@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class StartFire : MonoBehaviour
 {
     public GameObject gauge;
-    float progress=0.0f;
     public GameObject smoke;
-    bool isTriggerenter = false;
     public GameObject fire;
-    public static bool isFireOn;
     public GameObject StoryCanvas;
+    float progress=0.0f;
+    bool isTriggerenter = false;
+    public static bool isFireOn;
 
     // Start is called before the first frame update
     void Start()
@@ -27,17 +27,13 @@ public class StartFire : MonoBehaviour
             SliderProgress();
         }
         
-        if(progress>=11)
-        {
-            
-        }
-
-        else if(progress>=10)
+        if(progress>=10 && isTriggerenter==true)
         {
             FinishProgress();
             //progress = 0;
+            isTriggerenter=false;
         }
-        else if(progress>=5)
+        else if(progress>=5 && isTriggerenter==true)
         {
             smoke.gameObject.SetActive(true);
         }
@@ -72,7 +68,10 @@ public class StartFire : MonoBehaviour
 
     void SliderProgress()
     {
-        progress += Time.deltaTime*0.5f;
+        if(isTriggerenter!=false)
+        {
+            progress += Time.deltaTime*0.5f;
+        }
         gauge.gameObject.GetComponent<Slider>().value = progress;
     }
 
