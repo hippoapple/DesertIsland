@@ -10,7 +10,7 @@ public class StoryManager : MonoBehaviour
     public static StoryManager instance;
     public GameObject StoryCanvas;
     // private int LayerUI;
-    public static int clickCount = 0;
+    public static int clickCount = -1;
     List<string> hints;
     public TextMeshProUGUI hintText;
 
