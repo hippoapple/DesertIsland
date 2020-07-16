@@ -9,17 +9,20 @@ public class BoilWater : MonoBehaviour
 
     //1. 시작이 된다면 게이지가 나올 것이다.
     //2. 물을 찾아보자
-    
+
     public GameObject gauge;
     public GameObject bubble;
     bool istriggerenter=false;
     float progress;
+    public GameObject cleanWater;
+
     
     // Start is called before the first frame update
     void Start()
     {
         gauge.gameObject.SetActive(false);
         bubble.gameObject.SetActive(false);
+        cleanWater.gameObject.SetActive(false);
 
     }
 
@@ -45,6 +48,10 @@ public class BoilWater : MonoBehaviour
         else if(progress>=5)
         {
             bubble.gameObject.SetActive(true);
+            iTween.MoveBy(cleanWater, iTween.Hash("y", 0.055f
+                                                , "time", 2.0f
+                                                , "easetype", iTween.EaseType.easeOutElastic
+                                                , "oncompletetarget", this.gameObject));
         }
         else
         {
