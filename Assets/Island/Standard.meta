@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0dfb2fd2c0028ff478e077c58a475a5f
+=======
+<<<<<<< HEAD:Assets/Scripts.meta
+guid: f6d3734cdf33a1149b99d959a5c274b9
+=======
+guid: 0dfb2fd2c0028ff478e077c58a475a5f
+>>>>>>> 06d6091abc8c064b7b6bbf3e7b04d9d220a2bee5:Assets/Island/Standard.meta
+>>>>>>> 06d6091abc8c064b7b6bbf3e7b04d9d220a2bee5
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
