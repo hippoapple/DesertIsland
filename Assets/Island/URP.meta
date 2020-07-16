@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Island/URP.meta
 guid: dce7d8a6974ae2a41a7e0d5c75d2db97
 folderAsset: yes
 DefaultImporter:
+=======
+guid: 62562a905d89d1a4f8ecbefe93e43d7e
+NativeFormatImporter:
+>>>>>>> ed98a21cae7a87a9291f2234bc09fd6bc8a148b6:Assets/NewAudioMixer.mixer.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
