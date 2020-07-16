@@ -15,7 +15,7 @@ public class PotPosition : MonoBehaviour
         if(other.gameObject.CompareTag("BigPot"))
         {
             other.transform.position= potPosition.transform.position;
-            boilWater.BoiledWaterInPot();
+            //boilWater.BoiledWaterInPot();
         }
     }
 }
