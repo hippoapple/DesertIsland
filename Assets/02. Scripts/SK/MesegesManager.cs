@@ -70,7 +70,7 @@ public class MesegesManager : MonoBehaviour
             Invoke("CanvasOff", 10);
         }
 
-         if (isCavasOn == false && StoryManager.timer > 7 && ReadyWaterStep2.IsSmallCup == true )
+         if (isCavasOn == false && StoryManager.timer > 10 && ReadyWaterStep2.IsSmallCup == true )
         {
             
             Hint5_Canvas.SetActive(true);
@@ -80,7 +80,7 @@ public class MesegesManager : MonoBehaviour
             Invoke("CanvasOff", 10);
         }
 
-          if (isCavasOn == false && StoryManager.timer > 7 && GrabMgr.isFlag == false && ReadyWaterStep2.IsPotLid == true )
+          if (isCavasOn == false && StoryManager.timer > 20 && GrabMgr.isFlag == false && ReadyWaterStep2.IsPotLid == true )
         {   
             Hint6_Canvas.SetActive(true);
             Debug.Log("힌트 6 실행.");

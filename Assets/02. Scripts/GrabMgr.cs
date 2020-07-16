@@ -12,19 +12,19 @@ public class GrabMgr : MonoBehaviour
     private bool isTouched = false;
     public static bool isFlag = false;
 
-  
+
     SteamVR_Input_Sources hand;
     SteamVR_Action_Boolean trigger;
     public GameObject SOS;
     public float speed = 5;
-
+    public GameObject StoryCanvas;
     void Awake()
     {
         hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
         trigger = SteamVR_Actions.default_InteractUI;
     }
 
- 
+
     // Update is called once per frame
     void Update()
     {
@@ -49,21 +49,23 @@ public class GrabMgr : MonoBehaviour
     void OnTriggerEnter(Collider coll)
     {
         isTouched = true;
-        if(coll.gameObject.tag=="UnTouched"||coll.gameObject.tag=="UI"||coll.gameObject.tag=="Sea")
+        if (coll.gameObject.tag == "UnTouched" || coll.gameObject.tag == "UI" || coll.gameObject.tag == "Sea")
         {
-            isTouched= false;
+            isTouched = false;
         }
-        grabObject = coll.transform;  
-        if (coll.gameObject.CompareTag ("Flag"))
+        grabObject = coll.transform;
+        if (coll.gameObject.CompareTag("Flag"))
         {
             isFlag = true;
-         SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f) ;
-	    }
+            SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f);
+            StoryCanvas.SetActive(true);
+
+        }
     }
-        
 
- 
 
-   
+
+
+
 
 }
