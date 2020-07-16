@@ -55,8 +55,9 @@ public class ReadyWaterStep1 : MonoBehaviour
                                             , "time", 2.0f
                                             , "easetype", iTween.EaseType.easeOutElastic
                                             , "oncompletetarget", this.gameObject));
+             isWaterOn = true;
         }
-        isWaterOn = true;
+       
     }
     private void OnTriggerExit(Collider other)
     {
