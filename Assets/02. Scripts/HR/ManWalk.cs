@@ -9,7 +9,7 @@ public class ManWalk : MonoBehaviour
     public GameObject manWalk;
     // public Canvas canvas;
     // public Color color;
-    public float passedTime = 6.0f;
+    public float passedTime = 5.0f;
     private float currentTime = 0.0f;
 
     void Start()
