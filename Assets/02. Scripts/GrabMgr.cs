@@ -6,10 +6,10 @@ public class GrabMgr : MonoBehaviour
 {
 
     //컨트롤러로 잡은 물체를 저장한다.
-    private Transform grabObject;
+    public Transform grabObject;
 
     //공에 접촉했는지 여부
-    private bool isTouched = false;
+    public bool isTouched = false;
     public static bool isFlag = false;
 
 
