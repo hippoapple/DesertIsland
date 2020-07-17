@@ -22,9 +22,10 @@ public class FireFire : MonoBehaviour
     {
         if (coll.CompareTag("WOOD"))
         {
+            Invoke("DestroyWoods", 3.0f);
             if (++woodCount == 3)
             {
-                DestoryWoods();
+                //DestoryWoods();
                 rocks.gameObject.SetActive(false);
                 firePlace.gameObject.SetActive(true);
                 isFirePlaceOn=true;
