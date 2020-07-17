@@ -15,6 +15,7 @@ public class PotPosition : MonoBehaviour
     public GameObject bubble;
     public GameObject cleanWater;
     bool istriggerenter=false;
+    bool iswateron = false;
     float progress;
     private void Start()
     {
@@ -49,10 +50,14 @@ public class PotPosition : MonoBehaviour
         {
             bubble.gameObject.SetActive(true);
             cleanWater.gameObject.SetActive(true);
-            iTween.MoveBy(cleanWater, iTween.Hash("y", 0.055f
-                                                , "time", 2.0f
-                                                , "easetype", iTween.EaseType.easeOutElastic
-                                                , "oncompletetarget", this.gameObject));
+            if(iswateron == false)
+            {
+                iTween.MoveBy(cleanWater, iTween.Hash("y", 0.055f
+                                                    , "time", 2.0f
+                                                    , "easetype", iTween.EaseType.easeOutElastic
+                                                    , "oncompletetarget", this.gameObject));
+                iswateron=true;            
+            }
         }
         else if(progress>0 && istriggerenter ==true)
         {
