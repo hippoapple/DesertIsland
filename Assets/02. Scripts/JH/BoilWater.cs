@@ -34,9 +34,9 @@ public class BoilWater : MonoBehaviour
     public void BoiledWaterInPot()
     {
         //gauge.getcomponent<value>().value = progress;
-        Invoke("startBoiledWater", 3);
+        Invoke("StartBoiledWater", 3);
     }
-    void startBoiledWater()
+    void StartBoiledWater()
     {
         progress+=Time.deltaTime;
         if(progress>= 10 && istriggerenter ==true)
@@ -53,7 +53,7 @@ public class BoilWater : MonoBehaviour
                                                 , "easetype", iTween.EaseType.easeOutElastic
                                                 , "oncompletetarget", this.gameObject));
         }
-        else
+        else if(progress>=5 && istriggerenter ==true)
         {
             gauge.gameObject.SetActive(true);
             gauge.gameObject.GetComponent<Slider>().value= progress;
