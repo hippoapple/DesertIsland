@@ -53,7 +53,7 @@ public class BoilWater : MonoBehaviour
                                                 , "easetype", iTween.EaseType.easeOutElastic
                                                 , "oncompletetarget", this.gameObject));
         }
-        else if(progress>=5 && istriggerenter ==true)
+        else if(progress>=0 && istriggerenter ==true)
         {
             gauge.gameObject.SetActive(true);
             gauge.gameObject.GetComponent<Slider>().value= progress;
