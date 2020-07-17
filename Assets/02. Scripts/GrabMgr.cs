@@ -31,7 +31,10 @@ public class GrabMgr : MonoBehaviour
         if (isTouched == true && trigger.GetStateDown(hand))//만졌을때
         {
             grabObject.SetParent(this.transform);
+            if(grabObject.GetComponent<Rigidbody>().isKinematic == false)
+            {
             grabObject.GetComponent<Rigidbody>().isKinematic = true; //잡은물체의 물리엔진을 끈다,.
+            }
         }
     }
 
