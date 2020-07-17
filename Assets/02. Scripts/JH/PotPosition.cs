@@ -14,8 +14,10 @@ public class PotPosition : MonoBehaviour
     public GameObject gauge;
     public GameObject bubble;
     public GameObject cleanWater;
+    public GameObject water;
     bool istriggerenter=false;
     bool iswateron = false;
+    bool isbigwateron = false;
     float progress;
     private void Start()
     {
@@ -42,9 +44,19 @@ public class PotPosition : MonoBehaviour
 
         if(progress> 10 && istriggerenter ==true)
         {
-            istriggerenter = false;
             gauge.gameObject.SetActive(false);
             bubble.gameObject.SetActive(false);
+            if(isbigwateron ==false)
+            {
+                iTween.MoveBy(water, iTween.Hash("y", - 0.05f
+                                                , "time", 2.5f
+                                                , "easetype", iTween.EaseType.easeOutElastic
+                                                , "oncompletetarget", this.gameObject));
+
+                Destroy(water.gameObject,2.5f);
+                isbigwateron = true;
+            }
+            istriggerenter = false;
         }
         else if(progress>5 && istriggerenter ==true)
         {

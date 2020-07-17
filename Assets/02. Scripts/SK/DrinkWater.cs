@@ -11,13 +11,9 @@ public class DrinkWater : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "BigPot" && ReadyWaterStep2.IsPotLid == true)
+        if (other.tag == "BigPot" && ReadyWaterStep1.IsPotLid == true && isDrink==false)
         {
-            isDrink = true;
-             water.gameObject.SetActive(true);
-
-
-           
+            print("빅팟 충돌");
             iTween.MoveBy(water, iTween.Hash("y", - 0.05f
                                             , "time", 2.5f
                                             , "easetype", iTween.EaseType.easeOutElastic
@@ -25,6 +21,7 @@ public class DrinkWater : MonoBehaviour
 
             Destroy(water.gameObject,2.5f);
             StoryCanvas.SetActive(true);
+            isDrink = true;           
         }
     }
 }
