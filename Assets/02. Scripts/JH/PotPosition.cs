@@ -30,23 +30,22 @@ public class PotPosition : MonoBehaviour
             dolmenANDFire.gameObject.SetActive(true);
             beforeFire.gameObject.SetActive(false);
             //other.transform.position= potPosition.transform.position;
-            grabMgr.isTouched = false;
-            grabMgr.grabObject = null;
-            grabMgr.grabObject.SetParent(null);
             istriggerenter = true;
             //boilWater.BoiledWaterInPot();
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        progress+=Time.deltaTime;
-        if(progress>= 10 && istriggerenter ==true)
+        progress +=Time.deltaTime * 0.2f;
+        print("progress" +  (int)progress);
+
+        if(progress> 10 && istriggerenter ==true)
         {
             istriggerenter = false;
             gauge.gameObject.SetActive(false);
             bubble.gameObject.SetActive(false);
         }
-        else if(progress>=5 && istriggerenter ==true)
+        else if(progress>5 && istriggerenter ==true)
         {
             bubble.gameObject.SetActive(true);
             iTween.MoveBy(cleanWater, iTween.Hash("y", 0.055f
@@ -54,7 +53,7 @@ public class PotPosition : MonoBehaviour
                                                 , "easetype", iTween.EaseType.easeOutElastic
                                                 , "oncompletetarget", this.gameObject));
         }
-        else if(progress>=0 && istriggerenter ==true)
+        else if(progress>0 && istriggerenter ==true)
         {
             gauge.gameObject.SetActive(true);
             gauge.gameObject.GetComponent<Slider>().value= progress;
