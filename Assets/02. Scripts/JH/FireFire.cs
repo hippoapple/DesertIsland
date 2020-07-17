@@ -38,6 +38,7 @@ public class FireFire : MonoBehaviour
     }
     void DestoryWoods()
     {
+        Debug.Log("test to this script");
         Collider[] colls = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Wood"));
         foreach (Collider coll in colls)
         {
