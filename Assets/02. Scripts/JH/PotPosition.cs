@@ -48,6 +48,7 @@ public class PotPosition : MonoBehaviour
         else if(progress>5 && istriggerenter ==true)
         {
             bubble.gameObject.SetActive(true);
+            cleanWater.gameObject.SetActive(true);
             iTween.MoveBy(cleanWater, iTween.Hash("y", 0.055f
                                                 , "time", 2.0f
                                                 , "easetype", iTween.EaseType.easeOutElastic
