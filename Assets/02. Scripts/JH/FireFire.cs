@@ -22,7 +22,7 @@ public class FireFire : MonoBehaviour
     {
         if (coll.CompareTag("WOOD"))
         {
-            Invoke("DestroyWoods", 3.0f);
+            Invoke("DestroyWoods",3);
             if (++woodCount == 3)
             {
                 //DestoryWoods();
