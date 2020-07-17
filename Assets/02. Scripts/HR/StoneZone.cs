@@ -43,6 +43,15 @@ public class StoneZone : MonoBehaviour
         }
     }
 
+     private void OnTriggerExit(Collider coll)
+    {
+        if (coll.CompareTag("Stone") == false)
+        {
+            --stoneCount;
+            Debug.Log($"count(stone Out)  =  {stoneCount}");
+        }
+    }
+    
         IEnumerator stay()
     {
         if (tweenMgr == true) // tweenMgr가 true 면
@@ -52,6 +61,8 @@ public class StoneZone : MonoBehaviour
             //,LoadSceneMode.Additive // level5 씬이 켜진다.
         }
     }
+
+
 }
 
     // 만약 존 안에 10개의 돌이 올라온다면
