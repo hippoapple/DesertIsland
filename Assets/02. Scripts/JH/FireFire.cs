@@ -22,7 +22,7 @@ public class FireFire : MonoBehaviour
     {
         if (coll.CompareTag("WOOD"))
         {
-            Invoke("DestroyWoods",3);
+            DestoryWoods(coll);
             if (++woodCount == 3)
             {
                 //DestoryWoods();
@@ -36,14 +36,15 @@ public class FireFire : MonoBehaviour
             Debug.Log($"Woodcount  =  {woodCount}");
         }
     }
-    void DestoryWoods()
+    void DestoryWoods(Collider colling)
     {
+        Destroy(colling, 30.0f);
         Debug.Log("test to this script");
-        Collider[] colls = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Wood"));
-        foreach (Collider coll in colls)
-        {
-            Destroy(coll.gameObject);
-        }
+        // Collider[] colls = Physics.OverlapSphere(transform.position, 1.0f, 1 << LayerMask.NameToLayer("Wood"));
+        // foreach (Collider coll in colls)
+        // {
+        //     Destroy(coll.gameObject);
+        // }
     }
     private void OnTriggerExit(Collider coll)
     {
