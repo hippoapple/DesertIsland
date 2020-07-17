@@ -33,33 +33,50 @@ public class GrabMgr : MonoBehaviour
             grabObject.SetParent(this.transform);
             grabObject.GetComponent<Rigidbody>().isKinematic = true; //잡은물체의 물리엔진을 끈다,.
         }
+    }
 
-        if (isTouched == true && trigger.GetStateUp(hand))//땔때
+    void LateUpdate()
+    {
+        if (grabObject != null && trigger.GetStateUp(hand))//땔때
         {
             grabObject.SetParent(null);
             Vector3 _velocity = GetComponent<SteamVR_Behaviour_Pose>().GetVelocity();
+            Vector3 _angularVelocity = GetComponent<SteamVR_Behaviour_Pose>().GetAngularVelocity();
             grabObject.GetComponent<Rigidbody>().isKinematic = false;
             grabObject.GetComponent<Rigidbody>().velocity = _velocity;
-
-            isTouched = false;
-            grabObject = null;
+            grabObject.GetComponent<Rigidbody>().angularVelocity = _angularVelocity;
         }
     }
 
     void OnTriggerEnter(Collider coll)
     {
-        isTouched = true;
         if (coll.gameObject.tag == "UnTouched" || coll.gameObject.tag == "UI" || coll.gameObject.tag == "Sea")
         {
             isTouched = false;
+            return;
         }
-        grabObject = coll.transform;
+        else
+        {
+            isTouched = true;
+            grabObject = coll.transform;
+        }
+
+
         if (coll.gameObject.CompareTag("Flag"))
         {
             isFlag = true;
             SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f);
             StoryCanvas.SetActive(true);
 
+        }
+    }
+
+    void OnTriggerExit(Collider coll)
+    {
+        if (grabObject != null)
+        {
+            isTouched = false;
+            grabObject = null;
         }
     }
 
