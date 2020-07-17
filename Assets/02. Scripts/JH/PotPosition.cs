@@ -52,7 +52,7 @@ public class PotPosition : MonoBehaviour
             cleanWater.gameObject.SetActive(true);
             if(iswateron == false)
             {
-                iTween.MoveBy(cleanWater, iTween.Hash("y", 0.055f
+                iTween.MoveBy(cleanWater, iTween.Hash("y", 0.009f
                                                     , "time", 2.0f
                                                     , "easetype", iTween.EaseType.easeOutElastic
                                                     , "oncompletetarget", this.gameObject));
