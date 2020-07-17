@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DrinkWater : MonoBehaviour
 {
-    public bool isDrink = false;
+    public static bool isDrink = false;
     public GameObject water;
+
+    public GameObject StoryCanvas;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +24,7 @@ public class DrinkWater : MonoBehaviour
                                             , "oncompletetarget", this.gameObject));
 
             Destroy(water.gameObject,2.5f);
+            StoryCanvas.SetActive(true);
         }
     }
 }

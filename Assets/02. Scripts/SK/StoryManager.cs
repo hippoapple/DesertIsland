@@ -201,9 +201,9 @@ public class StoryManager : MonoBehaviour
     public void SetScript()
     {
         hints.Add("여기가 어디지...?");    //0
-        hints.Add("섬인것같은데...");//1
+        hints.Add("섬인것 같은데...");//1
         hints.Add("그건 그렇고.. 너무 춥다.");//2
-        hints.Add("저기 화덕에 불을 피워야겠다.");//3
+        hints.Add("먼저 저기 화덕에 불을 피워야겠다.");//3
         hints.Add("나무가 필요하겠지?");//4
         hints.Add("Mission 1 <불을 피우자!!> ");//5
         hints.Add("");//6
@@ -211,7 +211,7 @@ public class StoryManager : MonoBehaviour
 
         hints.Add("흐음...");//7
         hints.Add("불을 어떻게 피우지?");//
-        hints.Add("빛을 모을 수 있는게 있나?");//9
+        hints.Add("여긴 섬이라 가스레인지가 없어서 불이 없을텐데..");//9
         hints.Add("주위를 살펴보자");//10
         hints.Add("");//11
 
@@ -232,7 +232,7 @@ public class StoryManager : MonoBehaviour
 
 
         //물을 먹고 난후     
-        hints.Add("아 좋다... 그런데 이렇게 살수는 없지");//22        
+        hints.Add("아 시원하다... 너무 좋은데..? \n 아! 그런데 이렇게 계속 살수는 없지");//22        
         hints.Add("섬에서 나갈 준비를 해야할 것 같은데");//23        
         hints.Add("섬을 조사해보자");//24        
         hints.Add("분명 쓰레기가 있는 걸 보니 사람이 있었을꺼야");//25  
