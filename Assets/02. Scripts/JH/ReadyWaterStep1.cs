@@ -40,7 +40,8 @@ public class ReadyWaterStep1 : MonoBehaviour
                                             , "easetype", iTween.EaseType.easeOutElastic
                                             , "oncompletetarget", this.gameObject));
             isWaterOn = true;
-            StoryCanvas.SetActive(true);
+            StoryCanvas.SetActive(true); 
+            print("스토리 4 실행");
         }
 
         if(other.gameObject.CompareTag("SmallCup"))

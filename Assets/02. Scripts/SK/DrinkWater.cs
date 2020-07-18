@@ -21,6 +21,7 @@ public class DrinkWater : MonoBehaviour
 
             Destroy(water.gameObject,2.5f);
             StoryCanvas.SetActive(true);
+            print("스토리 5 실행");
             isDrink = true;           
         }
     }

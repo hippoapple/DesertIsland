@@ -15,7 +15,7 @@ public class PotPosition : MonoBehaviour
     public GameObject bubble;
     public GameObject cleanWater;
     public GameObject water;
-    bool istriggerenter=false;
+    public static bool isBigpotEnter=false;
     bool iswateron = false;
     bool isbigwateron = false;
     float progress;
@@ -33,19 +33,19 @@ public class PotPosition : MonoBehaviour
             dolmenANDFire.gameObject.SetActive(true);
             beforeFire.gameObject.SetActive(false);
             //other.transform.position= potPosition.transform.position;
-            istriggerenter = true;
+            isBigpotEnter = true;
             //boilWater.BoiledWaterInPot();
         }
     }
     private void OnTriggerStay(Collider other)
     {
         //progress를 멈추어라!!!
-        if(istriggerenter ==true)
+        if(isBigpotEnter ==true)
         {
             progress +=Time.deltaTime * 0.2f;
             print("progress" +  (int)progress);
         }
-        if(progress> 10 && istriggerenter ==true)
+        if(progress> 10 && isBigpotEnter ==true)
         {
             gauge.gameObject.SetActive(false);
             bubble.gameObject.SetActive(false);
@@ -59,9 +59,9 @@ public class PotPosition : MonoBehaviour
                 Destroy(water.gameObject,2.5f);
                 isbigwateron = true;
             }
-            istriggerenter = false;
+            isBigpotEnter = false;
         }
-        else if(progress>5 && istriggerenter ==true)
+        else if(progress>5 && isBigpotEnter ==true)
         {
             bubble.gameObject.SetActive(true);
             cleanWater.gameObject.SetActive(true);
@@ -74,7 +74,7 @@ public class PotPosition : MonoBehaviour
                 iswateron=true;            
             }
         }
-        else if(progress>0 && istriggerenter ==true)
+        else if(progress>0 && isBigpotEnter ==true)
         {
             gauge.gameObject.SetActive(true);
             gauge.gameObject.GetComponent<Slider>().value= progress;

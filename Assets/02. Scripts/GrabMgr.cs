@@ -47,6 +47,7 @@ public class GrabMgr : MonoBehaviour
             Vector3 _angularVelocity = GetComponent<SteamVR_Behaviour_Pose>().GetAngularVelocity();
             grabObject.GetComponent<Rigidbody>().isKinematic = false;
             grabObject.GetComponent<Rigidbody>().velocity = _velocity;
+            print("_velocity  :  " + _velocity);
             grabObject.GetComponent<Rigidbody>().angularVelocity = _angularVelocity;
             Debug.Log("grapObject is null");
             grabObject = null;
@@ -57,7 +58,7 @@ public class GrabMgr : MonoBehaviour
 
 
     void OnTriggerEnter(Collider coll)
-    {
+    {   
         if (coll.gameObject.tag == "UnTouched" || coll.gameObject.tag == "UI" || coll.gameObject.tag == "Sea")
         {
             isTouched = false;
@@ -77,6 +78,7 @@ public class GrabMgr : MonoBehaviour
             isFlag = true;
             SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f);
             StoryCanvas.SetActive(true);
+            print("스토리 6 실행");
         }
     }
 

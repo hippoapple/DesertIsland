@@ -42,7 +42,7 @@ public class MesegesManager : MonoBehaviour
 
         }
 
-        if (isCavasOn == false && StoryManager.timer > 10 && FireFire.woodCount > 3 && StoryManager.clickCount == 11 )
+        if (isCavasOn == false && StoryManager.timer > 10 && FireFire.woodCount >= 3 && StoryManager.clickCount == 11 )
         {
             
             Hint2_Canvas.SetActive(true);
@@ -61,7 +61,7 @@ public class MesegesManager : MonoBehaviour
             Invoke("CanvasOff", 10);
         }
 
-         if (isCavasOn == false && StoryManager.timer > 7 && ReadyWaterStep2.IsSmallCup == false && ReadyWaterStep1.isWaterOn == true)
+         if (isCavasOn == false && StoryManager.timer > 7 && ReadyWaterStep1.IsSmallCup == false && ReadyWaterStep1.isWaterOn == true)
         {
             Hint4_Canvas.SetActive(true);
             Debug.Log("힌트 4 실행.");
@@ -76,14 +76,15 @@ public class MesegesManager : MonoBehaviour
             Hint5_Canvas.SetActive(true);
             Debug.Log("힌트 5 실행.");
             isCavasOn = true;
-           
+           return;
         }
-        if (isCavasOn == false  && ReadyWaterStep1.IsSmallCup == true &&  ReadyWaterStep1.IsPotLid == true)
+        if (isCavasOn == true  && ReadyWaterStep1.IsSmallCup == true &&  PotPosition.isBigpotEnter == true)
         {
             
             Hint5_Canvas.SetActive(false);
             Debug.Log("힌트 5 끔.");
-            isCavasOn = true;
+            isCavasOn = false;
+            return;
             
         }
 
