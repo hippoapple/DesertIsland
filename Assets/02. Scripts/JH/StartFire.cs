@@ -18,7 +18,7 @@ public class StartFire : MonoBehaviour
     void Start()
     {
         audioSource= GetComponent<AudioSource>();
-        audioSource.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class StartFire : MonoBehaviour
             FinishProgress();
             //progress = 0;
             isTriggerenter=false;
-            audioSource.gameObject.SetActive(true);
+            audioSource.Play();
         }
         else if(progress>=5 && isTriggerenter==true)
         {
