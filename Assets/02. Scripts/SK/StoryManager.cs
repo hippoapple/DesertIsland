@@ -93,12 +93,12 @@ public class StoryManager : MonoBehaviour
             case 10:
                 hintText.text = hints[clickCount];
                 break;
-                
+
 
             case 11:
                 hintText.text = hints[clickCount];
                 StoryCanvas.SetActive(false);
-              
+
                 //timer =0;
                 break;
 
@@ -248,7 +248,7 @@ public class StoryManager : MonoBehaviour
 
     }
 
-    
+
     public static IEnumerator Timer()
     {
         for (int i = 0; i < 500; i++)

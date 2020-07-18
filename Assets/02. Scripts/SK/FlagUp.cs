@@ -5,21 +5,37 @@ using UnityEngine;
 public class FlagUp : MonoBehaviour
 {
     // Start is called before the first frame update
-    
-    float timer;
+
+    bool isFlagUp;
+
 
     private void Update()
     {
-        timer += Time.deltaTime;
-    if(timer >= 300) 
-    {
-        iTween.MoveBy(gameObject, iTween.Hash("y", 3.82f
-                                            , "time", 2.5f
-                                            , "easetype", iTween.EaseType.easeOutElastic
-                                            , "oncompletetarget", this.gameObject));
-    }    
+
+
+        if (DrinkWater.isDrink == true && isFlagUp == false)
+        {
+            iTween.MoveBy(gameObject, iTween.Hash("y", 3.82f
+                                                , "time", 2.5f
+                                                , "easetype", iTween.EaseType.easeOutElastic
+                                                , "oncompletetarget", this.gameObject));
+
+            isFlagUp = true;
+            Invoke("colliderOn", 1f);
+
+
+
+        }
 
     }
-    
 
+    void colliderOn()
+    {
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+    }
+
+    public void colliderOff()
+    {
+        this.GetComponent<BoxCollider>().enabled = false;
+    }
 }

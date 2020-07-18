@@ -20,22 +20,24 @@ public class GrabMgr : MonoBehaviour
     public float speed = 5;
     public GameObject StoryCanvas;
     AudioSource audioSource;
+
+
     void Awake()
     {
         hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
         trigger = SteamVR_Actions.default_InteractUI;
-        audioSource=GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (grabObject == null && isTouched == true && trigger.GetStateDown(hand) )//만졌을때
+        if (grabObject == null && isTouched == true && trigger.GetStateDown(hand))//만졌을때
         {
             grabObject = approachObject;
             grabObject.SetParent(this.transform);
-            if(grabObject.GetComponent<Rigidbody>().isKinematic == false)
+            if (grabObject.GetComponent<Rigidbody>().isKinematic == false)
             {
                 grabObject.GetComponent<Rigidbody>().isKinematic = true; //잡은물체의 물리엔진을 끈다,.
             }
@@ -52,13 +54,13 @@ public class GrabMgr : MonoBehaviour
             Debug.Log("grapObject is null");
             grabObject = null;
             audioSource.Play();
-            
+
         }
     }
 
 
     void OnTriggerEnter(Collider coll)
-    {   
+    {
         if (coll.gameObject.tag == "UnTouched" || coll.gameObject.tag == "UI" || coll.gameObject.tag == "Sea")
         {
             isTouched = false;
@@ -67,7 +69,7 @@ public class GrabMgr : MonoBehaviour
         else
         {
             isTouched = true;
-            approachObject= coll.transform;
+            approachObject = coll.transform;
             //grabObject = coll.transform;
         }
 
@@ -76,9 +78,12 @@ public class GrabMgr : MonoBehaviour
         if (coll.gameObject.CompareTag("Flag"))
         {
             isFlag = true;
-            SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f);
             StoryCanvas.SetActive(true);
+            SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f);
             print("스토리 6 실행");
+            GameObject.Find("Flag").GetComponent<FlagUp>().colliderOff();
+
+
         }
     }
 
@@ -87,7 +92,7 @@ public class GrabMgr : MonoBehaviour
         if (coll.gameObject.tag == "UnTouched" || coll.gameObject.tag == "UI" || coll.gameObject.tag == "Sea")
             return;
 
-            
+
         isTouched = false;
         approachObject = null;
     }

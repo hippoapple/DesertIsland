@@ -13,10 +13,10 @@ public class ReadyWaterStep1 : MonoBehaviour
     public GameObject StoryCanvas;
 
 
-     public GameObject smallCup;
-    public static bool IsSmallCup; 
+    public GameObject smallCup;
+    public static bool IsSmallCup;
     public GameObject potLid;
-    public static bool IsPotLid; 
+    public static bool IsPotLid;
     void Start()
     {
         water.gameObject.SetActive(false);
@@ -29,7 +29,7 @@ public class ReadyWaterStep1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Sea" &&isWaterOn ==false)
+        if (other.gameObject.tag == "Sea" && isWaterOn == false)
         {
             water.gameObject.SetActive(true);
 
@@ -40,21 +40,21 @@ public class ReadyWaterStep1 : MonoBehaviour
                                             , "easetype", iTween.EaseType.easeOutElastic
                                             , "oncompletetarget", this.gameObject));
             isWaterOn = true;
-            StoryCanvas.SetActive(true); 
+            StoryCanvas.SetActive(true);
             print("스토리 4 실행");
         }
 
-        if(other.gameObject.CompareTag("SmallCup"))
+        if (other.gameObject.CompareTag("SmallCup"))
         {
             Destroy(other.gameObject);
             smallCup.gameObject.SetActive(true);
             IsSmallCup = true;
         }
-        if(other.gameObject.CompareTag("PotLid"))
+        if (other.gameObject.CompareTag("PotLid"))
         {
             Destroy(other.gameObject);
             potLid.gameObject.SetActive(true);
-            IsPotLid=true;
+            IsPotLid = true;
         }
     }
 }
