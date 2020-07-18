@@ -39,9 +39,12 @@ public class PotPosition : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        progress +=Time.deltaTime * 0.2f;
-        print("progress" +  (int)progress);
-
+        //progress를 멈추어라!!!
+        if(istriggerenter ==true)
+        {
+            progress +=Time.deltaTime * 0.2f;
+            print("progress" +  (int)progress);
+        }
         if(progress> 10 && istriggerenter ==true)
         {
             gauge.gameObject.SetActive(false);

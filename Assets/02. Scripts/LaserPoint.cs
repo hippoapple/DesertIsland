@@ -80,6 +80,7 @@ public class LaserPoint : MonoBehaviour
 
     void Update()
     {
+        //Debug.DrawRay(tr.position, tr.forward * 10f, Color.red, 0.1f);
         if (Physics.Raycast(tr.position, tr.forward, out hit, distance))//시작좌표. 광선의 방향(0.0.1), 맞은 오브젝트의 정보, 광선의 거리
         {
             line.SetPosition(1, new Vector3(0, 0, hit.distance));//라인 렌더러의 끝점을 오브젝트의 거리 까지만 한다. 
@@ -97,6 +98,7 @@ public class LaserPoint : MonoBehaviour
         if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerFloor))//왼손
         {
             SteamVR_Fade.Start(Color.black,0.0f ); // 바뀔 색, 바뀔 시간, 
+            
             //Sleep
             //print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
