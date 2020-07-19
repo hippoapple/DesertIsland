@@ -15,10 +15,10 @@ public class PotPosition : MonoBehaviour
     public GameObject bubble;
     public GameObject cleanWater;
     public GameObject water;
-    public static bool isBigpotEnter = false;
     bool iswateron = false;
+    public float progress;
+    public static bool isBigpotEnter = false;
     public static bool isbigwateron = false;
-    float progress;
     private void Start()
     {
         dolmenANDFire.gameObject.SetActive(false);
@@ -63,6 +63,7 @@ public class PotPosition : MonoBehaviour
         }
         else if (progress > 7 && isBigpotEnter == true)
         {
+            //오 좋네요!
             cleanWater.gameObject.SetActive(true);
             if (iswateron == false)
             {

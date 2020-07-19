@@ -7,6 +7,7 @@ public class FlagUp : MonoBehaviour
     // Start is called before the first frame update
 
     bool isFlagUp;
+    AudioSource audioSound;
 
 
     private void Update()
@@ -30,8 +31,9 @@ public class FlagUp : MonoBehaviour
     }
 
     void colliderOn()
-    {
+    {//위에서 invoke 함수 안에서 선언함.
         gameObject.GetComponent<BoxCollider>().enabled = true;
+        audioSound.Play();
     }
 
     public void colliderOff()
