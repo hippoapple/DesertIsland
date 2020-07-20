@@ -14,6 +14,7 @@ public class PotLidCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        if(other.gameObject.tag=="BigPot")
         audioSource.Play();
     }
 }
