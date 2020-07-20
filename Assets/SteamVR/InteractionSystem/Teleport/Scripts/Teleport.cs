@@ -966,7 +966,7 @@ namespace Valve.VR.InteractionSystem
 				hintCoroutine = null;
 			}
 
-			CancelInvoke( "ShowTeleportHint" );
+		//CancelInvoke( "ShowTeleportHint" );
 		}
 
 
