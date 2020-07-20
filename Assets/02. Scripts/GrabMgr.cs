@@ -49,22 +49,23 @@ public class GrabMgr : MonoBehaviour
         {
             grabObject.SetParent(null);
             Vector3 _velocity = GetComponent<SteamVR_Behaviour_Pose>().GetVelocity();
-            Vector3 _angularVelocity = GetComponent<SteamVR_Behaviour_Pose>().GetAngularVelocity();
+            //Vector3 _angularVelocity = GetComponent<SteamVR_Behaviour_Pose>().GetAngularVelocity();
             grabObject.GetComponent<Rigidbody>().isKinematic = false;
             grabObject.GetComponent<Rigidbody>().velocity = _velocity;
             print("_velocity  :  " + _velocity);
-            grabObject.GetComponent<Rigidbody>().angularVelocity = _angularVelocity;
+            //grabObject.GetComponent<Rigidbody>().angularVelocity = _angularVelocity;
             Debug.Log("grapObject is null");
             grabObject = null;
-            if (grabObject.GetComponent<Rigidbody>().velocity.y >= 0.0f && grabObject.GetComponent<Rigidbody>().velocity.y <= 0.2f)
-            {
-                shortAudio.Play();
-            }
-            else 
-            {
+            
+            // if (grabObject.GetComponent<Rigidbody>().velocity.y >= 0.0f && grabObject.GetComponent<Rigidbody>().velocity.y <= 0.2f)
+            // {
+            //     shortAudio.Play();
+            //     print("짧은 휙");
+            // }
+            
                 audioSource.Play();
-            }
-
+                print("휙");
+           
         }
     }
 
