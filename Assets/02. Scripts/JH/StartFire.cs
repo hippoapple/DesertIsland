@@ -12,7 +12,6 @@ public class StartFire : MonoBehaviour
     float progress=0.0f;
     bool isTriggerenter = false;
     public static bool isFireOn;
-    public GameObject fireplace;
     AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
