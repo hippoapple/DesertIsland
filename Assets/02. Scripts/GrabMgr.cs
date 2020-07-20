@@ -23,6 +23,8 @@ public class GrabMgr : MonoBehaviour
     Rigidbody rig;
 
     AudioSource shortAudio;
+    AudioSource stoneAudio;
+
     void Awake()
     {
         hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
@@ -30,6 +32,7 @@ public class GrabMgr : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         // rig = grabObject.GetComponent<Rigidbody>();
          shortAudio = GameObject.Find("ShortThrow").GetComponent<AudioSource>();
+         stoneAudio= GameObject.Find("SOS").GetComponent<AudioSource>();
     }
 
 
@@ -49,22 +52,23 @@ public class GrabMgr : MonoBehaviour
         {
             grabObject.SetParent(null);
             Vector3 _velocity = GetComponent<SteamVR_Behaviour_Pose>().GetVelocity();
-            Vector3 _angularVelocity = GetComponent<SteamVR_Behaviour_Pose>().GetAngularVelocity();
+            //Vector3 _angularVelocity = GetComponent<SteamVR_Behaviour_Pose>().GetAngularVelocity();
             grabObject.GetComponent<Rigidbody>().isKinematic = false;
             grabObject.GetComponent<Rigidbody>().velocity = _velocity;
             print("_velocity  :  " + _velocity);
-            grabObject.GetComponent<Rigidbody>().angularVelocity = _angularVelocity;
+            //grabObject.GetComponent<Rigidbody>().angularVelocity = _angularVelocity;
             Debug.Log("grapObject is null");
             grabObject = null;
-            if (grabObject.GetComponent<Rigidbody>().velocity.y >= 0.0f && grabObject.GetComponent<Rigidbody>().velocity.y <= 0.2f)
-            {
-                shortAudio.Play();
-            }
-            else 
-            {
+            
+            // if (grabObject.GetComponent<Rigidbody>().velocity.y >= 0.0f && grabObject.GetComponent<Rigidbody>().velocity.y <= 0.2f)
+            // {
+            //     shortAudio.Play();
+            //     print("짧은 휙");
+            // }
+            
                 audioSource.Play();
-            }
-
+                print("휙");
+           
         }
     }
 
@@ -90,6 +94,7 @@ public class GrabMgr : MonoBehaviour
             isFlag = true;
             StoryCanvas.SetActive(true);
             SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f);
+            stoneAudio.Play();
             print("스토리 6 실행");
             GameObject.Find("Flag").GetComponent<FlagUp>().colliderOff();
 
