@@ -9,7 +9,10 @@ public class FlagUp : MonoBehaviour
     bool isFlagUp;
     AudioSource audioSound;
 
-
+    private void Start()
+    {
+        audioSound= GetComponent<AudioSource>();
+    }
     private void Update()
     {
 

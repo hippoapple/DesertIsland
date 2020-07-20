@@ -11,19 +11,14 @@ public class StopVoil : MonoBehaviour
     void Start()
     {
         audioSource =GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
+    }    
+        
+    public void SrartVoil()
     {
-        // 조건을 하나 더 주어야 할까요?
-        if(potPosition.progress>=10)
-        {
-            audioSource.Stop();
-        }
-        else if(potPosition.progress>=5)
-        {
-            audioSource.Play();
-        }
+        audioSource.Play();
+    }
+    public void StopVoilClass()
+    {
+        audioSource.Stop();
     }
 }
