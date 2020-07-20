@@ -95,14 +95,14 @@ public class LaserPoint : MonoBehaviour
             pointer.transform.rotation = Quaternion.LookRotation(tr.forward); //올일러를 하면 오류가있을수있음  벡터의 각도를 쿼터니온 각도로 변환해서 넣어준다. 
         }
 
-        if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerFloor))//왼손
-        {
-            SteamVR_Fade.Start(Color.black, 0.0f); // 바뀔 색, 바뀔 시간, 
+        // if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerFloor))//왼손
+        // {
+        //     SteamVR_Fade.Start(Color.black, 0.0f); // 바뀔 색, 바뀔 시간, 
 
-            //Sleep
-            //print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
-            StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
-        }
+        //     //Sleep
+        //     //print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
+        //     StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
+        // }
 
         if (trigger.GetStateDown(triggerhands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//오른손 트리거
         {
@@ -114,17 +114,17 @@ public class LaserPoint : MonoBehaviour
         }
 
     }
-    IEnumerator Teleport(Vector3 pos)//열거자형태 //까맣게 하고 위치를 바꿀꺼야 
+    // IEnumerator Teleport(Vector3 pos)//열거자형태 //까맣게 하고 위치를 바꿀꺼야 
 
-    {
-        //위치를 바꾼다는건 카메라 리그를 점프한다는것
-        //   tr.parent.transform.position = pos;
-        //   print(tr.parent.transform.position);
-        cameraRig.transform.position = pos;
-        this.gameObject.transform.position = cameraRig.transform.position;
-        // Waiting
-        yield return new WaitForSeconds(durationTime);//0.2포만큼 기다렸다가 
-        SteamVR_Fade.Start(Color.clear, 0.2f);
-    }
+    // {
+    //     //위치를 바꾼다는건 카메라 리그를 점프한다는것
+    //     //   tr.parent.transform.position = pos;
+    //     //   print(tr.parent.transform.position);
+    //     cameraRig.transform.position = pos;
+    //     this.gameObject.transform.position = cameraRig.transform.position;
+    //     // Waiting
+    //     yield return new WaitForSeconds(durationTime);//0.2포만큼 기다렸다가 
+    //     SteamVR_Fade.Start(Color.clear, 0.2f);
+    // }
 
 }
