@@ -12,7 +12,7 @@ namespace Valve.VR.InteractionSystem
 {
     public class HandPhysics : MonoBehaviour
     {
-        [Tooltip("Hand collider prefab to instantiate")]
+        [Tooltip("Hand collider prefab to instantiate")]//여기서 hand의 물리적 충돌을 위한 collider를 생성해 옴.
         public HandCollider handColliderPrefab;
         [HideInInspector]
         public HandCollider handCollider;
