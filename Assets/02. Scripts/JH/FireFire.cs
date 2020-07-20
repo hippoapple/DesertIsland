@@ -10,10 +10,11 @@ public class FireFire : MonoBehaviour
     public GameObject StoryCanvas;
     public List<GameObject> storage = new List<GameObject>();
     bool isFirePlaceOn;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -30,7 +31,7 @@ public class FireFire : MonoBehaviour
                 print("rocks Off");
                 firePlace.gameObject.SetActive(true);
                 print("firePlace On");
-
+                audioSource.Play();
                 isFirePlaceOn=true;
                 StoryCanvas.SetActive(true);
                 // StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();

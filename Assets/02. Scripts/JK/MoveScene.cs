@@ -28,23 +28,28 @@ public class MoveScene : MonoBehaviour
     //         gameObject.GetComponent<"Tutorial">().enabled = false;
     //   }
 
-    public GameObject Tutorial;
-    // Use this for initialization
-    void Start () {
+    // public GameObject Tutorial;
+    // // Use this for initialization
+    // void Start () {
      
-    }
+    // }
      
-    // Update is called once per frame
-    void Update () {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Tutorial.SetActive(false);
-        }
-        if(Input.GetMouseButtonDown(1))
-        {
-            //오른족 버튼
-            Tutorial.SetActive(true);
-        }
-    }
+    // // Update is called once per frame
+    // void Update () {
+    //     if(Input.GetMouseButtonDown(0))
+    //     {
+    //         Tutorial.SetActive(false);
+    //     }
+    //     if(Input.GetMouseButtonDown(1))
+    //     {
+    //         //오른족 버튼
+    //         Tutorial.SetActive(true);
+    //     }
+    // }
+
+       public void GoToScene(string sceneName)
+   {
+        SceneManager.LoadScene(sceneName);
+   }
 
 }

@@ -12,6 +12,7 @@ public class FlagUp : MonoBehaviour
     private void Start()
     {
         audioSound= GetComponent<AudioSource>();
+        
     }
     private void Update()
     {
@@ -26,7 +27,7 @@ public class FlagUp : MonoBehaviour
 
             isFlagUp = true;
             Invoke("colliderOn", 1f);
-
+            
 
 
         }
