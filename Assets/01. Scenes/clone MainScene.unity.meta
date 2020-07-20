@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/MobileDepthWater.meta
+guid: 9d9cbb912b1444a488d4cabf8818bf95
+folderAsset: yes
+=======
 guid: af07094796e279d47ad1374689d404eb
+>>>>>>> 5583f99c5b58bbf67a8a55b15904c11d5d0fdd4b:Assets/01. Scenes/clone MainScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
