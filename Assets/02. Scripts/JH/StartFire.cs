@@ -12,10 +12,11 @@ public class StartFire : MonoBehaviour
     float progress=0.0f;
     bool isTriggerenter = false;
     public static bool isFireOn;
-
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource= GetComponent<AudioSource>();
         
     }
 
@@ -32,6 +33,7 @@ public class StartFire : MonoBehaviour
             FinishProgress();
             //progress = 0;
             isTriggerenter=false;
+            audioSource.Play();
         }
         else if(progress>=5 && isTriggerenter==true)
         {

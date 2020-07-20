@@ -33,11 +33,13 @@ public class ReadyWaterStep2 : MonoBehaviour
             smallCup.gameObject.SetActive(true);
             IsSmallCup = true;
         }
+            print("###### ");
         if(other.gameObject.CompareTag("PotLid"))
         {
             Destroy(other.gameObject);
             potLid.gameObject.SetActive(true);
             IsPotLid=true;
+            print("IsPotLid == true");
         }
         
     }

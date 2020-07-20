@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Valve.VR;
 public class LaserPoint : MonoBehaviour
-    {
-    private SteamVR_Action_Boolean trigger ;   
+{
+    private SteamVR_Action_Boolean trigger;
     private SteamVR_Behaviour_Pose pose; //컨트롤의 위치, 회전 값을 가져오기 위해
     private SteamVR_Input_Sources hands;
     private SteamVR_Input_Sources triggerhands;
@@ -30,13 +30,13 @@ public class LaserPoint : MonoBehaviour
     //암막효과가 지속되는 시간
 
     public float durationTime = 0.2f;
-    private int LayerFloor ;
-    private int LayerUI ;
+    private int LayerFloor;
+    private int LayerUI;
 
-    
+
     public Transform cameraRig;
-    
-   
+
+
     void Awake()
     {
         trigger = SteamVR_Actions.default_InteractUI;
@@ -48,7 +48,7 @@ public class LaserPoint : MonoBehaviour
         pose = GetComponent<SteamVR_Behaviour_Pose>();
         hands = SteamVR_Input_Sources.LeftHand;
         triggerhands = SteamVR_Input_Sources.RightHand;
-       
+
         CreateLine();
 
         pointerPrefab = Resources.Load<GameObject>("Pointer");
@@ -59,7 +59,7 @@ public class LaserPoint : MonoBehaviour
         LayerFloor = 1 << LayerMask.NameToLayer("Floor");
         LayerUI = 1 << LayerMask.NameToLayer("UI");
 
-         cameraRig = GameObject.Find("[CameraRig]").GetComponent<Transform>();  
+        cameraRig = GameObject.Find("[CameraRig]").GetComponent<Transform>();
     }
 
 
@@ -80,6 +80,7 @@ public class LaserPoint : MonoBehaviour
 
     void Update()
     {
+        //Debug.DrawRay(tr.position, tr.forward * 10f, Color.red, 0.1f);
         if (Physics.Raycast(tr.position, tr.forward, out hit, distance))//시작좌표. 광선의 방향(0.0.1), 맞은 오브젝트의 정보, 광선의 거리
         {
             line.SetPosition(1, new Vector3(0, 0, hit.distance));//라인 렌더러의 끝점을 오브젝트의 거리 까지만 한다. 
@@ -96,17 +97,18 @@ public class LaserPoint : MonoBehaviour
 
         if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerFloor))//왼손
         {
-            SteamVR_Fade.Start(Color.black,0.0f ); // 바뀔 색, 바뀔 시간, 
+            SteamVR_Fade.Start(Color.black, 0.0f); // 바뀔 색, 바뀔 시간, 
+
             //Sleep
             //print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
             StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
-        }   
+        }
 
-       if (trigger.GetStateDown(triggerhands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//오른손 트리거
+        if (trigger.GetStateDown(triggerhands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//오른손 트리거
         {
             print("tirgger Click");
             StoryManager.clickCount++;
-          
+
             StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
             hintManager.ChangeStory();
         }
@@ -118,11 +120,11 @@ public class LaserPoint : MonoBehaviour
         //위치를 바꾼다는건 카메라 리그를 점프한다는것
         //   tr.parent.transform.position = pos;
         //   print(tr.parent.transform.position);
-       cameraRig.transform.position = pos;
-       this.gameObject.transform.position = cameraRig.transform.position;
-       // Waiting
+        cameraRig.transform.position = pos;
+        this.gameObject.transform.position = cameraRig.transform.position;
+        // Waiting
         yield return new WaitForSeconds(durationTime);//0.2포만큼 기다렸다가 
-        SteamVR_Fade.Start(Color.clear,0.2f);
+        SteamVR_Fade.Start(Color.clear, 0.2f);
     }
 
 }

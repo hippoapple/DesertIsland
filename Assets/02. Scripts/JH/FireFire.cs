@@ -13,7 +13,7 @@ public class FireFire : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firePlace.gameObject.SetActive(false);
+        
 
     }
 
@@ -27,7 +27,10 @@ public class FireFire : MonoBehaviour
             {
                 //DestoryWoods();
                 rocks.gameObject.SetActive(false);
+                print("rocks Off");
                 firePlace.gameObject.SetActive(true);
+                print("firePlace On");
+
                 isFirePlaceOn=true;
                 StoryCanvas.SetActive(true);
                 // StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
