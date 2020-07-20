@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/MobileDepthWater/Models/Materials/Material.001.mat.meta
+guid: b9778516b02b71b49ab455f90a84260c
+NativeFormatImporter:
+=======
 guid: 45072a8a667aadd4b9113701cd37a804
 folderAsset: yes
 DefaultImporter:
+>>>>>>> 5583f99c5b58bbf67a8a55b15904c11d5d0fdd4b:Assets/05. Models/HR/Water.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
