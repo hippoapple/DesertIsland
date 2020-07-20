@@ -6,7 +6,7 @@ public class GrabMgr : MonoBehaviour
 {
 
     //컨트롤러로 잡은 물체를 저장한다.
-    public GameObject grabObject;
+    public Transform grabObject;
     public Transform approachObject;
 
     //공에 접촉했는지 여부
@@ -28,8 +28,8 @@ public class GrabMgr : MonoBehaviour
         hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
         trigger = SteamVR_Actions.default_InteractUI;
         audioSource = GetComponent<AudioSource>();
-        rig = grabObject.GetComponent<Rigidbody>();
-        shortAudio = GameObject.Find("ShortThrow").GetComponent<AudioSource>();
+        // rig = grabObject.GetComponent<Rigidbody>();
+        // shortAudio = GameObject.finzz
     }
 
 
@@ -50,15 +50,15 @@ public class GrabMgr : MonoBehaviour
             grabObject.SetParent(null);
             Vector3 _velocity = GetComponent<SteamVR_Behaviour_Pose>().GetVelocity();
             Vector3 _angularVelocity = GetComponent<SteamVR_Behaviour_Pose>().GetAngularVelocity();
-            rig.isKinematic = false;
-            rig.velocity = _velocity;
+            grabObject.GetComponent<Rigidbody>().isKinematic = false;
+            grabObject.GetComponent<Rigidbody>().velocity = _velocity;
             print("_velocity  :  " + _velocity);
-            rig.angularVelocity = _angularVelocity;
+            grabObject.GetComponent<Rigidbody>().angularVelocity = _angularVelocity;
             Debug.Log("grapObject is null");
             grabObject = null;
-            if (rig.velocity.y >= 0.0f && rig.velocity.y <= 0.2f)
+            if (grabObject.GetComponent<Rigidbody>().velocity.y >= 0.0f && grabObject.GetComponent<Rigidbody>().velocity.y <= 0.2f)
             {
-                shortAudio.Play();
+                
             }
             else 
             {
