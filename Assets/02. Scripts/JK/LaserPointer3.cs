@@ -111,7 +111,7 @@ public class LaserPointer3 : MonoBehaviour
                                     , new PointerEventData(EventSystem.current)
                                     , ExecuteEvents.pointerClickHandler);
 
-                SceneManager.LoadScene("01. MainScene");
+                
             }
 
             //트랙패드를 클릭했을 때 텔레포트 처리
