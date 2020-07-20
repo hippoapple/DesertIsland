@@ -29,7 +29,7 @@ public class GrabMgr : MonoBehaviour
         trigger = SteamVR_Actions.default_InteractUI;
         audioSource = GetComponent<AudioSource>();
         // rig = grabObject.GetComponent<Rigidbody>();
-        // shortAudio = GameObject.finzz
+         shortAudio = GameObject.Find("ShortThrow").GetComponent<AudioSource>();
     }
 
 
@@ -58,7 +58,7 @@ public class GrabMgr : MonoBehaviour
             grabObject = null;
             if (grabObject.GetComponent<Rigidbody>().velocity.y >= 0.0f && grabObject.GetComponent<Rigidbody>().velocity.y <= 0.2f)
             {
-                
+                shortAudio.Play();
             }
             else 
             {
