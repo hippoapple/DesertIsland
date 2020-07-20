@@ -72,7 +72,7 @@ public class StartFire : MonoBehaviour
     {
         if(isTriggerenter!=false)
         {
-            progress += Time.deltaTime*0.5f;
+            progress += Time.deltaTime;
         }
         gauge.gameObject.GetComponent<Slider>().value = progress;
     }
