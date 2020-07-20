@@ -35,13 +35,13 @@ public class PotPosition : MonoBehaviour
             beforeFire.gameObject.SetActive(false);
             //other.transform.position= potPosition.transform.position;
             isBigpotEnter = true;
-            //boilWater.BoiledWaterInPot();
+            
         }
     }
     private void OnTriggerStay(Collider other)
     {
         //progress를 멈추어라!!!
-        if (isbigwateron == false)
+        if (isBigpotEnter== true)
         {
             progress += Time.deltaTime * 0.25f;
             gauge.gameObject.GetComponent<Slider>().value = progress;
@@ -51,7 +51,6 @@ public class PotPosition : MonoBehaviour
         {
             gauge.gameObject.SetActive(false);
             bubble.gameObject.SetActive(false);
-            StopVoil.StopVoilClass();
             if (isbigwateron == false)
             {
                 iTween.MoveBy(water, iTween.Hash("y", -0.05f
@@ -80,7 +79,6 @@ public class PotPosition : MonoBehaviour
         else if (progress > 5 && isBigpotEnter == true)
         {
             bubble.gameObject.SetActive(true);
-            StopVoil.SrartVoil();
         }
         else if (progress > 0 && isBigpotEnter == true)
         {
