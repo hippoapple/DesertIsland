@@ -6,7 +6,7 @@ public class GrabMgr : MonoBehaviour
 {
 
     //컨트롤러로 잡은 물체를 저장한다.
-    public Transform grabObject;
+    public GameObject grabObject;
     public Transform approachObject;
 
     //공에 접촉했는지 여부
@@ -28,7 +28,7 @@ public class GrabMgr : MonoBehaviour
         hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
         trigger = SteamVR_Actions.default_InteractUI;
         audioSource = GetComponent<AudioSource>();
-        rig = grabObject.gameObject.GetComponent<Rigidbody>();
+        rig = grabObject.GetComponent<Rigidbody>();
         shortAudio = GameObject.Find("ShortThrow").GetComponent<AudioSource>();
     }
 
