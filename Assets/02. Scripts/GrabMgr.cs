@@ -54,7 +54,7 @@ public class GrabMgr : MonoBehaviour
             Vector3 _velocity = GetComponent<SteamVR_Behaviour_Pose>().GetVelocity();
             //Vector3 _angularVelocity = GetComponent<SteamVR_Behaviour_Pose>().GetAngularVelocity();
             grabObject.GetComponent<Rigidbody>().isKinematic = false;
-            grabObject.GetComponent<Rigidbody>().velocity = _velocity;
+            grabObject.GetComponent<Rigidbody>().velocity = _velocity*2;
             print("_velocity  :  " + _velocity);
             //grabObject.GetComponent<Rigidbody>().angularVelocity = _angularVelocity;
             Debug.Log("grapObject is null");
