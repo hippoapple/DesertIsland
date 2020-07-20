@@ -28,7 +28,7 @@ public class GrabMgr : MonoBehaviour
         hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
         trigger = SteamVR_Actions.default_InteractUI;
         audioSource = GetComponent<AudioSource>();
-        rig = grabObject.GetComponent<Rigidbody>();
+        rig = grabObject.gameObject.GetComponent<Rigidbody>();
         shortAudio = GameObject.Find("ShortThrow").GetComponent<AudioSource>();
     }
 
