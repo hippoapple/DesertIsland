@@ -44,6 +44,7 @@ public class PotPosition : MonoBehaviour
         if (isbigwateron == false)
         {
             progress += Time.deltaTime * 0.25f;
+            gauge.gameObject.GetComponent<Slider>().value = progress;
             print("progress" + (int)progress);
         }
         if (progress > 10 && isBigpotEnter == true)
@@ -79,13 +80,12 @@ public class PotPosition : MonoBehaviour
         else if (progress > 5 && isBigpotEnter == true)
         {
             bubble.gameObject.SetActive(true);
-            gauge.gameObject.GetComponent<Slider>().value = progress;
             StopVoil.SrartVoil();
         }
         else if (progress > 0 && isBigpotEnter == true)
         {
             gauge.gameObject.SetActive(true);
-            gauge.gameObject.GetComponent<Slider>().value = progress;
+
         }
     }
 }
