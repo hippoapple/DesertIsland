@@ -41,7 +41,7 @@ public class PotPosition : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //progress를 멈추어라!!!
-        if (isBigpotEnter== false)
+        if (isBigpotEnter== true)
         {
             progress += Time.deltaTime * 0.25f;
             gauge.gameObject.GetComponent<Slider>().value = progress;
