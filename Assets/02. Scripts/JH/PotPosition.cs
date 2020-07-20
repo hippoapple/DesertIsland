@@ -19,6 +19,7 @@ public class PotPosition : MonoBehaviour
     public float progress;
     public static bool isBigpotEnter = false;
     public static bool isbigwateron = false;
+    StopVoil voilSound;
     private void Start()
     {
         dolmenANDFire.gameObject.SetActive(false);
@@ -40,7 +41,7 @@ public class PotPosition : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //progress를 멈추어라!!!
-        if (isBigpotEnter == true)
+        if (iswateron == false)
         {
             progress += Time.deltaTime * 0.25f;
             print("progress" + (int)progress);
@@ -49,6 +50,7 @@ public class PotPosition : MonoBehaviour
         {
             gauge.gameObject.SetActive(false);
             bubble.gameObject.SetActive(false);
+            voilSound.StopVoilClass();
             if (isbigwateron == false)
             {
                 iTween.MoveBy(water, iTween.Hash("y", -0.05f
@@ -78,8 +80,7 @@ public class PotPosition : MonoBehaviour
         {
             bubble.gameObject.SetActive(true);
             gauge.gameObject.GetComponent<Slider>().value = progress;
-
-
+            voilSound.SrartVoil();
         }
         else if (progress > 0 && isBigpotEnter == true)
         {
