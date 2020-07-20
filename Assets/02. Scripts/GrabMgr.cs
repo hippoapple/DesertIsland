@@ -20,13 +20,16 @@ public class GrabMgr : MonoBehaviour
     public float speed = 5;
     public GameObject StoryCanvas;
     AudioSource audioSource;
+    Rigidbody rig;
 
-
+    AudioSource shortAudio;
     void Awake()
     {
         hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
         trigger = SteamVR_Actions.default_InteractUI;
         audioSource = GetComponent<AudioSource>();
+        // rig = grabObject.GetComponent<Rigidbody>();
+         shortAudio = GameObject.Find("ShortThrow").GetComponent<AudioSource>();
     }
 
 
@@ -53,7 +56,14 @@ public class GrabMgr : MonoBehaviour
             grabObject.GetComponent<Rigidbody>().angularVelocity = _angularVelocity;
             Debug.Log("grapObject is null");
             grabObject = null;
-            audioSource.Play();
+            if (grabObject.GetComponent<Rigidbody>().velocity.y >= 0.0f && grabObject.GetComponent<Rigidbody>().velocity.y <= 0.2f)
+            {
+                shortAudio.Play();
+            }
+            else 
+            {
+                audioSource.Play();
+            }
 
         }
     }
