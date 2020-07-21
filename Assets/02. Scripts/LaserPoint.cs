@@ -36,7 +36,7 @@ public class LaserPoint : MonoBehaviour
 
     public Transform cameraRig;
 
-
+    AudioSource storyClickSound;
     void Awake()
     {
         trigger = SteamVR_Actions.default_InteractUI;
@@ -58,7 +58,7 @@ public class LaserPoint : MonoBehaviour
         tr = GetComponent<Transform>();
         LayerFloor = 1 << LayerMask.NameToLayer("Floor");
         LayerUI = 1 << LayerMask.NameToLayer("UI");
-
+        storyClickSound = GetComponent<AudioSource>();
 //S        cameraRig = GameObject.Find("[CameraRig]").GetComponent<Transform>();
     }
 
@@ -108,7 +108,7 @@ public class LaserPoint : MonoBehaviour
         {
             print("tirgger Click");
             StoryManager.clickCount++;
-
+            storyClickSound.Play();
             StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
             hintManager.ChangeStory();
         }
