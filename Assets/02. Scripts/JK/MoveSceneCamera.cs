@@ -12,7 +12,7 @@ public class MoveSceneCamera : MonoBehaviour
     void Start()
     {
           timer = 0.0f;
-          waitingTime = 20;
+          waitingTime = 12;
           inside = false;
     }
 
