@@ -59,7 +59,7 @@ public class LaserPoint : MonoBehaviour
         LayerFloor = 1 << LayerMask.NameToLayer("Floor");
         LayerUI = 1 << LayerMask.NameToLayer("UI");
 
-        cameraRig = GameObject.Find("[CameraRig]").GetComponent<Transform>();
+//S        cameraRig = GameObject.Find("[CameraRig]").GetComponent<Transform>();
     }
 
 

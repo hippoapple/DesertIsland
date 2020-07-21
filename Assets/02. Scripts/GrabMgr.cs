@@ -31,7 +31,7 @@ public class GrabMgr : MonoBehaviour
         trigger = SteamVR_Actions.default_InteractUI;
         audioSource = GetComponent<AudioSource>();
         // rig = grabObject.GetComponent<Rigidbody>();
-         shortAudio = GameObject.Find("ShortThrow").GetComponent<AudioSource>();
+//         shortAudio = GameObject.Find("ShortThrow").GetComponent<AudioSource>();
          stoneAudio= GameObject.Find("SOS").GetComponent<AudioSource>();
     }
 
