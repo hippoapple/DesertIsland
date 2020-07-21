@@ -217,8 +217,8 @@ public class StoryManager : MonoBehaviour
 
 
         //화덕에 불이 붙음
-        hints.Add("와아..");//12
-        hints.Add("불이 붙었다.");//13        
+        hints.Add("와아 불이 붙었다.");//12
+        hints.Add("따뜻해서 더이상 체온이 떨어지지 않아");//13        
         hints.Add("이제 목이 좀 마른데..");//14        
         hints.Add("바닷물은 마시면 안된다고 하던데");//15        
         hints.Add("어떻게 물을 구하지"); //16   
