@@ -108,9 +108,9 @@ public class LaserPoint : MonoBehaviour
         {
             print("tirgger Click");
             StoryManager.clickCount++;
-            storyClickSound.Play();
             StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
             hintManager.ChangeStory();
+            storyClickSound.Play();
         }
 
     }
