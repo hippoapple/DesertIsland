@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class MesegesManager : MonoBehaviour
 {
 
+    public GameObject bottelSTAR;
+    public GameObject cupSTAR;
+    public GameObject flagSTAR;
     public GameObject Hint1_Canvas;
     public GameObject Hint2_Canvas;
     public GameObject Hint3_Canvas;
@@ -19,6 +22,8 @@ public class MesegesManager : MonoBehaviour
     StoryManager storyManager;
     bool ishint5;
     bool isCavasOn = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +56,11 @@ public class MesegesManager : MonoBehaviour
 
             isCavasOn = true;
             Invoke("CanvasOff", 10);
+
+            Debug.Log("이제 병별이 켜질꺼야");
+            bottelSTAR.SetActive(true);
+            //10 초 후
+            Destroy(bottelSTAR, 10.0f);
         }
 
         if (isCavasOn == false && StoryManager.timer > 7 && StartFire.isFireOn == true && ReadyWaterStep1.isWaterOn == false)
@@ -60,6 +70,11 @@ public class MesegesManager : MonoBehaviour
 
             isCavasOn = true;
             Invoke("CanvasOff", 10);
+
+            Debug.Log("이제 컵별이 켜질꺼야");
+            cupSTAR.SetActive(true);
+            //10 초 후
+            Destroy(cupSTAR, 10.0f);
         }
 
         if (isCavasOn == false && StoryManager.timer > 7 && ReadyWaterStep1.IsSmallCup == false && ReadyWaterStep1.isWaterOn == true)
@@ -97,6 +112,10 @@ public class MesegesManager : MonoBehaviour
 
             isCavasOn = true;
             Invoke("CanvasOff", 10);
+            Debug.Log("이제 깃발별이 켜질꺼야");
+            flagSTAR.SetActive(true);
+            //10 초 후
+            Destroy(flagSTAR, 10.0f);
         }
 
         if (isCavasOn == false && StoryManager.timer > 7 && StoneZone.stoneCount < 3 && GrabMgr.isFlag == true)
