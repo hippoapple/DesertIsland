@@ -17,8 +17,8 @@ public class LaserPoint : MonoBehaviour
 
     //라인렌더러 속성변수
     private LineRenderer line;
-    [Range(3.0f, 10.0f)] //
-    public float distance = 20.0f;
+    [Range(3.0f, 100.0f)] //
+    public float distance = 100.0f;
 
     public Color defaltColor = Color.green;
     public Color clikedColor = Color.blue;
