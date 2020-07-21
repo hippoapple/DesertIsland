@@ -9,7 +9,7 @@ public class FireFire : MonoBehaviour
     public GameObject rocks;
     public GameObject StoryCanvas;
     public List<GameObject> storage = new List<GameObject>();
-    bool isFirePlaceOn;
+    public bool isFirePlaceOn;
     AudioSource audioSource;
     // Start is called before the first frame update
     void Start()

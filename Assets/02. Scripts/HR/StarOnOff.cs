@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StarOnOff : MonoBehaviour
 {
+    FireFire fire1;
+  
     public GameObject bottelSTAR;
     public GameObject cupSTAR;
     public GameObject flagSTAR;
@@ -16,31 +19,30 @@ public class StarOnOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (장작이 생기면 == true)
-        // {
-        //     bottelSTAR.SetActive(true);
-        // }
-        // if (보틀을 잡으면 == true)
-        // {
-        //     bottelSTAR.SetActive(false));
-        // }
+        if (fire1.isFirePlaceOn ==true)
+        {
+            Debug.Log("이제 병별이 켜질꺼야");
+            bottelSTAR.SetActive(true);
+            //10 초 후
+            Destroy(bottelSTAR,10.0f);
+        }
 
-        // if (불켜지면 == true)
-        // {
-        //     cupSTAR.SetActive(true);
-        // }
-        // if (컵을 잡으면 == true)
-        // {
-        //     cupSTAR.SetActive(false);
-        // }
+
+        if (StartFire.isFireOn == true)
+        {
+            Debug.Log("이제 컵별이 켜질꺼야");
+            cupSTAR.SetActive(true);
+            //10 초 후
+            Destroy(cupSTAR,10.0f);
+        }
         
-        // if (물 마시면 == true)
-        // {
-        //     flagSTAR.SetActive(true);
-        // }
-        // if (깃발을 잡으면 == true)
-        // {
-        //     flagSTAR.SetActive(false);
-        // }
+
+        if (DrinkWater.isDrink == true)
+        {
+            Debug.Log("이제 깃발별이 켜질꺼야");
+            flagSTAR.SetActive(true);
+            //10 초 후
+            Destroy(flagSTAR,10.0f);
+        }
     }
 }
