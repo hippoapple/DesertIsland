@@ -34,7 +34,7 @@ public class LaserPoint : MonoBehaviour
     private int LayerUI;
 
 
-    public Transform cameraRig;
+   // public Transform cameraRig;
 
     AudioSource storyClickSound;
     void Awake()
@@ -52,14 +52,14 @@ public class LaserPoint : MonoBehaviour
         CreateLine();
 
         pointerPrefab = Resources.Load<GameObject>("Pointer");
-        //pointerPrefab = Resources.Load("Pointer") as GameObject;
+        pointerPrefab = Resources.Load("Pointer") as GameObject;
 
         pointer = Instantiate<GameObject>(pointerPrefab, this.transform);//(pointerPrefab,위치,각도, 부모)
         tr = GetComponent<Transform>();
         LayerFloor = 1 << LayerMask.NameToLayer("Floor");
         LayerUI = 1 << LayerMask.NameToLayer("UI");
         storyClickSound = GetComponent<AudioSource>();
-//S        cameraRig = GameObject.Find("[CameraRig]").GetComponent<Transform>();
+       // cameraRig = GameObject.Find("[CameraRig]").GetComponent<Transform>();
     }
 
 
@@ -101,16 +101,16 @@ public class LaserPoint : MonoBehaviour
 
         //     //Sleep
         //     //print(hit.collider.name + " : " + hit.point + " : " + tr.parent.transform.position);
-        //     StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
+        //     //StartCoroutine(Teleport(hit.point)); //힛된 지점을 넘기고 
         // }
 
         if (trigger.GetStateDown(triggerhands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerUI))//오른손 트리거
         {
             print("tirgger Click");
             StoryManager.clickCount++;
-            storyClickSound.Play();
             StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
             hintManager.ChangeStory();
+            storyClickSound.Play();
         }
 
     }
