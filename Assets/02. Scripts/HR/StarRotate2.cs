@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StarRotate : MonoBehaviour
+public class StarRotate2 : MonoBehaviour
 {
     
     public float rotateSpeed = 360.0f;
@@ -15,7 +15,7 @@ public class StarRotate : MonoBehaviour
     {
         Hashtable ht = new Hashtable();
         ht.Add("time", 10.0f);
-        ht.Add("path", iTweenPath.GetPath("StarPath"));
+        ht.Add("path", iTweenPath.GetPath("StarPath2"));
         ht.Add("easetype", iTween.EaseType.linear); //easeOutBounce통통튐
         // ht.Add("looktarget",centerStar.position);
         //ht.Add("looktime",0.2f);
