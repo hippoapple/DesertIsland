@@ -52,9 +52,10 @@ public class MoveScene : MonoBehaviour
         SceneManager.LoadScene(sceneName);
         //SceneManager.LoadScene()
    }
-   public void GoToScene2(string sceneName)
-   {
-        SceneManager.LoadScene(sceneName);
-   }
+//    public void GoToScene2(string sceneName)
+//    {
+//         SceneManager.LoadScene("01. MainScene""ViveSetting_HR");
+//         //SceneManager.LoadScene()
+//    }
 
 }
