@@ -93,7 +93,7 @@ public class GrabMgr : MonoBehaviour
         {
             isFlag = true;
             StoryCanvas.SetActive(true);
-            SOS.transform.position = new Vector3(-0.6456904f, 10.5f, -25.36989f);
+            SOS.transform.position = new Vector3(-0.25f, 5.53f, -18.48f);
             stoneAudio.Play();
             print("스토리 6 실행");
             GameObject.Find("Flag").GetComponent<FlagUp>().colliderOff();

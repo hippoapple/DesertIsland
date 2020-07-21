@@ -44,7 +44,7 @@ public class PotPosition : MonoBehaviour
         if (isBigpotEnter== true)
         {
             progress += Time.deltaTime * 0.25f;
-            gauge.gameObject.GetComponent<Slider>().value = progress;
+            gauge.gameObject.GetComponent<Slider>().value = progress*1.25f;
             print("progress" + (int)progress);
         }
         if (progress > 10 && isBigpotEnter == true)
