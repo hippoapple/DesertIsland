@@ -15,7 +15,8 @@ public class StoryManager1 : MonoBehaviour
     public TextMeshProUGUI hintText;
 
     public static int timer;
-    public AudioClip[] Diralog;
+    public int numOfAudioClip =31;
+    public  AudioClip[] Diralog; 
     public static AudioSource Dialog_Source;
     //public static List <int>  timeArry;
 
