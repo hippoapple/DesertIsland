@@ -42,6 +42,7 @@ public class FlagUp : MonoBehaviour
 
     public void colliderOff()
     {
-        this.GetComponent<BoxCollider>().enabled = false;
+        Destroy(gameObject,2.0f);
+        //this.GetComponent<BoxCollider>().enabled = false;
     }
 }
