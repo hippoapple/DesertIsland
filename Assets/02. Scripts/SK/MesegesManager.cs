@@ -101,7 +101,7 @@ public class MesegesManager : MonoBehaviour
             Debug.Log("힌트 5 끔.");
             isCavasOn = false;
             ishint5 = true;
-
+            storyManager.StopAllCoroutines();
 
         }
 
