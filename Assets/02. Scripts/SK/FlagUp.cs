@@ -20,7 +20,7 @@ public class FlagUp : MonoBehaviour
 
         if (DrinkWater.isDrink == true && isFlagUp == false)
         {
-            iTween.MoveBy(gameObject, iTween.Hash("y", 3.82f
+            iTween.MoveBy(gameObject, iTween.Hash("y", 3.0f
                                                 , "time", 2.5f
                                                 , "easetype", iTween.EaseType.easeOutElastic
                                                 , "oncompletetarget", this.gameObject));
