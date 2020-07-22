@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/05. Models/Island/Standard.meta
+guid: 263d44fb734bb3b4d8130069038f0846
+=======
 guid: 88155007f5bb1ff4b8658d91fbf863ab
+>>>>>>> 8e74eda505f60081e2d3de5e33331831093c59b2:Assets/SkyBox Volume 2/DeepSpaceBlueWithPlanet.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
