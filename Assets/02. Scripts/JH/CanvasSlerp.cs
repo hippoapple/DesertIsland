@@ -18,13 +18,13 @@ public class CanvasSlerp : MonoBehaviour
     void Update()
     {
         alpha= Vector3.Slerp(alpha, beta, 0.01f);
-        if(beta.y>7.5f)
-        {
-            alpha.y = 7.5f;
-        }
-        if(beta.y<4.5f)
-        {
-            alpha.y =4.5f;
-        }
+        // if(beta.y>7.5f)
+        // {
+        //     alpha.y = 7.5f;
+        // }
+        // if(beta.y<4.5f)
+        // {
+        //     alpha.y =4.5f;
+        // }
     }
 }
