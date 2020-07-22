@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class CanvasSlerp : MonoBehaviour
 {
-    Transform alpha;
+    Vector3 alpha;
     public GameObject playercanvas;
     Vector3 beta;
     // Start is called before the first frame update
     void Start()
     {
-        alpha = GetComponent<Transform>();
+        alpha = GetComponent<Transform>().position;
         beta =playercanvas.transform.position; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        alpha.position = Vector3.Slerp(alpha.position, playercanvas.transform.position, 0.01f);
-        if(playercanvas.transform.position.y>7.5f)
+        alpha= Vector3.Slerp(alpha, beta, 0.01f);
+        if(beta.y>7.5f)
         {
-            //beta.y =
+            alpha.y = 7.5f;
+        }
+        if(beta.y<4.5f)
+        {
+            alpha.y =4.5f;
         }
     }
 }
