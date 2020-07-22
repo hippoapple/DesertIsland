@@ -12,6 +12,7 @@ public class PotPosition : MonoBehaviour
     public GameObject beforeFire;
     GrabMgr grabMgr;
     public GameObject gauge;
+    public GameObject baekdo;
     public GameObject bubble;
     public GameObject cleanWater;
     public GameObject water;
@@ -24,6 +25,7 @@ public class PotPosition : MonoBehaviour
     {
         dolmenANDFire.gameObject.SetActive(false);
         gauge.gameObject.SetActive(false);
+        baekdo.gameObject.SetActive(false);
         bubble.gameObject.SetActive(false);
         cleanWater.gameObject.SetActive(false);
     }
@@ -50,6 +52,7 @@ public class PotPosition : MonoBehaviour
         if (progress > 10 && isBigpotEnter == true)
         {
             gauge.gameObject.SetActive(false);
+            baekdo.gameObject.SetActive(false);
             bubble.gameObject.SetActive(false);
             if (isbigwateron == false)
             {
@@ -83,7 +86,7 @@ public class PotPosition : MonoBehaviour
         else if (progress > 0 && isBigpotEnter == true)
         {
             gauge.gameObject.SetActive(true);
-
+            baekdo.gameObject.SetActive(true);
         }
     }
 }
