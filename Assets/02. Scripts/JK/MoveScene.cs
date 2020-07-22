@@ -50,6 +50,12 @@ public class MoveScene : MonoBehaviour
        public void GoToScene(string sceneName)
    {
         SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene()
    }
+//    public void GoToScene2(string sceneName)
+//    {
+//         SceneManager.LoadScene("01. MainScene""ViveSetting_HR");
+//         //SceneManager.LoadScene()
+//    }
 
 }
