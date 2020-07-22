@@ -54,6 +54,15 @@ public class PotPosition : MonoBehaviour
             gauge.gameObject.SetActive(false);
             baekdo.gameObject.SetActive(false);
             bubble.gameObject.SetActive(false);
+            cleanWater.gameObject.SetActive(true);
+            if (iswateron == false)
+            {
+                iTween.MoveBy(cleanWater, iTween.Hash("y", 0.009f
+                                                    , "time", 2.0f
+                                                    , "easetype", iTween.EaseType.easeOutElastic
+                                                    , "oncompletetarget", this.gameObject));
+                iswateron = true;
+            }
             if (isbigwateron == false)
             {
                 iTween.MoveBy(water, iTween.Hash("y", -0.05f
@@ -69,15 +78,6 @@ public class PotPosition : MonoBehaviour
         else if (progress > 7 && isBigpotEnter == true)
         {
             //오 좋네요!
-            cleanWater.gameObject.SetActive(true);
-            if (iswateron == false)
-            {
-                iTween.MoveBy(cleanWater, iTween.Hash("y", 0.009f
-                                                    , "time", 2.0f
-                                                    , "easetype", iTween.EaseType.easeOutElastic
-                                                    , "oncompletetarget", this.gameObject));
-                iswateron = true;
-            }
         }
         else if (progress > 5 && isBigpotEnter == true)
         {
