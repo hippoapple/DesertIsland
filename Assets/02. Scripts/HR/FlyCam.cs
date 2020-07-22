@@ -11,7 +11,7 @@ public class FlyCam : MonoBehaviour
     void Start()
     {
         Hashtable ht = new Hashtable();
-        ht.Add("time", 35.0f);
+        ht.Add("time", 30.0f);
         ht.Add("path", iTweenPath.GetPath("Fly"));
         ht.Add("easetype", iTween.EaseType.easeInOutBack); //easeOutBounce통통튐
         ht.Add("looktarget",centerTr.position);
