@@ -54,7 +54,7 @@ public class StartFire : MonoBehaviour
          {
             Destroy(other.gameObject);
             StoryCanvas.SetActive(true);
-            StoryManager1.Dialog_Source.PlayOneShot(StoryManager1.Diralog[StoryManager1.clickCount]);
+            //StoryManager1.Dialog_Source.PlayOneShot(StoryManager1.Diralog[StoryManager1.clickCount]);
 
             print("스토리 3 실행");
          }

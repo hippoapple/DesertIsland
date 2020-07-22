@@ -95,7 +95,7 @@ public class GrabMgr : MonoBehaviour
             StoryCanvas.SetActive(true);
             SOS.transform.position = new Vector3(-0.25f, 5.53f, -18.48f);
             stoneAudio.Play();
-            StoryManager1.Dialog_Source.PlayOneShot(StoryManager1.Diralog[StoryManager1.clickCount]);
+            //StoryManager1.Dialog_Source.PlayOneShot(StoryManager1.Diralog[StoryManager1.clickCount]);
 
             print("스토리 6 실행");
             GameObject.Find("Flag").GetComponent<FlagUp>().colliderOff();

@@ -7,7 +7,7 @@ using TMPro;
 
 public class StoryManager1 : MonoBehaviour
 {
-    public static StoryManager instance;
+   // public static StoryManager1 instance;
     public GameObject StoryCanvas;
     // private int LayerUI;
     public static int clickCount = -1;
@@ -15,10 +15,14 @@ public class StoryManager1 : MonoBehaviour
     public TextMeshProUGUI hintText;
 
     public static int timer;
-    public static AudioClip[] Diralog;
+    public AudioClip[] Diralog;
     public static AudioSource Dialog_Source;
     //public static List <int>  timeArry;
 
+    private void Awake()
+    {
+      //  instance = this;
+    }
     void Start()
     {
         // LayerUI = 1 << LayerMask.NameToLayer("UI");
@@ -187,11 +191,11 @@ public class StoryManager1 : MonoBehaviour
                 break;
             case 26:
                 hintText.text = hints[clickCount];
-                  StoryCanvas.SetActive(false);
+                StoryCanvas.SetActive(false);
                 print("스토리 5 사라져");
                 StartCoroutine(Timer());
                 break;
-          
+
         }
 
 
