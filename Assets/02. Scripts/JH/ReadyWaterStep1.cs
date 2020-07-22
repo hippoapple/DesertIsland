@@ -41,6 +41,8 @@ public class ReadyWaterStep1 : MonoBehaviour
                                             , "oncompletetarget", this.gameObject));
             isWaterOn = true;
             StoryCanvas.SetActive(true);
+            StoryManager1.Dialog_Source.PlayOneShot(StoryManager1.Diralog[StoryManager1.clickCount]);
+
             print("스토리 4 실행");
         }
 
