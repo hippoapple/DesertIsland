@@ -237,13 +237,13 @@ public class StoryManager : MonoBehaviour
         hints.Add("그건 그렇고.. 너무 추운걸?");//2
         hints.Add("먼저 저기 화덕에 불을 피워야겠다.");//3
         hints.Add("나무가 필요하겠지?");//4
-        hints.Add("Mission 1 <불을 피우자!!> ");//5
+        hints.Add("Mission 1\n <불을 피우자!!> ");//5
         hints.Add("");//6
         ///화덕이 만들어졌음(나무 3개 모음)
 
         hints.Add("흐음...");//7
         hints.Add("불을 어떻게 피우지?");//
-        hints.Add("여긴 섬이라 가스레인지가 없어서 불이 없을텐데..");//9
+        hints.Add("여긴 섬이라 가스레인지가 없어서 \n 불이 없을텐데..");//9
         hints.Add("주위를 살펴보자");//10
         hints.Add("");//11
 
@@ -255,7 +255,7 @@ public class StoryManager : MonoBehaviour
         hints.Add("바닷물은 마시면 안된다고 배웠는데!");//15        
         hints.Add("물을 어떻게 구하지"); //16   
         hints.Add("일단 물을 담을 통을 구해보자");//17        
-        hints.Add("Mission 2 <마실수 있는 물을 만들어 보자!!> ");//18
+        hints.Add("Mission 2\n<마실수 있는 물을 만들어 보자!!> ");//18
         hints.Add("");//19
 
         //통에 물을 담았다.
@@ -268,7 +268,7 @@ public class StoryManager : MonoBehaviour
         hints.Add("섬에서 나갈 준비를 해야겠어!");//23        
         hints.Add("섬을 조사해보자");//24        
         hints.Add("분명 쓰레기가 있는 걸 보니 사람이 있었을꺼야");//25  
-        hints.Add("Mission 3 <섬에서 탈출하자!> ");//26
+        hints.Add("Mission 3\n <섬에서 탈출하자!> ");//26
         hints.Add(" ");//27
 
 
