@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Island/Standard.meta
 guid: 5420259dc019af84f95fe60cb27d8c85
+=======
+guid: e646960d6a938b6498b89427c7693f39
+>>>>>>> 25082a6d69b4f1c09b2a287b05f52954793ee89a:Assets/05. Models/HR/Materials.meta
+=======
+guid: 5420259dc019af84f95fe60cb27d8c85
+>>>>>>> 25082a6d69b4f1c09b2a287b05f52954793ee89a
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
