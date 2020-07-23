@@ -11,9 +11,9 @@ public class LaserPoint : MonoBehaviour
     private SteamVR_Input_Sources triggerhands;
     private SteamVR_Action_Boolean teleport;
 
-    [SerializeField] //프라이빗이지만 인스펙터창에 보여짐
-    private GameObject pointerPrefab;
-    private GameObject pointer;
+    //[SerializeField] //프라이빗이지만 인스펙터창에 보여짐
+    //private GameObject pointerPrefab;
+    //private GameObject pointer;
 
     //라인렌더러 속성변수
     private LineRenderer line;
@@ -51,10 +51,10 @@ public class LaserPoint : MonoBehaviour
 
         CreateLine();
 
-        pointerPrefab = Resources.Load<GameObject>("Pointer");
-        pointerPrefab = Resources.Load("Pointer") as GameObject;
+        //pointerPrefab = Resources.Load<GameObject>("Pointer");
+        //pointerPrefab = Resources.Load("Pointer") as GameObject;
 
-        pointer = Instantiate<GameObject>(pointerPrefab, this.transform);//(pointerPrefab,위치,각도, 부모)
+        //pointer = Instantiate<GameObject>(pointerPrefab, this.transform);//(pointerPrefab,위치,각도, 부모)
         tr = GetComponent<Transform>();
         LayerFloor = 1 << LayerMask.NameToLayer("Floor");
         LayerUI = 1 << LayerMask.NameToLayer("UI");
@@ -85,14 +85,14 @@ public class LaserPoint : MonoBehaviour
         {
             line.SetPosition(1, new Vector3(0, 0, hit.distance));//라인 렌더러의 끝점을 오브젝트의 거리 까지만 한다. 
 
-            pointer.transform.position = hit.point + (hit.normal * 0.01f);
-            pointer.transform.rotation = Quaternion.LookRotation(hit.normal);// 물체와 부딧
+            //pointer.transform.position = hit.point + (hit.normal * 0.01f);
+            //pointer.transform.rotation = Quaternion.LookRotation(hit.normal);// 물체와 부딧
         }
 
         else
         {
-            pointer.transform.position = tr.position + (tr.forward * distance); //하늘을 바라봤을 때 수직으로보게한다 
-            pointer.transform.rotation = Quaternion.LookRotation(tr.forward); //올일러를 하면 오류가있을수있음  벡터의 각도를 쿼터니온 각도로 변환해서 넣어준다. 
+            //pointer.transform.position = tr.position + (tr.forward * distance); //하늘을 바라봤을 때 수직으로보게한다 
+            //pointer.transform.rotation = Quaternion.LookRotation(tr.forward); //올일러를 하면 오류가있을수있음  벡터의 각도를 쿼터니온 각도로 변환해서 넣어준다. 
         }
 
         // if (teleport.GetStateDown(hands) && Physics.Raycast(tr.position, tr.forward, out hit, distance, LayerFloor))//왼손
