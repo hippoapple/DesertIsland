@@ -13,7 +13,7 @@ public class StartFire : MonoBehaviour
     bool isTriggerenter = false;
     public static bool isFireOn;
     AudioSource audioSource;
-
+[HideInInspector]
     public  StoryManager1 storyManager1;
     private AudioClip[] audioClips;
     // Start is called before the first frame update

@@ -11,6 +11,7 @@ public class FireFire : MonoBehaviour
     public List<GameObject> storage = new List<GameObject>();
     public bool isFirePlaceOn;
     AudioSource audioSource;
+[HideInInspector]
 
     public  StoryManager1 storyManager1;
     private AudioClip[] audioClips;

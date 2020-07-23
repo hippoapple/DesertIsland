@@ -24,7 +24,10 @@ public class GrabMgr : MonoBehaviour
 
     AudioSource shortAudio;
     AudioSource stoneAudio;
-    public  StoryManager1 storyManager1;
+
+  
+  [HideInInspector]  
+  public  StoryManager1 storyManager1;
     private AudioClip[] audioClips;
     
         void Awake()

@@ -17,6 +17,7 @@ public class ReadyWaterStep1 : MonoBehaviour
     public static bool IsSmallCup;
     public GameObject potLid;
     public static bool IsPotLid;
+[HideInInspector]
 
     public  StoryManager1 storyManager1;
     private AudioClip[] audioClips;

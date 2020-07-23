@@ -17,6 +17,7 @@ public class MoveSceneEndMenu : MonoBehaviour
    public void GoToScene(string sceneName)
    {
         SceneManager.LoadScene(sceneName);
+        StoryManager1.clickCount = -1;
    }
 }
    
