@@ -31,8 +31,8 @@ public class ReadyWaterStep1 : MonoBehaviour
     }
 
     // Update is called once per frame
-
-    private void OnTriggerEnter(Collider other)
+    
+   private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Sea" && isWaterOn == false)
         {
