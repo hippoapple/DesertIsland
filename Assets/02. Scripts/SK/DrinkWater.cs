@@ -9,6 +9,7 @@ public class DrinkWater : MonoBehaviour
 
     AudioSource drinkSound;
     public GameObject StoryCanvas;
+    [HideInInspector]
      public  StoryManager1 storyManager1;
     private AudioClip[] audioClips;
     // Start is called before the first frame update
