@@ -9,11 +9,16 @@ public class DrinkWater : MonoBehaviour
 
     AudioSource drinkSound;
     public GameObject StoryCanvas;
+    [HideInInspector]
+     public  StoryManager1 storyManager1;
+    private AudioClip[] audioClips;
     // Start is called before the first frame update
 
     private void Start()
     {
         drinkSound=GetComponent<AudioSource>();
+        storyManager1 = GameObject.Find("HintManager1").GetComponent<StoryManager1>();
+
     }
     private void Update()
     {
@@ -36,6 +41,9 @@ public class DrinkWater : MonoBehaviour
             Destroy(water.gameObject,2.5f);
             print("drinkSound on");
             StoryCanvas.SetActive(true);
+            audioClips = storyManager1.Diralog;
+            StoryManager1.Dialog_Source.PlayOneShot(audioClips[StoryManager1.clickCount]);
+
             print("스토리 5 실행"); 
             isDrink = true;           
         }

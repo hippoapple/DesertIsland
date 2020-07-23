@@ -30,6 +30,14 @@ public class StoneZone : MonoBehaviour
             // Debug.Log($"count = {count}");
         }
     }
+     void OnTriggerExit(Collider coll)
+     {
+        if (coll.CompareTag("Stone"))
+        {
+            --stoneCount;
+             print("-stoneCount  : " + stoneCount);
+        }
+     }
 
     void DestroyStones()
     {

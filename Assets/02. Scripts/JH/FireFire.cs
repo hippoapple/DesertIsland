@@ -11,11 +11,17 @@ public class FireFire : MonoBehaviour
     public List<GameObject> storage = new List<GameObject>();
     public bool isFirePlaceOn;
     AudioSource audioSource;
+[HideInInspector]
+
+    public  StoryManager1 storyManager1;
+    private AudioClip[] audioClips;
+
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
+        storyManager1 = GameObject.Find("HintManager1").GetComponent<StoryManager1>();
+        
     }
 
 
@@ -34,7 +40,10 @@ public class FireFire : MonoBehaviour
                 audioSource.Play();
                 isFirePlaceOn=true;
                 StoryCanvas.SetActive(true);
-               // StoryManager1.Dialog_Source.PlayOneShot(StoryManager1.Diralog[StoryManager1.clickCount]);
+                audioClips = storyManager1.Diralog;
+                StoryManager1.Dialog_Source.PlayOneShot(audioClips[StoryManager1.clickCount]);
+                
+                //StoryManager1.Dialog_Source.PlayOneShot(storyManager1.Diralog[StoryManager1.clickCount]);
                 // StoryManager hintManager = GameObject.Find("HintManager").GetComponent<StoryManager>();
                 // hintManager.ChangeStory();
             }

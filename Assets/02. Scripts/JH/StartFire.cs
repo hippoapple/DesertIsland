@@ -13,11 +13,14 @@ public class StartFire : MonoBehaviour
     bool isTriggerenter = false;
     public static bool isFireOn;
     AudioSource audioSource;
+[HideInInspector]
+    public  StoryManager1 storyManager1;
+    private AudioClip[] audioClips;
     // Start is called before the first frame update
     void Start()
     {
         audioSource= GetComponent<AudioSource>();
-        
+        storyManager1 = GameObject.Find("HintManager1").GetComponent<StoryManager1>();
     }
 
     // Update is called once per frame
@@ -54,6 +57,8 @@ public class StartFire : MonoBehaviour
          {
             Destroy(other.gameObject);
             StoryCanvas.SetActive(true);
+            audioClips = storyManager1.Diralog;
+            StoryManager1.Dialog_Source.PlayOneShot(audioClips[StoryManager1.clickCount]);
             //StoryManager1.Dialog_Source.PlayOneShot(StoryManager1.Diralog[StoryManager1.clickCount]);
 
             print("스토리 3 실행");

@@ -49,7 +49,7 @@ public class PotPosition : MonoBehaviour
             gauge.gameObject.GetComponent<Slider>().value = progress*1.25f;
          //   print("progress" + (int)progress);
         }
-        if (progress > 10 && isBigpotEnter == true)
+        if (progress > 10 && isBigpotEnter == true && DrinkWater.isDrink ==false)
         {
             gauge.gameObject.SetActive(false);
             baekdo.gameObject.SetActive(false);

@@ -25,14 +25,21 @@ public class GrabMgr : MonoBehaviour
     AudioSource shortAudio;
     AudioSource stoneAudio;
 
-    void Awake()
+  
+  [HideInInspector]  
+  public  StoryManager1 storyManager1;
+    private AudioClip[] audioClips;
+    
+        void Awake()
     {
         hand = SteamVR_Input_Sources.Any; //양손을 사용할 수 있도록 하는 변수
         trigger = SteamVR_Actions.default_InteractUI;
         audioSource = GameObject.Find("LeftHand").GetComponent<AudioSource>();
         // rig = grabObject.GetComponent<Rigidbody>();
 //         shortAudio = GameObject.Find("ShortThrow").GetComponent<AudioSource>();
-         stoneAudio= GameObject.Find("SOS").GetComponent<AudioSource>();
+        stoneAudio= GameObject.Find("SOS").GetComponent<AudioSource>();
+        storyManager1 = GameObject.Find("HintManager1").GetComponent<StoryManager1>();
+
     }
 
 
@@ -95,6 +102,9 @@ public class GrabMgr : MonoBehaviour
             StoryCanvas.SetActive(true);
             SOS.transform.position = new Vector3(-0.25f, 5.53f, -18.48f);
             stoneAudio.Play();
+            audioClips = storyManager1.Diralog;
+            StoryManager1.Dialog_Source.PlayOneShot(audioClips[StoryManager1.clickCount]);
+
             //StoryManager1.Dialog_Source.PlayOneShot(StoryManager1.Diralog[StoryManager1.clickCount]);
 
             print("스토리 6 실행");

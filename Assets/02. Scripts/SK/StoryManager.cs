@@ -7,7 +7,6 @@ using TMPro;
 
 public class StoryManager : MonoBehaviour
 {
-    
     public GameObject StoryCanvas;
     // private int LayerUI;
     public static int clickCount = -1;
@@ -15,7 +14,7 @@ public class StoryManager : MonoBehaviour
     public TextMeshProUGUI hintText;
 
     public static int timer;
-    public AudioClip[] Diralog;
+    public  AudioClip[] Diralog;
     AudioSource Dialog_Source;
     //public static List <int>  timeArry;
 
