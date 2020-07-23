@@ -232,7 +232,7 @@ public class StoryManager : MonoBehaviour
     public void SetScript()
     {
         hints.Add("여기가 어디지...?");    //0
-        hints.Add("섬인것 같은데...");//1
+        hints.Add("섬인 것 같은데...");//1
         hints.Add("그건 그렇고.. 너무 추운걸?");//2
         hints.Add("먼저 저기 화덕에 불을 피워야겠다.");//3
         hints.Add("나무가 필요하겠지?");//4
@@ -242,37 +242,37 @@ public class StoryManager : MonoBehaviour
 
         hints.Add("흐음...");//7
         hints.Add("불을 어떻게 피우지?");//
-        hints.Add("여긴 섬이라 가스레인지가 없어서\n불이 없을텐데..");//9
+        hints.Add("여긴 섬이라 가스레인지가 없어서\n불이 없을 텐데..");//9
         hints.Add("주위를 살펴보자");//10
         hints.Add("");//11
 
 
         //화덕에 불이 붙음
         hints.Add("와아 불이 붙었다.");//12
-        hints.Add("따뜻해서 더이상 체온이\n떨어지지 않아");//13        
+        hints.Add("따뜻해서 더 이상 체온이\n떨어지지 않아");//13        
         hints.Add("이제 목이 좀 마른데..");//14        
-        hints.Add("바닷물은 마시면\n안된다고 배웠는데!");//15        
+        hints.Add("바닷물은 마시면\n안 된다고 배웠는데!");//15        
         hints.Add("물을 어떻게 구하지"); //16   
         hints.Add("일단 물을 담을 통을 구해보자");//17        
         hints.Add("Mission 2\n<마실수 있는 물을 만들어 보자!!> ");//18
         hints.Add("");//19
 
         //통에 물을 담았다.
-        hints.Add("바닷물을 어떻게 마실수\n있는 물로 만들지..?");//20    
+        hints.Add("바닷물을 어떻게 마실 수\n있는 물로 만들지..?");//20    
         hints.Add("");//21    
 
 
         //물을 먹고 난후     
-        hints.Add("캬아~ 시원하다... 너무 좋은 걸?\n그런데 이렇게 계속 살수는 없지");//22        
+        hints.Add("캬아~ 시원하다... 너무 좋은 걸?\n그런데 이렇게 계속 살 수는 없지");//22        
         hints.Add("섬에서 나갈 준비를 해야겠어!");//23        
         hints.Add("섬을 조사해보자");//24        
-        hints.Add("분명 쓰레기가 있는 걸 보니\n사람이 있었을꺼야");//25  
+        hints.Add("분명 쓰레기가 있는 걸 보니\n사람이 있었을거야");//25  
         hints.Add("Mission 3\n <섬에서 탈출하자!> ");//26
         hints.Add(" ");//27
 
 
         //깃발을 터치한후 
-        hints.Add("어라 해골과 SO..가 보인다! ");//28
+        hints.Add("어라 해골과 SO.. 가 보인다! ");//28
         hints.Add("SOS 구조요청을 하려던\n흔적인가..? ");//29
         hints.Add("SOS를 완성해보자 ");//30
         hints.Add(" ");//31
