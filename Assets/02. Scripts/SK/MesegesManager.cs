@@ -105,7 +105,7 @@ public class MesegesManager : MonoBehaviour
 
         }
 
-        if (isCavasOn == false  && StoryManager1.timer > 20 && GrabMgr.isFlag == false && ReadyWaterStep1.IsPotLid == true)
+        if (isCavasOn == false  && StoryManager1.timer > 5 && GrabMgr.isFlag == false && ReadyWaterStep1.IsPotLid == true)
         {
             Hint6_Canvas.SetActive(true);
             Debug.Log("힌트 6 실행.");
